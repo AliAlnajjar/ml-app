@@ -52,14 +52,14 @@ const headerStyle = {
   title: {
     ...defaultFont,
     lineHeight: "30px",
-    fontSize: "1.5em",
+    fontSize: "2em",
     borderRadius: "3px",
     textTransform: "none",
     padding: "8px 16px",
     letterSpacing: "unset",
     fontWeight: 500,
     color: "#000000",
-    fontFamily: "Lekton",
+    fontFamily:  'Saira Stencil One',
     "&:hover,&:focus": {
       color: "#000000",
       background: "transparent"

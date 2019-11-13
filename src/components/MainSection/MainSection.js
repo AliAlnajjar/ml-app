@@ -6,8 +6,6 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 
 class MainSection extends Component {
     render() {
-        const leftLinks = ['Link 1', 'Linke 2', 'Linke 3'];
-
         return (
             <div className="TestDiv">
                 <Header brand={'Mobilland'} leftLinks={<HeaderLinks />} />
