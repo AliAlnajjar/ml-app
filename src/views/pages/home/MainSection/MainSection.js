@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import 'App.css';
-import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
+import "views/pages/home/MainSection/MainSection.css";
+import Header from "views/sections/Header/Header.js";
+import HeaderLinks from "views/sections/Header/HeaderLinks.js";
 
 
 class MainSection extends Component {
@@ -9,7 +9,7 @@ class MainSection extends Component {
         return (
             <div className="mainSection">
                 <Header brand={'Mobilland'} leftLinks={<HeaderLinks />} />
-                <div className=" shape-style-1">
+                {/*  <div className=" shape-style-1">
                     <span class="span-150"></span>
                     <span class="span-50"></span>
                     <span class="span-50"></span>
@@ -20,7 +20,7 @@ class MainSection extends Component {
                     <span class="span-100"></span>
                     <span class="span-50"></span>
                     <span class="span-100"></span>
-                </div>
+                </div> */}
             </div>
 
         );

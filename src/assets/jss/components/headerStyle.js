@@ -4,8 +4,6 @@ import {
   transition,
   boxShadow,
   drawerWidth,
-  ml_bgColor_50,
-  ml_primaryColor_800
 } from "assets/jss/mobilland.js";
 
 const headerStyle = {

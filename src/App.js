@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import MainSection from "./components/MainSection/MainSection.js";
-import Footer from "./components/Footer/Footer.js";
 
+import MainSection from "./views/pages/home/MainSection/MainSection.js";
+import FixSection from "./views/pages/home/FixSection/FixSection.js";
 
-
+import Footer from "./views/sections/Footer/Footer.js";
 
 class App extends Component {
-
 
   render() {
     return (
@@ -15,14 +14,14 @@ class App extends Component {
         <MainSection>
         </MainSection>
 
-        
+        <FixSection>
+        </FixSection>
 
         <Footer>
         </Footer>
       </div>
     );
   }
-
 }
 
 export default App;
