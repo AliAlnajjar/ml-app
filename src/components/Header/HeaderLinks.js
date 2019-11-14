@@ -18,7 +18,7 @@ import ListItem from "@material-ui/core/ListItem";
 //import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import Button from "components/CustomButtons/Button.js";
 
-import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
+import styles from "assets/jss/components/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
 

@@ -7,7 +7,7 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 class MainSection extends Component {
     render() {
         return (
-            <div className="TestDiv">
+            <div className="mainSection">
                 <Header brand={'Mobilland'} leftLinks={<HeaderLinks />} />
                 <div className=" shape-style-1">
                     <span class="span-150"></span>

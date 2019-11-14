@@ -1,8 +1,8 @@
 {
 	"version": 3,
-	"file": "material-kit-react.css",
+	"file": "mobilland.css",
 	"sources": [
-		"../scss/material-kit-react.scss",
+		"../scss/mobilland.scss",
 		"../scss/core/_variables.scss",
 		"../scss/core/variables/_colors.scss",
 		"../scss/core/variables/_shadow.scss",
