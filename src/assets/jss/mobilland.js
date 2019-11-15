@@ -58,11 +58,11 @@ const infoColor = "#00acc1";
 const roseColor = "#e91e63";
 const grayColor = "#999999";
 
-const ml_primaryColor_800 = "#356859";
-const ml_primaryColor_500 = "#37966F";
-const ml_primaryColor_100 = "#B9E4C9";
-const ml_secondaryColor_100 = "#FD5523";
-const ml_bgColor_50 = "#FFFBE6";
+// const ml_primaryColor_800 = "#356859";
+// const ml_primaryColor_500 = "#37966F";
+// const ml_primaryColor_100 = "#B9E4C9";
+// const ml_secondaryColor_100 = "#FD5523";
+// const ml_bgColor_50 = "#FFFBE6";
 
 
 
@@ -145,7 +145,7 @@ const defaultBoxShadow = {
 };
 
 const title = {
-  color: ml_primaryColor_800,
+  // color: ml_primaryColor_800,
   margin: "1.75rem 0 0.875rem",
   textDecoration: "none",
   fontWeight: "700",
@@ -184,8 +184,8 @@ export {
   infoColor,
   roseColor,
   grayColor,
-  ml_bgColor_50,
-  ml_primaryColor_800,
+  // ml_bgColor_50,
+  // ml_primaryColor_800,
   primaryBoxShadow,
   infoBoxShadow,
   successBoxShadow,

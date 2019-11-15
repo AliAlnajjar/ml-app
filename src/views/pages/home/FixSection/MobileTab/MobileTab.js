@@ -13,20 +13,8 @@ const styles = {
     root: {
         width: "100%",
         height: "auto",
-        border: "1px solid red",
     },
-    item1: {
-        border: "1px solid green"
 
-    },
-    item2: {
-        border: "1px solid blue"
-
-    },
-    item3: {
-        border: "1px solid orange"
-
-    }
 }
 const useStyles = makeStyles(styles);
 

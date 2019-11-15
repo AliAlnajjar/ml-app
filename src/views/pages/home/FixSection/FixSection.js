@@ -4,6 +4,8 @@ import 'views/pages/home/FixSection/FixSection.css';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
+import Section from "components/Section/Section.js"
+
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -19,7 +21,7 @@ const useStyles = makeStyles(styles, {
         height: 216,
         flexGrow: 1,
         maxWidth: 400,
-    },
+    }
 });
 
 
@@ -30,9 +32,7 @@ export default function FixSection() {
     const classes = useStyles();
 
     return (
-        <div className={classes.section}>
-            {/* <div className={classes.container}> */}
-            <h3>Fiks din mobil/nettbrett</h3>
+        <Section title={"Fix Your Device"}>
             <GridContainer>
                 <GridItem >
                     <CustomTabs
@@ -78,8 +78,10 @@ export default function FixSection() {
                     />
                 </GridItem>
             </GridContainer>
-            {/* </div> */}
-        </div>
+        </Section>
+
+
+
     );
 
 }

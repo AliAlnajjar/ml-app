@@ -26,12 +26,13 @@ const customTabsStyle = {
     lineHeight: "24px",
     border: "0 !important",
     color: "#fff !important",
-    marginLeft: "4px",
+    marginLeft: "15px",
     fontWeight: "500",
-    fontSize: "12px",
-    "&:last-child": {
-      marginLeft: "0px"
-    }
+    fontSize: "18px",
+    textTransform: "capitalize",
+    // "&:last-child": {
+    //   marginLeft: "0px"
+    // }
   },
   tabSelected: {
     backgroundColor: "rgba(255, 255, 255, 0.2)",
