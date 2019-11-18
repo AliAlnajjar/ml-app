@@ -1,44 +1,31 @@
 import React from 'react';
-// import 'views/pages/home/FixSection/FixSection.css';
-
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import ChooseMobile from "views/pages/home/FixSection/MobileTab/ChooseMobile.js"
-
-const styles = {
-    root: {
-        width: "100%",
-        height: "auto",
-    },
-
-}
-const useStyles = makeStyles(styles);
+import ChooseMobile from "./ChooseMobile.js"
+import ChooseProblem from './ChooseProblem';
+import ShowPrice from './ShowPrice'
+import Stepper from "views/pages/home/FixSection/MobileTab/Stepper.js";
 
 export default function MobileTab() {
-
-    const classes = useStyles();
-
     return (
-        <div className={classes.root}>
-            {/* <div className={classes.container}> */}
+        <div>
+            <Stepper/>
             <GridContainer>
-                <GridItem xs={12} sm={12} md={4} lg={4} xl={4} className={classes.item1} >
+                
+                <GridItem xs={12} sm={12} md={4} lg={4} xl={4}>
+
                     <ChooseMobile />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={4} lg={4} xl={4} className={classes.item2}>
-                    <p> valg problem </p>
+                <GridItem xs={12} sm={12} md={4} lg={4} xl={4}>
+                    <ChooseProblem />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={4} lg={4} xl={4} className={classes.item3} >
-                    <p> pris </p>
-
+                <GridItem xs={12} sm={12} md={4} lg={4} xl={4} >
+                <ShowPrice />
                 </GridItem>
             </GridContainer>
-            {/* </div> */}
         </div>
+            
     );
 
 }

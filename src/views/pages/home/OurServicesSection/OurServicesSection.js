@@ -24,7 +24,6 @@ export default function OurServicesSection() {
                         title="Buy used phone"
                         desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
                         btn1Lable="check available phones"
-                        btn1Lable="check available phones"
                         img={BuyPhoneImage}
                     />
 
@@ -34,7 +33,6 @@ export default function OurServicesSection() {
                         title="Sell your broken phone"
                         desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
                         btn1Lable="Sell your phone here "
-                        btn1Lable="Sell your phone here "
                         img={SellPhoneImage}
                     />
 
@@ -42,7 +40,6 @@ export default function OurServicesSection() {
                     <MediaCard
                         title="Buy accessories"
                         desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-                        btn1Lable="check accessories page"
                         btn1Lable="check accessories page"
                         img={BuyAccessoriesImage}
                     />

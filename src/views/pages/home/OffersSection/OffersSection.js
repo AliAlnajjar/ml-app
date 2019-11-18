@@ -4,7 +4,7 @@ import Section from "components/Section/Section.js"
 export default function OffersSection() {
 
     return (
-        <Section title={"Weekly Offers"}>
+        <Section title={"Our Offers"}>
 
         </Section>
     );

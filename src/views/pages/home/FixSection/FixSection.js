@@ -1,89 +1,95 @@
-import React, { Component } from 'react';
-import 'views/pages/home/FixSection/FixSection.css';
-
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import React from 'react';
 
 import Section from "components/Section/Section.js"
-
-// core components
+import MobileTab from 'views/pages/home/FixSection/MobileTab/MobileTab.js';
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import CustomTabs from "components/CustomTabs/CustomTabs.js";
 
-import MobileTab from 'views/pages/home/FixSection/MobileTab/MobileTab.js';
+// import NavPills from "components/NavPills/NavPills.js";
+import Hidden from '@material-ui/core/Hidden';
+import { Stepper } from '@material-ui/core';
 
 
-import styles from "assets/jss/views/componentsSections/tabsStyle.js";
+// @material-ui/core components
+// import { makeStyles } from "@material-ui/core/styles";
+// @material-ui/icons
+// import PhoneIphone from "@material-ui/icons/PhoneIphone";
+// import TabletMac from "@material-ui/icons/TabletMac";
 
-const useStyles = makeStyles(styles, {
-    root: {
-        height: 216,
-        flexGrow: 1,
-        maxWidth: 400,
-    }
-});
+// const styles = {
+//   root: {
+//       width: "100%",
+//       height: "500px",
+//   },
 
-
-
-
-export default function FixSection() {
-
-    const classes = useStyles();
-
-    return (
-        <Section title={"Fix Your Device"}>
-            <GridContainer>
-                <GridItem >
-                    <CustomTabs
-                        headerColor="primary"
-                        tabs={[
-                            {
-                                tabName: "Mobil",
-                                tabContent: (
-                                    <MobileTab />
-                                )
-                            },
-                            {
-                                tabName: "Nettbrett",
-                                tabContent: (
-                                    <p className={classes.textCenter}>
-                                        I think that’s a responsibility that I have, to push
-                                        possibilities, to show people, this is the level that
-                                        things could be at. I will be the leader of a company
-                                        that ends up being worth billions of dollars, because I
-                                        got the answers. I understand culture. I am the nucleus.
-                                        I think that’s a responsibility that I have, to push
-                                        possibilities, to show people, this is the level that
-                                        things could be at.
-                                            </p>
-                                )
-                            },
-                            {
-                                tabName: "PC",
-                                tabContent: (
-                                    <p className={classes.textCenter}>
-                                        think that’s a responsibility that I have, to push
-                                        possibilities, to show people, this is the level that
-                                        things could be at. So when you get something that has
-                                        the name Kanye West on it, it’s supposed to be pushing
-                                        the furthest possibilities. I will be the leader of a
-                                        company that ends up being worth billions of dollars,
-                                        because I got the answers. I understand culture. I am
-                                        the nucleus.
-                                            </p>
-                                )
-                            }
-                        ]}
-                    />
-                </GridItem>
-            </GridContainer>
-        </Section>
+// }
+// const useStyles = makeStyles(styles);
 
 
 
-    );
+export default function SectionPills() {
+  // const classes = useStyles()
+  return (
+    <Section title={"Fix Your Device"}>
 
+
+
+      
+      <CustomTabs
+          headerColor="primary"
+          tabs={[
+              {
+                  tabName: "Mobile",
+                  tabContent: (
+                      <MobileTab />
+                  )
+              },
+              {
+                  tabName: "Tablet",
+                  tabContent: (
+                      <p >
+                          Tablet
+                              </p>
+                  )
+              },
+              {
+                  tabName: "PC",
+                  tabContent: (
+                      <p>
+                          PC
+                              </p>
+                  )
+              }
+          ]}
+      />
+    </Section>
+
+  );
 }
 
 
+
+
+{/* <NavPills
+                color="primary"
+                tabs={[
+                  {
+                    tabButton: "Mobile",
+                    tabIcon: PhoneIphone,
+                    tabContent: (
+                      <MobileTab />
+                    )
+                  },
+                  {
+                    tabButton: "Tablet",
+                    tabIcon: TabletMac,
+                    tabContent: (
+                      <span>
+                        Tablet
+                      </span>
+                    )
+                  }
+                ]}
+              />
+ */}

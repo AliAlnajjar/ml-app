@@ -15,39 +15,28 @@ const useStyles = makeStyles({
     media: {
         height: 210,
 
-        backgroundSize: "200px", /* Resize the background image to cover the entire container */
+        backgroundSize: "80px", /* Resize the background image to cover the entire container */
     },
+    
 });
 
 export default function MediaCard(props) {
     const classes = useStyles();
-    const { title, desc, btn1Lable, btn2Lable, img } = props
+    const { title, img } = props
 
     return (
-        <Card className={classes.card}>
-            <CardActionArea>
+       <div>
                 <CardMedia
                     className={classes.media}
                     image={img}
                     title=" "
                 />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography  variant="h6" component="h3">
                         {title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        {desc}
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                    {btn1Lable}
-                </Button>
-                <Button size="small" color="primary">
-                    {btn2Lable}
-                </Button>
-            </CardActions>
-        </Card>
+       </div>
+                
+                    
+                
     );
 }

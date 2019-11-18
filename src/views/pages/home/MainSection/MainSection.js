@@ -21,6 +21,8 @@ class MainSection extends Component {
                     <span class="span-50"></span>
                     <span class="span-100"></span>
                 </div> */}
+
+                
             </div>
 
         );
