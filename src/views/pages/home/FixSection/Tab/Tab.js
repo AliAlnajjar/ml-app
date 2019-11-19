@@ -9,18 +9,31 @@ import ChooseService from './ChooseService.js';
 import ShowPrice from './ShowPrice.js'
 import Stepper from "./Stepper.js";
 
-export default class Tab extends Component() {
-    constructor(props) {
-        super(props);
-        this.state = {
-            choosenDevice: "",
-            problemsList: {},
-            price: "",
-            activeTab: "mobile"
-        }
-    }
+export default class Tab extends Component {
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //     choosenDevice: "",
+    //     serviceList: [],
+    //     choosenService: "",
+    //     priceList: [],
+    //     stepNumber: 0
+    //     }
+    // }
+    // componentDidUpdate(prevProps) {
+    //     const serviceList = this.props.deviceList.filter((device) => device.name == this.state.choosenDevice);
+    //     const priceList = (this.props.deviceList.filter((device) => device.name == this.state.choosenDevice));
+    //     // ) ? device.services.map((service) => {service.prices}) : null;
+    //   this.setState({
+    //     choosenDevice: "",
+    //     serviceList: serviceList,
+    //     choosenService: "",
+    //     priceList: priceList,
+    //     stepNumber: 0
+    //   })
+    // }
     render() {
-        const { device, servicesList } = this.props;
+        const { device, deviceList } = this.props;
         return (
             <div>
                 <Stepper device={device} />
@@ -29,27 +42,21 @@ export default class Tab extends Component() {
                         <ChooseDevice
                             device={device}
                             deviceList=
-                            {servicesList.map((device) => {
+                            {this.props.deviceList.map((device) => {
                                 return {
-                                    id: device.id,
                                     name: device.name,
                                 };
                             })}
                         />
                     </GridItem>
                     <GridItem xs={12} sm={12} md={4} lg={4} xl={4}>
-                        <ChooseService problemsList=
-                            {servicesList.filter((device) => {
-                                return (device.id = this.state.choosenDevice) ? device.pricies : null;
-                            })}
-                        />
+                        {/* <ChooseService servicesList= {this.state.serviceList}
+                            
+                        /> */}
                     </GridItem>
                     <GridItem xs={12} sm={12} md={4} lg={4} xl={4} >
-                        <ShowPrice priceList=
-                            {servicesList.filter((device) => {
-                                return (device.id = this.state.choosenDevice) ? device.pricies : null;
-                            })}
-                        />
+                        {/* <ShowPrice priceList={this.state.priceList}
+                        /> */}
                     </GridItem>
                 </GridContainer>
             </div>

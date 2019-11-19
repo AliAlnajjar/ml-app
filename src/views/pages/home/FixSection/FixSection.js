@@ -10,43 +10,19 @@ export default class FixSection extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mobile: {
-        devicesList: {},
-        servicesList: [],
-        prisList: [],
-        choosenDevice: "",
-        choosenService: "",
-        stepNumber: 0
-      },
-      tablet: {
-        devicesList: {},
-        servicesList: [],
-        prisList: [],
-        choosenDevice: "",
-        choosenService: "",
-        stepNumber: 0
-      },
-      pc: {
-        devicesList: {},
-        servicesList: [],
-        prisList: [],
-        choosenDevice: "",
-        choosenService: "",
-        stepNumber: 0
-      },
+      mobiles: MobileList,
+      tablets: TabletList,
+      pcs: PCList,
       activeTab: "mobile"
     }
   }
-  componentDidUpdate(prevProps) {
-    const mobilesServiceList = {}
-    const tabletsServiceList = {}
-    const pcsServiceList = {}
-    this.setState({
-      mobile: mobilesServiceList,
-      tablet: tabletsServiceList,
-      pc: pcsServiceList,
-    })
-  }
+  // componentDidUpdate(prevProps) {
+  //   this.setState({
+  //     mobiles:  MobilesPriceList,
+  //     tablets: TabletsPriceList,
+  //     pcs : PCsPriceList,
+  //   })
+  // }
   render() {
     return (
       <Section title={"Fix Your Device"} >
@@ -72,19 +48,19 @@ export default class FixSection extends Component {
             {
               tabName: "Mobile",
               tabContent: (
-                <Tab device={"mobile"} servicesList={this.state.mobile} />
+                <Tab device={"mobile"} deviceList={this.state.mobiles} />
               )
             },
             {
               tabName: "Tablet",
               tabContent: (
-                <Tab device={"tablet"} servicesList={this.state.tablet} />
+                <Tab device={"tablet"} deviceList={this.state.tablets} />
               )
             },
             {
               tabName: "PC",
               tabContent: (
-                <Tab device={"pc"} servicesList={this.state.pc} />
+                <Tab device={"pc"} deviceList={this.state.pcs} />
               )
             }
           ]}
@@ -93,126 +69,608 @@ export default class FixSection extends Component {
     );
   }
 }
-const MobilesPriceList = [
+const MobileList = [
   {
     name: 'iPhone X',
-    services: {
-      "Change screen": 1200,
-      "Cange battery": 1450,
-      "Fix mic": 1610,
-      "Fix camera": 1355
-    }
+    services: [
+      {
+        name :"Change screen",
+        prices : [
+          {
+            price: 1200,
+            note: "Orginal"
+          },
+          {
+            price: 900,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Fix mic",
+        price : [
+          {
+            price: 450,
+            note: ""
+          }
+        ]
+      },
+      {
+        name :"Fix camera",
+        price : [
+          {
+            price: 840,
+            note: "Orginal"
+          },
+          {
+            price: 650,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Change battery",
+        price : [
+          {
+            price: 1740,
+            note: ""
+          }
+        ]
+      },
+    ],
+    notes: ""
   },
   {
     name: 'iPhone 8',
-    services: {
-      "Change screen": 1540,
-      "Cange battery": 865,
-      "Fix camera": 1340
-    },
+    services: [
+      {
+        name :"Change screen",
+        prices : [
+          {
+            price: 1200,
+            note: "Orginal"
+          },
+          {
+            price: 900,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Fix mic",
+        price : [
+          {
+            price: 450,
+            note: ""
+          }
+        ]
+      },
+      {
+        name :"Fix camera",
+        price : [
+          {
+            price: 840,
+            note: "Orginal"
+          },
+          {
+            price: 650,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Change battery",
+        price : [
+          {
+            price: 1740,
+            note: ""
+          }
+        ]
+      },
+    ],
     notes: ""
   },
   {
     name: 'iPhone 7',
-    services: {
-      "Change screen": 1100,
-      "Cange battery": 1250,
-      "Fix mic": 1380,
-      "Fix camera": 1110
-    },
+    services: [
+      {
+        name :"Change screen",
+        prices : [
+          {
+            price: 1200,
+            note: "Orginal"
+          },
+          {
+            price: 900,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Fix mic",
+        price : [
+          {
+            price: 450,
+            note: ""
+          }
+        ]
+      },
+      {
+        name :"Fix camera",
+        price : [
+          {
+            price: 840,
+            note: "Orginal"
+          },
+          {
+            price: 650,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Change battery",
+        price : [
+          {
+            price: 1740,
+            note: ""
+          }
+        ]
+      },
+    ],
     notes: ""
   },
   {
     name: 'iPhone 6',
-    services: {
-      "Change screen": [{ "Orginal screen": 1580 }, { "chinees screen": 1100 },],
-      "Cange battery": 1350,
-      "Fix mic": 1450,
-      "Fix camera": 1280,
-      "Fix Speaker": 1565,
-    },
+    services: [
+      {
+        name :"Change screen",
+        prices : [
+          {
+            price: 1200,
+            note: "Orginal"
+          },
+          {
+            price: 900,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Fix mic",
+        price : [
+          {
+            price: 450,
+            note: ""
+          }
+        ]
+      },
+      {
+        name :"Fix camera",
+        price : [
+          {
+            price: 840,
+            note: "Orginal"
+          },
+          {
+            price: 650,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Change battery",
+        price : [
+          {
+            price: 1740,
+            note: ""
+          }
+        ]
+      },
+    ],
     notes: ""
   },
   {
-    name: 'iPhone 5',
-    services: {
-      "Change screen": 990,
-      "Cange battery": [{ "Apple Battery": 1580 }, { "non orginal Battery": 950 },],
-      "Fix camera": 1180,
-    },
+    services: [
+      {
+        name :"Change screen",
+        prices : [
+          {
+            price: 1200,
+            note: "Orginal"
+          },
+          {
+            price: 900,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Fix mic",
+        price : [
+          {
+            price: 450,
+            note: ""
+          }
+        ]
+      },
+      {
+        name :"Fix camera",
+        price : [
+          {
+            price: 840,
+            note: "Orginal"
+          },
+          {
+            price: 650,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Change battery",
+        price : [
+          {
+            price: 1740,
+            note: ""
+          }
+        ]
+      },
+    ],
     notes: ""
   },
 ];
-const TabletsPriceList = [
+const TabletList = [
   {
     name: 'iPad 4',
-    services: {
-      "Change screen": 1200,
-      "Cange battery": 1450,
-      "Fix mic": 1610,
-      "Fix camera": 1355
-    },
+    services: [
+      {
+        name :"Change screen",
+        prices : [
+          {
+            price: 1200,
+            note: "Orginal"
+          },
+          {
+            price: 900,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Fix mic",
+        price : [
+          {
+            price: 450,
+            note: ""
+          }
+        ]
+      },
+      {
+        name :"Fix camera",
+        price : [
+          {
+            price: 840,
+            note: "Orginal"
+          },
+          {
+            price: 650,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Change battery",
+        price : [
+          {
+            price: 1740,
+            note: ""
+          }
+        ]
+      },
+    ],
     notes: ""
   },
   {
     name: 'iPad 3',
-    services: {
-      "Change screen": 1540,
-      "Cange battery": 865,
-      "Fix camera": 1340
-    },
+    services: [
+      {
+        name :"Change screen",
+        prices : [
+          {
+            price: 1200,
+            note: "Orginal"
+          },
+          {
+            price: 900,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Fix mic",
+        price : [
+          {
+            price: 450,
+            note: ""
+          }
+        ]
+      },
+      {
+        name :"Fix camera",
+        price : [
+          {
+            price: 840,
+            note: "Orginal"
+          },
+          {
+            price: 650,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Change battery",
+        price : [
+          {
+            price: 1740,
+            note: ""
+          }
+        ]
+      },
+    ],
     notes: ""
   },
   {
     name: 'iPad 2',
-    services: {
-      "Change screen": 1100,
-      "Cange battery": 1250,
-      "Fix mic": 1380,
-      "Fix camera": 1110
-    },
+    services: [
+      {
+        name :"Change screen",
+        prices : [
+          {
+            price: 1200,
+            note: "Orginal"
+          },
+          {
+            price: 900,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Fix mic",
+        price : [
+          {
+            price: 450,
+            note: ""
+          }
+        ]
+      },
+      {
+        name :"Fix camera",
+        price : [
+          {
+            price: 840,
+            note: "Orginal"
+          },
+          {
+            price: 650,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Change battery",
+        price : [
+          {
+            price: 1740,
+            note: ""
+          }
+        ]
+      },
+    ],
     notes: ""
   },
   {
     name: 'iPad 1',
-    services: {
-      "Change screen": 1580,
-      "Cange battery": 1350,
-      "Fix mic": 1450,
-      "Fix camera": 1280,
-      "Fix Speaker": 1565,
-    },
+    services: [
+      {
+        name :"Change screen",
+        prices : [
+          {
+            price: 1200,
+            note: "Orginal"
+          },
+          {
+            price: 900,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Fix mic",
+        price : [
+          {
+            price: 450,
+            note: ""
+          }
+        ]
+      },
+      {
+        name :"Fix camera",
+        price : [
+          {
+            price: 840,
+            note: "Orginal"
+          },
+          {
+            price: 650,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Change battery",
+        price : [
+          {
+            price: 1740,
+            note: ""
+          }
+        ]
+      },
+    ],
     notes: ""
   }
 ];
-const PCsPriceList = [
+const PCList = [
   {
     name: 'Mac 4',
-    services: {
-      "Change screen": 1200,
-      "Cange battery": 1450,
-      "Fix mic": 1610,
-      "Fix camera": 1355
-    },
+    services: [
+      {
+        name :"Change screen",
+        prices : [
+          {
+            price: 1200,
+            note: "Orginal"
+          },
+          {
+            price: 900,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Fix mic",
+        price : [
+          {
+            price: 450,
+            note: ""
+          }
+        ]
+      },
+      {
+        name :"Fix camera",
+        price : [
+          {
+            price: 840,
+            note: "Orginal"
+          },
+          {
+            price: 650,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Change battery",
+        price : [
+          {
+            price: 1740,
+            note: ""
+          }
+        ]
+      },
+    ],
     notes: ""
   },
   {
     name: 'Mac 3',
-    services: {
-      "Change screen": 2860,
-      "Cange battery": 3300,
-      "Fix camera": 5200
-    },
+    services: [
+      {
+        name :"Change screen",
+        prices : [
+          {
+            price: 1200,
+            note: "Orginal"
+          },
+          {
+            price: 900,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Fix mic",
+        price : [
+          {
+            price: 450,
+            note: ""
+          }
+        ]
+      },
+      {
+        name :"Fix camera",
+        price : [
+          {
+            price: 840,
+            note: "Orginal"
+          },
+          {
+            price: 650,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Change battery",
+        price : [
+          {
+            price: 1740,
+            note: ""
+          }
+        ]
+      },
+    ],
     notes: ""
   },
   {
     name: 'Mac 2',
-    services: {
-      "Change screen": 2450,
-      "Cange battery": 3650,
-      "Fix mic": 1780,
-      "Fix camera": 2540
-    },
+    services: [
+      {
+        name :"Change screen",
+        prices : [
+          {
+            price: 1200,
+            note: "Orginal"
+          },
+          {
+            price: 900,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Fix mic",
+        price : [
+          {
+            price: 450,
+            note: ""
+          }
+        ]
+      },
+      {
+        name :"Fix camera",
+        price : [
+          {
+            price: 840,
+            note: "Orginal"
+          },
+          {
+            price: 650,
+            note: "compatible"
+          },
+        ]
+      },
+      {
+        name :"Change battery",
+        price : [
+          {
+            price: 1740,
+            note: ""
+          }
+        ]
+      },
+    ],
     notes: ""
   }
 ];
