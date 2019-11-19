@@ -7,12 +7,12 @@ const useStyles = makeStyles({
     root: {
         display: "block",
         flexGrow: 1,
-        justifyContent:"center",
-        color:"#00A99D"
-        
+        justifyContent: "center",
+        color: "#00A99D"
+
     },
-    blackText:{
-        color:"black"
+    blackText: {
+        color: "black"
     }
 });
 
@@ -22,13 +22,13 @@ export default function ChooseMobile() {
 
     return (
         <div className={classes.root}>
-            <h3>1200,-</h3>
+            <h1>1200,-</h1>
             <p>
-            <h4 className={classes.blackText}>Some Extra details go here...</h4>
-                </p>
-            
+                <h4 className={classes.blackText}>Some Extra details go here...</h4>
+            </p>
 
-        </div>    
+
+        </div>
     );
 
 }

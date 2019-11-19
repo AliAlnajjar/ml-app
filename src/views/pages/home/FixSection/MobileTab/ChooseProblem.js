@@ -2,16 +2,15 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
     maxWidth: 360,
-    height:"auto",
+    height: "auto",
     backgroundColor: theme.palette.background.paper,
-    padding : "20px 0"
+    padding: "20px 0"
   },
 }));
 
@@ -31,7 +30,7 @@ export default function ChooseProblem() {
           selected={selectedIndex === 0}
           onClick={event => handleListItemClick(event, 0)}
         >
-          
+
           <ListItemText primary="Change Screen" />
         </ListItem>
         <ListItem
@@ -62,7 +61,7 @@ export default function ChooseProblem() {
         >
           <ListItemText primary="Fix alt mulig :D" />
         </ListItem>
-            
+
       </List>
     </div>
   );

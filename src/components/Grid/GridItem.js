@@ -12,7 +12,11 @@ const styles = {
     minHeight: "1px",
     paddingRight: "15px",
     paddingLeft: "15px",
-    flexBasis: "auto"
+    flexBasis: "auto",
+    // textAlign: "center",
+    // textAlign: "-webkit-center",
+    // border: "2px solid #00A99D",
+    borderRadius: "5%"
   }
 };
 

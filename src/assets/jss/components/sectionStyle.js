@@ -20,14 +20,14 @@ const sectionStyle = {
         minHeight: "100px"
     },
     sectionTitle: {
-        fontSize: "1.7em",
+        fontSize: "2.5em",
         fontFamily: "Montserrat",
-        textAlign: "left",
+        textAlign: "center",
         "@media (max-width: 576px)": {
             textAlign: "Center",
             padding: "30px 0"
         },
-        padding: "30px 25%"
+        padding: "30px 0px"
     }
 };
 
