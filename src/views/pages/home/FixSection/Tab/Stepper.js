@@ -141,6 +141,11 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
   },
+  stepper: {
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingTop: 0
+  }
 }));
 
 function getSteps() {
@@ -180,7 +185,7 @@ export default function CustomizedSteppers() {
   return (
     <div className={classes.root}>
 
-      <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
+      <Stepper className={classes.stepper} alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
         {steps.map(label => (
           <Step completed={false} key={label}>
             <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>

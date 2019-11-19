@@ -39,40 +39,33 @@ export default function WhyUsSection() {
 
         <div className={classes.section}>
             <div className={classes.container}>
-                <GridContainer classes={{ root: classes.root }}>
-                    <GridItem xs={4} sm={4} md={4} lg={4} xl={4}>
+                <GridContainer justify="center" classes={{ root: classes.root }}>
 
-                    </GridItem>
-
-                    <GridItem xs={4} sm={4} md={1} lg={1} xl={1}>
+                    <GridItem xs={6} sm={6} md={1} lg={1} xl={1}>
                         <WhyUsCard title="Fast repair"
                             img={FastRepairImage}
                         />
 
                     </GridItem>
-                    <GridItem xs={4} sm={4} md={1} lg={1} xl={1}>
+
+                    <GridItem xs={6} sm={6} md={1} lg={1} xl={1}>
                         <WhyUsCard title="1 year warranty"
                             img={WarrantyImage}
                         />
-
                     </GridItem>
-                    <GridItem xs={4} sm={4} md={1} lg={1} xl={1} >
+
+                    <GridItem xs={6} sm={6} md={1} lg={1} xl={1} >
                         <WhyUsCard title="Trained technicians"
                             img={TrainedTechniciansImage}
                         />
-
                     </GridItem>
-                    <GridItem xs={4} sm={4} md={1} lg={1} xl={1} >
+
+                    <GridItem xs={6} sm={6} md={1} lg={1} xl={1} >
                         <WhyUsCard title="Competitive prices"
                             img={CompetitivePricesImage}
                         />
-
-
-
                     </GridItem>
-                    <GridItem xs={4} sm={4} md={4} lg={4} xl={4}>
 
-                    </GridItem>
                 </GridContainer>
 
             </div>
