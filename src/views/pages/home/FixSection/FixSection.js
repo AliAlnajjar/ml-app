@@ -37,7 +37,16 @@ export default class FixSection extends Component {
       activeTab: "mobile"
     }
   }
-
+  componentDidUpdate(prevProps) {
+    const mobilesServiceList = {}
+    const tabletsServiceList = {}
+    const pcsServiceList = {}
+    this.setState({
+      mobile: mobilesServiceList,
+      tablet: tabletsServiceList,
+      pc: pcsServiceList,
+    })
+  }
   render() {
     return (
       <Section title={"Fix Your Device"} >
@@ -63,19 +72,19 @@ export default class FixSection extends Component {
             {
               tabName: "Mobile",
               tabContent: (
-                <Tab device={"mobile"} servicesList={MobilesPriceList} />
+                <Tab device={"mobile"} servicesList={this.state.mobile} />
               )
             },
             {
               tabName: "Tablet",
               tabContent: (
-                <Tab device={"tablet"} servicesList={TabletsPriceList} />
+                <Tab device={"tablet"} servicesList={this.state.tablet} />
               )
             },
             {
               tabName: "PC",
               tabContent: (
-                <Tab device={"pc"} servicesList={PCsPriceList} />
+                <Tab device={"pc"} servicesList={this.state.pc} />
               )
             }
           ]}
