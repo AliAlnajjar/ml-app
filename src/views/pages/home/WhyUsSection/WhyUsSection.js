@@ -10,70 +10,69 @@ import FastRepairImage from 'assets/img/Fast-Repair-icon-Retina.png';
 import WarrantyImage from 'assets/img/Warranty-Icon-Retina.png';
 import TrainedTechniciansImage from 'assets/img/Trained-Technicians-icon-Retina.png';
 import CompetitivePricesImage from 'assets/img/Sale-Tag-icon.png';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 
 const styles = {
-  root: {
-      width: "100%",
-  },
-  img :{
-      width:"60px",
-      height:"60px",
-  },
-  section:{
-      paddingTop:0
+    root: {
+        width: "100%",
+    },
+    img: {
+        width: "60px",
+        height: "60px",
+    },
+    section: {
+        paddingTop: "5px",
+        paddingBottom: "25px"
 
-  }
-
+    }
 }
 const useStyles = makeStyles(styles);
 
 
 export default function WhyUsSection() {
-  const classes = useStyles()
+    const classes = useStyles()
 
     return (
-        <Section className={classes.section}>
-                <GridContainer classes = {{root: classes.root}}>
-                <GridItem xs={6} sm={6} md={3} lg={2} xl={3}>
-                      
-                    </GridItem>
-                
-                    <GridItem xs={6} sm={6} md={3} lg={2} xl={3}>
-                      <WhyUsCard title="Fast repair"
-                        img={FastRepairImage}
-                        />
-                      
-                    </GridItem>
-                    <GridItem xs={6} sm={6} md={3} lg={2} xl={3}>
-                    <WhyUsCard title="1 year warranty"
-                        img={WarrantyImage}
-                        />
-                         
-                    </GridItem>
-                    <GridItem xs={6} sm={6} md={3} lg={2} xl={3} >
-                    <WhyUsCard title="Trained technicians"
-                        img={TrainedTechniciansImage}
+
+
+        <div className={classes.section}>
+            <div className={classes.container}>
+                <GridContainer justify="center" classes={{ root: classes.root }}>
+
+                    <GridItem xs={6} sm={6} md={1} lg={1} xl={1}>
+                        <WhyUsCard title="Fast repair"
+                            img={FastRepairImage}
                         />
 
                     </GridItem>
-                    <GridItem xs={6} sm={6} md={3} lg={2} xl={3} >
-                    <WhyUsCard title="Competitive prices"
-                        img={CompetitivePricesImage}
-                        />
-                    
 
-                     
+                    <GridItem xs={6} sm={6} md={1} lg={1} xl={1}>
+                        <WhyUsCard title="1 year warranty"
+                            img={WarrantyImage}
+                        />
                     </GridItem>
-                    <GridItem xs={6} sm={6} md={3} lg={2} xl={3}>
-                      
+
+                    <GridItem xs={6} sm={6} md={1} lg={1} xl={1} >
+                        <WhyUsCard title="Trained technicians"
+                            img={TrainedTechniciansImage}
+                        />
                     </GridItem>
+
+                    <GridItem xs={6} sm={6} md={1} lg={1} xl={1} >
+                        <WhyUsCard title="Competitive prices"
+                            img={CompetitivePricesImage}
+                        />
+                    </GridItem>
+
                 </GridContainer>
 
+            </div>
 
-        </Section>
+        </div>
+
+
     );
 }
 

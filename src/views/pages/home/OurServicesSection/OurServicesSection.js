@@ -2,7 +2,7 @@ import React from 'react';
 import Section from "components/Section/Section.js"
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import MediaCard from "components/ServiceCard/ServiceCard.js"
+import MediaCard from "components/MyCards/ServiceCard.js"
 
 // Assets
 import BuyPhoneImage from 'assets/img/Replacement-Phones-Icon-Retina.png';

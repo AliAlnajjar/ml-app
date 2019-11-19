@@ -41,18 +41,19 @@ const useQontoStepIconStyles = makeStyles({
     display: 'flex',
     height: 22,
     alignItems: 'center',
+    padding: "1px"
   },
   active: {
     color: '#784af4',
   },
   circle: {
-    width: 8,
-    height: 8,
+    width: 12,
+    height: 12,
     borderRadius: '50%',
-    backgroundColor: 'currentColor',
+    backgroundColor: '#00A99D',
   },
   completed: {
-    color: '#784af4',
+    color: '#00A99D',
     zIndex: 1,
     fontSize: 18,
   },
@@ -77,30 +78,6 @@ QontoStepIcon.propTypes = {
   active: PropTypes.bool,
   completed: PropTypes.bool,
 };
-
-const ColorlibConnector = withStyles({
-  alternativeLabel: {
-    top: 22,
-  },
-  active: {
-    '& $line': {
-      backgroundImage:
-        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
-    },
-  },
-  completed: {
-    '& $line': {
-      backgroundImage:
-        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
-    },
-  },
-  line: {
-    height: 3,
-    border: 0,
-    backgroundColor: '#eaeaf0',
-    borderRadius: 1,
-  },
-})(StepConnector);
 
 const useColorlibStepIconStyles = makeStyles({
   root: {
@@ -164,6 +141,11 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
   },
+  stepper: {
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingTop: 0
+  }
 }));
 
 function getSteps() {
@@ -202,16 +184,16 @@ export default function CustomizedSteppers() {
 
   return (
     <div className={classes.root}>
-      
-      <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
+
+      <Stepper className={classes.stepper} alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
         {steps.map(label => (
           <Step completed={false} key={label}>
             <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>
-      
-      
+
+
     </div>
   );
 }

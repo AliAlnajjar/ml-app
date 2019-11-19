@@ -12,7 +12,7 @@ const headerStyle = {
     border: "0",
     borderRadius: "3px",
     padding: "0.625rem 0",
-    marginBottom: "20px",
+    marginBottom: "2px",
     color: "#000000",
     width: "100%",
     backgroundColor: "none",
@@ -56,7 +56,7 @@ const headerStyle = {
     padding: "8px 16px",
     letterSpacing: "unset",
     fontWeight: 500,
-    color: "#000000",
+    color: "#00A99D",
     fontFamily: 'Saira Stencil One',
     "&:hover,&:focus": {
       color: "#000000",
