@@ -13,6 +13,9 @@ const useStyles = makeStyles({
     },
     blackText: {
         color: "black"
+    },
+    item :{
+        paddingTop: "20px"
     }
 });
 
@@ -23,13 +26,20 @@ export default function ChooseMobile(props) {
     return (
         <div className={classes.root}>
 
-            <h1>{props.price}+,-</h1>
-
-            <p>
-                <h4 className={classes.blackText}>Some Extra details go here...</h4>
-            </p>
-
-
+            
+            {
+              props.priceList.map(item =>
+                <div className={classes.item}>
+                    <h1>{item.price},-</h1>
+                    <p>
+                        <h4 className={classes.blackText}>{item.note}</h4>
+                    </p>
+                </div>
+                )  
+            }
+            
+            
+            
         </div>
     );
 

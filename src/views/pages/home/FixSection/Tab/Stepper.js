@@ -148,8 +148,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function getSteps() {
-  return ['Select your mobile', 'select the malfunction', 'Price'];
+function getSteps(device) {
+  return ['Select your '+device, 'select the malfunction', 'Price'];
 }
 
 function getStepContent(step) {
@@ -165,18 +165,11 @@ function getStepContent(step) {
   }
 }
 
-export default function CustomizedSteppers() {
+export default function CustomizedSteppers(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
-  const steps = getSteps();
+  const steps = getSteps(props.device);
 
-  const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep(prevActiveStep => prevActiveStep - 1);
-  };
 
   const handleReset = () => {
     setActiveStep(0);
@@ -184,10 +177,9 @@ export default function CustomizedSteppers() {
 
   return (
     <div className={classes.root}>
-
       <Stepper className={classes.stepper} alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
-        {steps.map(label => (
-          <Step completed={false} key={label}>
+        {steps.map((label,idx) => (
+          <Step completed={idx<props.activeStep? true: false} key={label}>
             <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
           </Step>
         ))}

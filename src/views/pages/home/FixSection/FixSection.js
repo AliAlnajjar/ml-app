@@ -43,6 +43,7 @@ export default class FixSection extends Component {
           </Grid>
         </div>
         <CustomTabs
+          style = {{minHeight:"700px"}}
           headerColor="primary"
           tabs={[
             {
@@ -88,7 +89,7 @@ const MobileList = [
       },
       {
         name :"Fix mic",
-        price : [
+        prices: [
           {
             price: 450,
             note: ""
@@ -97,7 +98,7 @@ const MobileList = [
       },
       {
         name :"Fix camera",
-        price : [
+        prices : [
           {
             price: 840,
             note: "Orginal"
@@ -110,13 +111,22 @@ const MobileList = [
       },
       {
         name :"Change battery",
-        price : [
+        prices : [
           {
             price: 1740,
             note: ""
           }
         ]
       },
+      {
+        name :"Change back side",
+        prices : [
+          {
+            price: 1660,
+            note: ""
+          }
+        ]
+      }
     ],
     notes: ""
   },
@@ -138,7 +148,7 @@ const MobileList = [
       },
       {
         name :"Fix mic",
-        price : [
+        prices : [
           {
             price: 450,
             note: ""
@@ -147,7 +157,7 @@ const MobileList = [
       },
       {
         name :"Fix camera",
-        price : [
+        prices : [
           {
             price: 840,
             note: "Orginal"
@@ -160,7 +170,7 @@ const MobileList = [
       },
       {
         name :"Change battery",
-        price : [
+        prices : [
           {
             price: 1740,
             note: ""
@@ -188,7 +198,7 @@ const MobileList = [
       },
       {
         name :"Fix mic",
-        price : [
+        prices : [
           {
             price: 450,
             note: ""
@@ -197,7 +207,7 @@ const MobileList = [
       },
       {
         name :"Fix camera",
-        price : [
+        prices : [
           {
             price: 840,
             note: "Orginal"
@@ -210,7 +220,7 @@ const MobileList = [
       },
       {
         name :"Change battery",
-        price : [
+        prices : [
           {
             price: 1740,
             note: ""
@@ -238,7 +248,7 @@ const MobileList = [
       },
       {
         name :"Fix mic",
-        price : [
+        prices: [
           {
             price: 450,
             note: ""
@@ -247,57 +257,8 @@ const MobileList = [
       },
       {
         name :"Fix camera",
-        price : [
-          {
-            price: 840,
-            note: "Orginal"
-          },
-          {
-            price: 650,
-            note: "compatible"
-          },
-        ]
-      },
-      {
-        name :"Change battery",
-        price : [
-          {
-            price: 1740,
-            note: ""
-          }
-        ]
-      },
-    ],
-    notes: ""
-  },
-  {
-    services: [
-      {
-        name :"Change screen",
         prices : [
           {
-            price: 1200,
-            note: "Orginal"
-          },
-          {
-            price: 900,
-            note: "compatible"
-          },
-        ]
-      },
-      {
-        name :"Fix mic",
-        price : [
-          {
-            price: 450,
-            note: ""
-          }
-        ]
-      },
-      {
-        name :"Fix camera",
-        price : [
-          {
             price: 840,
             note: "Orginal"
           },
@@ -309,7 +270,7 @@ const MobileList = [
       },
       {
         name :"Change battery",
-        price : [
+        prices : [
           {
             price: 1740,
             note: ""
@@ -318,7 +279,7 @@ const MobileList = [
       },
     ],
     notes: ""
-  },
+  }
 ];
 const TabletList = [
   {
@@ -339,7 +300,7 @@ const TabletList = [
       },
       {
         name :"Fix mic",
-        price : [
+        prices : [
           {
             price: 450,
             note: ""
@@ -348,7 +309,7 @@ const TabletList = [
       },
       {
         name :"Fix camera",
-        price : [
+        prices : [
           {
             price: 840,
             note: "Orginal"
@@ -361,7 +322,7 @@ const TabletList = [
       },
       {
         name :"Change battery",
-        price : [
+        prices : [
           {
             price: 1740,
             note: ""
@@ -389,7 +350,7 @@ const TabletList = [
       },
       {
         name :"Fix mic",
-        price : [
+        prices : [
           {
             price: 450,
             note: ""
@@ -398,7 +359,7 @@ const TabletList = [
       },
       {
         name :"Fix camera",
-        price : [
+        prices : [
           {
             price: 840,
             note: "Orginal"
@@ -411,7 +372,7 @@ const TabletList = [
       },
       {
         name :"Change battery",
-        price : [
+        prices : [
           {
             price: 1740,
             note: ""
@@ -439,7 +400,7 @@ const TabletList = [
       },
       {
         name :"Fix mic",
-        price : [
+        prices : [
           {
             price: 450,
             note: ""
@@ -448,7 +409,7 @@ const TabletList = [
       },
       {
         name :"Fix camera",
-        price : [
+        prices : [
           {
             price: 840,
             note: "Orginal"
@@ -461,7 +422,7 @@ const TabletList = [
       },
       {
         name :"Change battery",
-        price : [
+        prices : [
           {
             price: 1740,
             note: ""
@@ -489,7 +450,7 @@ const TabletList = [
       },
       {
         name :"Fix mic",
-        price : [
+        prices : [
           {
             price: 450,
             note: ""
@@ -498,7 +459,7 @@ const TabletList = [
       },
       {
         name :"Fix camera",
-        price : [
+        prices : [
           {
             price: 840,
             note: "Orginal"
@@ -511,7 +472,7 @@ const TabletList = [
       },
       {
         name :"Change battery",
-        price : [
+        prices : [
           {
             price: 1740,
             note: ""
@@ -541,7 +502,7 @@ const PCList = [
       },
       {
         name :"Fix mic",
-        price : [
+        prices : [
           {
             price: 450,
             note: ""
@@ -550,7 +511,7 @@ const PCList = [
       },
       {
         name :"Fix camera",
-        price : [
+        prices : [
           {
             price: 840,
             note: "Orginal"
@@ -563,7 +524,7 @@ const PCList = [
       },
       {
         name :"Change battery",
-        price : [
+        prices : [
           {
             price: 1740,
             note: ""
@@ -591,7 +552,7 @@ const PCList = [
       },
       {
         name :"Fix mic",
-        price : [
+        prices : [
           {
             price: 450,
             note: ""
@@ -600,7 +561,7 @@ const PCList = [
       },
       {
         name :"Fix camera",
-        price : [
+        prices : [
           {
             price: 840,
             note: "Orginal"
@@ -613,7 +574,7 @@ const PCList = [
       },
       {
         name :"Change battery",
-        price : [
+        prices : [
           {
             price: 1740,
             note: ""
@@ -641,7 +602,7 @@ const PCList = [
       },
       {
         name :"Fix mic",
-        price : [
+        prices : [
           {
             price: 450,
             note: ""
@@ -650,7 +611,7 @@ const PCList = [
       },
       {
         name :"Fix camera",
-        price : [
+        prices : [
           {
             price: 840,
             note: "Orginal"
@@ -663,7 +624,7 @@ const PCList = [
       },
       {
         name :"Change battery",
-        price : [
+        prices : [
           {
             price: 1740,
             note: ""

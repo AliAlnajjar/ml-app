@@ -1,25 +1,25 @@
 import React from 'react';
-// core components
+// components
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
-const handleChange = (e,value) => {
-e.target.inputValue = value
-// console.log("props.deviceList: ",props.deviceList)
+export default function SelectDevice(props) {
 
-};
-export default function ChooseDevice(props) {
+    const handelOnChange = (e,selectedDevice)=>{
+        if (!selectedDevice)  {
+            props.onSelectDevice ("")
+            return;
+        }
+        props.onSelectDevice (selectedDevice.name)
+    }
     return (
         <div>
             <Autocomplete
                 id="chooseDevice"
                 options={props.deviceList}
                 getOptionLabel={option => option.name}
-                style={{ width: 250, margin: "20px 5px" }}
-                // value={value}
-                
-                onChange={handleChange}
-
+                style={{ width: "90%", margin: "20px auto" }}
+                onChange ={handelOnChange}
                 renderInput={params => (
                     <TextField {...params} label={"Select your " + props.device} variant="outlined" fullWidth />
                 )}
@@ -28,5 +28,3 @@ export default function ChooseDevice(props) {
     );
 
 }
-
-
