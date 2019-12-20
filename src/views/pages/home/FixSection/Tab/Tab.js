@@ -17,63 +17,62 @@ export default class Tab extends Component {
             serviceList: [],
             selectedService: "",
             priceList: [],
-            stepNumber: 0
+            stepNumber: 1
         }
     }
-    handelSelectDevice (selectedDevice){
-        if (!selectedDevice){
-            this.setState ( {
+    handelSelectDevice(selectedDevice) {
+        if (!selectedDevice) {
+            this.setState({
                 selectedDevice: "",
                 serviceList: [],
                 selectedService: "",
                 priceList: [],
-                stepNumber: 0
+                stepNumber: 1
             })
-            console.log("no fucken selected device")
             return;
         }
-        const serviceList = (this.props.deviceList.filter((device) => device.name == selectedDevice))[0].services.map(service=>service.name);
+        const serviceList = (this.props.deviceList.filter((device) => device.name == selectedDevice))[0].services.map(service => service.name);
         this.setState({
             selectedDevice: selectedDevice,
             serviceList: serviceList,
             selectedService: "",
             priceList: [],
-            stepNumber: 1
-          })
+            stepNumber: 2
+        })
     }
-    handelSelectService (selectedService){
+    handelSelectService(selectedService) {
         const serviceList = (this.props.deviceList.filter((device) => device.name == this.state.selectedDevice))[0].services;
-        const priceList = serviceList.filter(service =>service.name ==selectedService )[0].prices || []
+        const priceList = serviceList.filter(service => service.name == selectedService)[0].prices || []
         this.setState({
             selectedService: selectedService,
             priceList: priceList,
             stepNumber: 3
-          })  
+        })
     }
 
     render() {
         const { device, deviceList } = this.props;
         return (
             <div>
-                <Stepper device={device} activeStep = {this.state.stepNumber} />
+                <Stepper device={device} activeStep={this.state.stepNumber} />
                 <GridContainer>
                     <GridItem xs={12} sm={12} md={4} lg={4} xl={4}>
                         <SelectDevice
                             device={device}
                             deviceList=
-                                        {this.props.deviceList.map((device) => {
-                                            return {
-                                                name: device.name,
-                                            };
-                                        })}
-                            onSelectDevice = {this.handelSelectDevice.bind(this)}
+                            {this.props.deviceList.map((device) => {
+                                return {
+                                    name: device.name,
+                                };
+                            })}
+                            onSelectDevice={this.handelSelectDevice.bind(this)}
                         />
                     </GridItem>
                     <GridItem xs={12} sm={12} md={4} lg={4} xl={4}>
-                        <SelectService 
-                            serviceList= {this.state.serviceList}
-                            selectedService = {this.state.selectedService}
-                            onSelectService = {this.handelSelectService.bind(this)}
+                        <SelectService
+                            serviceList={this.state.serviceList}
+                            selectedService={this.state.selectedService}
+                            onSelectService={this.handelSelectService.bind(this)}
                         />
                     </GridItem>
                     <GridItem xs={12} sm={12} md={4} lg={4} xl={4} >

@@ -25,7 +25,7 @@ const QontoConnector = withStyles({
   },
   completed: {
     '& $line': {
-      borderColor: '#784af4',
+      borderColor: '#00A99D',
     },
   },
   line: {
@@ -46,11 +46,19 @@ const useQontoStepIconStyles = makeStyles({
   active: {
     color: '#784af4',
   },
-  circle: {
-    width: 12,
-    height: 12,
+  circle_completed: {
+    width: 20,
+    height: 20,
     borderRadius: '50%',
     backgroundColor: '#00A99D',
+    color: "white"
+  },
+  circle_notCompleted: {
+    width: 20,
+    height: 20,
+    borderRadius: '50%',
+    backgroundColor: '#EEEEEE',
+    color: "black"
   },
   completed: {
     color: '#00A99D',
@@ -61,15 +69,16 @@ const useQontoStepIconStyles = makeStyles({
 
 function QontoStepIcon(props) {
   const classes = useQontoStepIconStyles();
-  const { active, completed } = props;
-
+  const { active, completed, step } = props;
+  let stepNo = getStepNumber(step);
+  console.log(getStepNumber(step))
   return (
     <div
       className={clsx(classes.root, {
         [classes.active]: active,
       })}
     >
-      {completed ? <Check className={classes.completed} /> : <div className={classes.circle} />}
+      {completed ? <div className={classes.circle_completed} >{stepNo}</div> : <div className={classes.circle_notCompleted}>{stepNo}</div>}
     </div>
   );
 }
@@ -79,56 +88,6 @@ QontoStepIcon.propTypes = {
   completed: PropTypes.bool,
 };
 
-const useColorlibStepIconStyles = makeStyles({
-  root: {
-    backgroundColor: '#ccc',
-    zIndex: 1,
-    color: '#fff',
-    width: 50,
-    height: 50,
-    display: 'flex',
-    borderRadius: '50%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  active: {
-    backgroundImage:
-      'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
-    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
-  },
-  completed: {
-    backgroundImage:
-      'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
-  },
-});
-
-function ColorlibStepIcon(props) {
-  const classes = useColorlibStepIconStyles();
-  const { active, completed } = props;
-
-  const icons = {
-    1: <SettingsIcon />,
-    2: <GroupAddIcon />,
-    3: <VideoLabelIcon />,
-  };
-
-  return (
-    <div
-      className={clsx(classes.root, {
-        [classes.active]: active,
-        [classes.completed]: completed,
-      })}
-    >
-      {icons[String(props.icon)]}
-    </div>
-  );
-}
-
-ColorlibStepIcon.propTypes = {
-  active: PropTypes.bool,
-  completed: PropTypes.bool,
-  icon: PropTypes.node,
-};
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -149,37 +108,30 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function getSteps(device) {
-  return ['Select your '+device, 'select the malfunction', 'Price'];
+  return ['Velg din ' + device, 'Velg defekten', 'Sjekk pris'];
 }
-
-function getStepContent(step) {
+function getStepNumber(step) {
   switch (step) {
     case 0:
-      return 'Select your mobile...';
+      return '1';
     case 1:
-      return 'select the malfunction';
+      return '2';
     case 2:
-      return 'Details';
+      return '3';
     default:
-      return 'Unknown step';
+      return ' ';
   }
 }
-
 export default function CustomizedSteppers(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps(props.device);
 
-
-  const handleReset = () => {
-    setActiveStep(0);
-  };
-
   return (
     <div className={classes.root}>
       <Stepper className={classes.stepper} alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
-        {steps.map((label,idx) => (
-          <Step completed={idx<props.activeStep? true: false} key={label}>
+        {steps.map((label, idx) => (
+          <Step completed={idx < props.activeStep ? true : false} key={label}>
             <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
           </Step>
         ))}

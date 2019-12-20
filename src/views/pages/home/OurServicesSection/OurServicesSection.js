@@ -18,7 +18,7 @@ export default function OurServicesSection() {
     return (
         <Section title={"Other Services"}>
 
-            <GridContainer>
+            <GridContainer spacing={3}>
                 <GridItem xs={12} sm={12} md={4} lg={4} xl={4}  >
                     <MediaCard
                         title="Buy used phone"
@@ -31,7 +31,7 @@ export default function OurServicesSection() {
                 <GridItem xs={12} sm={12} md={4} lg={4} xl={4}  >
                     <MediaCard
                         title="Sell your broken phone"
-                        desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                        desc="Har du Defekte eller knuste mobil elle pc? Ta de med til oss, så vil vi gi en verdivurdering. Vi kan gjøre en bra deal til deg. "
                         btn1Lable="Sell your phone here "
                         img={SellPhoneImage}
                     />
@@ -39,7 +39,9 @@ export default function OurServicesSection() {
                 </GridItem><GridItem xs={12} sm={12} md={4} lg={4} xl={4}  >
                     <MediaCard
                         title="Buy accessories"
-                        desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                        desc="Vi har stort utvalg av alt som du trenger for din. 
+                        Vi kan bestille alt til deg. Vi lover beste priser i markedet.
+                        "
                         btn1Lable="check accessories page"
                         img={BuyAccessoriesImage}
                     />

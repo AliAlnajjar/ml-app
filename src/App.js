@@ -45,7 +45,7 @@ class App extends Component {
         <WhyUsSection />
         <FixSection />
         <OurServicesSection />
-        <OffersSection />
+        {/* <OffersSection /> */}
 
         <FindUSSection />
 
