@@ -31,13 +31,13 @@ export default class FixSection extends Component {
   //   })
   // }
   render() {
-    let div1Styles = { padding: "50px", alignText: "left" }
-    let div2Styles = { paddingTop: "80px" }
+    // let div1Styles = { padding: "50px", alignText: "left" }
+    // let div2Styles = { paddingTop: "80px" }
 
     return (
       <Section title={"Fix Your Device"} >
 
-        <div styles={div2Styles}>
+        <div>
           <CustomTabs
 
             headerColor="primary"
@@ -63,7 +63,7 @@ export default class FixSection extends Component {
             ]}
           />
         </div>
-        <div styles={div1Styles}>
+        <div>
           <Grid container spacing={10}>
             <Grid item xs={12} md={12}>
               {/* <Grid container spacing={0}> */}
@@ -122,107 +122,78 @@ export default class FixSection extends Component {
 }
 const MobileList = [
   {
-    name: 'iPhone X',
+    name: 'iPhone 11',
     services: [
       {
-        name: "Change screen",
+        name: "Bytte skjerm",
         prices: [
           {
-            price: 1200,
-            note: "Orginal"
-          },
-          {
-            price: 900,
-            note: "compatible"
-          },
-        ]
-      },
-      {
-        name: "Fix mic",
-        prices: [
-          {
-            price: 450,
-            note: ""
-          }
-        ]
-      },
-      {
-        name: "Fix camera",
-        prices: [
-          {
-            price: 840,
-            note: "Orginal"
-          },
-          {
-            price: 650,
-            note: "compatible"
-          },
-        ]
-      },
-      {
-        name: "Change battery",
-        prices: [
-          {
-            price: 1740,
-            note: ""
-          }
-        ]
-      },
-      {
-        name: "Change back side",
-        prices: [
-          {
-            price: 1660,
-            note: ""
+            price: 2499,
+            note: "refurdbished original"
           }
         ]
       }
     ],
     notes: ""
   },
+
   {
-    name: 'iPhone 8',
+    name: 'iPhone XS MAX',
     services: [
       {
-        name: "Change screen",
+        name: "Bytte skjerm",
         prices: [
           {
-            price: 1200,
-            note: "Orginal"
+            price: 2599,
+            note: "Tm kvalitet"
           },
           {
-            price: 900,
-            note: "compatible"
-          },
+            price: 3500,
+            note: "refurdbished original"
+          }
         ]
       },
       {
-        name: "Fix mic",
+        name: "Bytte batteri",
         prices: [
           {
-            price: 450,
+            price: 1099,
             note: ""
           }
         ]
       },
       {
-        name: "Fix camera",
+        name: "Front kamera",
         prices: [
           {
-            price: 840,
-            note: "Orginal"
-          },
-          {
-            price: 650,
-            note: "compatible"
-          },
+            price: 1099,
+            note: ""
+          }
         ]
       },
       {
-        name: "Change battery",
+        name: "Bak Kamera",
         prices: [
           {
-            price: 1740,
+            price: 1299,
+            note: ""
+          }
+        ]
+      },
+      {
+        name: "Lade port",
+        prices: [
+          {
+            price: 1299,
+            note: ""
+          }
+        ]
+      },
+      {
+        name: "Bak glass",
+        prices: [
+          {
+            price: 1299,
             note: ""
           }
         ]
@@ -230,49 +201,64 @@ const MobileList = [
     ],
     notes: ""
   },
+
   {
-    name: 'iPhone 7',
+    name: 'iPhone XS',
     services: [
       {
-        name: "Change screen",
+        name: "Bytte skjerm",
         prices: [
           {
-            price: 1200,
-            note: "Orginal"
+            price: 2099,
+            note: "Tm kvalitet"
           },
           {
-            price: 900,
-            note: "compatible"
-          },
+            price: 3000,
+            note: "refurdbished original"
+          }
         ]
       },
       {
-        name: "Fix mic",
+        name: "Bytte batteri",
         prices: [
           {
-            price: 450,
+            price: 899,
             note: ""
           }
         ]
       },
       {
-        name: "Fix camera",
+        name: "Front kamera",
         prices: [
           {
-            price: 840,
-            note: "Orginal"
-          },
-          {
-            price: 650,
-            note: "compatible"
-          },
+            price: 899,
+            note: ""
+          }
         ]
       },
       {
-        name: "Change battery",
+        name: "Bak Kamera",
         prices: [
           {
-            price: 1740,
+            price: 1099,
+            note: ""
+          }
+        ]
+      },
+      {
+        name: "Lade port",
+        prices: [
+          {
+            price: 1099,
+            note: ""
+          }
+        ]
+      },
+      {
+        name: "Bak glass",
+        prices: [
+          {
+            price: 1099,
             note: ""
           }
         ]
@@ -280,56 +266,136 @@ const MobileList = [
     ],
     notes: ""
   },
+
   {
-    name: 'iPhone 6',
+    name: 'iPhone XR',
     services: [
       {
-        name: "Change screen",
+        name: "Bytte skjerm",
         prices: [
           {
-            price: 1200,
-            note: "Orginal"
+            price: 1799,
+            note: "Tm kvalitet"
           },
           {
-            price: 900,
-            note: "compatible"
-          },
+            price: 2400,
+            note: "refurdbished original"
+          }
         ]
       },
       {
-        name: "Fix mic",
+        name: "Bytte batteri",
         prices: [
           {
-            price: 450,
+            price: 799,
             note: ""
           }
         ]
       },
       {
-        name: "Fix camera",
+        name: "Front kamera",
         prices: [
           {
-            price: 840,
-            note: "Orginal"
-          },
-          {
-            price: 650,
-            note: "compatible"
-          },
+            price: 699,
+            note: ""
+          }
         ]
       },
       {
-        name: "Change battery",
+        name: "Bak Kamera",
         prices: [
           {
-            price: 1740,
+            price: 899,
+            note: ""
+          }
+        ]
+      },
+      {
+        name: "Lade port",
+        prices: [
+          {
+            price: 899,
+            note: ""
+          }
+        ]
+      },
+      {
+        name: "Bak glass",
+        prices: [
+          {
+            price: 899,
             note: ""
           }
         ]
       },
     ],
     notes: ""
-  }
+  },
+
+  {
+    name: 'iPhone X',
+    services: [
+      {
+        name: "Bytte skjerm",
+        prices: [
+          {
+            price: 2800,
+            note: "refurdbished original"
+          },
+          {
+            price: 2400,
+            note: "Oled soft"
+          },
+        ]
+      },
+      {
+        name: "Bytte batteri",
+        prices: [
+          {
+            price: 799,
+            note: ""
+          }
+        ]
+      },
+      {
+        name: "Front kamera",
+        prices: [
+          {
+            price: 799,
+            note: ""
+          }
+        ]
+      },
+      {
+        name: "Bak Kamera",
+        prices: [
+          {
+            price: 999,
+            note: ""
+          }
+        ]
+      },
+      {
+        name: "Lade port",
+        prices: [
+          {
+            price: 999,
+            note: ""
+          }
+        ]
+      },
+      {
+        name: "Bak glass",
+        prices: [
+          {
+            price: 999,
+            note: ""
+          }
+        ]
+      },
+    ],
+    notes: ""
+  },
 ];
 const TabletList = [
   {

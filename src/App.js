@@ -42,7 +42,7 @@ class App extends Component {
         </div> */}
 
 
-        <WhyUsSection />
+        {/* <WhyUsSection /> */}
         <FixSection />
         <OurServicesSection />
         {/* <OffersSection /> */}

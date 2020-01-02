@@ -10,19 +10,28 @@ import SellPhoneImage from 'assets/img/Broken-Phones-Icon-Retina.png';
 import BuyAccessoriesImage from 'assets/img/Accessories-Icon-Retina.png';
 
 
+import { makeStyles } from '@material-ui/core/styles';
 
-
-
+const useStyles = makeStyles(theme => ({
+    GridContainer: {
+        gridAutoRows: "1fr"
+    }
+  
+  }));
+  
 export default function OurServicesSection() {
 
+
+   
+const classes = useStyles();
     return (
         <Section title={"Other Services"}>
 
-            <GridContainer spacing={3}>
+            <GridContainer spacing={3} className={classes.GridContainer}>
                 <GridItem xs={12} sm={12} md={4} lg={4} xl={4}  >
                     <MediaCard
                         title="Buy used phone"
-                        desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                        desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since."
                         btn1Lable="check available phones"
                         img={BuyPhoneImage}
                     />
@@ -36,7 +45,8 @@ export default function OurServicesSection() {
                         img={SellPhoneImage}
                     />
 
-                </GridItem><GridItem xs={12} sm={12} md={4} lg={4} xl={4}  >
+                </GridItem>
+                <GridItem xs={12} sm={12} md={4} lg={4} xl={4}  >
                     <MediaCard
                         title="Buy accessories"
                         desc="Vi har stort utvalg av alt som du trenger for din. 

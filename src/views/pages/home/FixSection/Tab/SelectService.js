@@ -46,19 +46,28 @@ export default function SelectService(props) {
         <ListItem
           disabled={true}
         >
-          <ListItemText primary={"Bytte battery"} />
+          <ListItemText primary={"Bytte batteri"} />
+        </ListItem>
+        <ListItem
+          disabled={true}
+        >
+          <ListItemText primary={"Front Kamera"} />
+        </ListItem>
+        <ListItem
+          disabled={true}
+        >
+          <ListItemText primary={"Bak Kamera"} />
+        </ListItem>
+        <ListItem
+          disabled={true}
+        >
+          <ListItemText primary={"Lade port"} />
         </ListItem>
         <ListItem
           disabled={true}
         >
           <ListItemText primary={"Bak glass"} />
         </ListItem>
-        <ListItem
-          disabled={true}
-        >
-          <ListItemText primary={"...."} />
-        </ListItem>
-
 
       </List>
     )

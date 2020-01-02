@@ -24,11 +24,11 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const styles = {
     root: {
-        width: "100%",
+        // width: "100%",
     },
     img: {
-        width: "60px",
-        height: "60px",
+        width: "40px",
+        height: "40px",
     },
     section: {
         paddingTop: "5px",
@@ -47,16 +47,16 @@ export default function WhyUsSection() {
 
         <div className={classes.section}>
             <div className={classes.container}>
-                <GridContainer justify="center" classes={{ root: classes.root }}>
+                <GridContainer spacing={3} justify="center" classes={{ root: classes.root }}>
 
-                    <GridItem xs={6} sm={6} md={1} lg={1} xl={1}>
+                    <GridItem xs={0} sm={0} md={2}>
                         <WhyUsCard title="Done Fast"
                             img={FastRepairImage}
                         />
 
                     </GridItem>
 
-                    <GridItem xs={6} sm={6} md={1} lg={1} xl={1}>
+                    <GridItem xs={0} sm={0} md={2}>
                         <WhyUsCard title="Warranty"
                             img={WarrantyImage}
                         />
@@ -68,7 +68,7 @@ export default function WhyUsSection() {
                         />
                     </GridItem> */}
 
-                    <GridItem xs={6} sm={6} md={1} lg={1} xl={1} >
+                    <GridItem xs={0} sm={0} md={2} >
                         <WhyUsCard title="Best Price"
                             img={CompetitivePricesImage}
                         />

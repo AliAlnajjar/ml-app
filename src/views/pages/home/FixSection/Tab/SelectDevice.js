@@ -29,7 +29,7 @@ export default function SelectDevice(props) {
                 style={{ width: "90%", margin: "20px auto" }}
                 onChange={handelOnChange}
                 renderInput={params => (
-                    <TextField {...params} label={"Select your " + props.device} variant="outlined" fullWidth />
+                    <TextField {...params} label={"Velg din " + props.device} variant="outlined" fullWidth />
                 )}
             />
         </div>
