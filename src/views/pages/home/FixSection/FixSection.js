@@ -35,7 +35,7 @@ export default class FixSection extends Component {
     // let div2Styles = { paddingTop: "80px" }
 
     return (
-      <Section title={"Fix Your Device"} >
+      <Section title={"Hva koster det?"} >
 
         <div>
           <CustomTabs

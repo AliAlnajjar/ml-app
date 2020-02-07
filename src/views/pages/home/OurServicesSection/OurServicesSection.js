@@ -25,7 +25,7 @@ export default function OurServicesSection() {
    
 const classes = useStyles();
     return (
-        <Section title={"Other Services"}>
+        <Section title={"Andre tjenster"}>
 
             <GridContainer spacing={3} className={classes.GridContainer}>
                 <GridItem xs={12} sm={12} md={4} lg={4} xl={4}  >

@@ -12,9 +12,6 @@ import FastRepairImage from 'assets/img/icon/quick.svg';
 // import WarrantyImage from 'assets/img/Warranty-Icon-Retina.png';
 import WarrantyImage from 'assets/img/icon/warranty.svg';
 
-// import TrainedTechniciansImage from 'assets/img/Trained-Technicians-icon-Retina.png';
-import TrainedTechniciansImage from 'assets/img/icon/expert.svg';
-
 // import CompetitivePricesImage from 'assets/img/Sale-Tag-icon.png';
 import CompetitivePricesImage from 'assets/img/icon/price.svg';
 

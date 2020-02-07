@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Background from 'assets/img/Cell-Phone-Hospital-Frontpage-iphone-samsung-repair.jpg';
-
 
 import MainSection from "./views/pages/home/MainSection/MainSection.js";
 import WhyUsSection from "./views/pages/home/WhyUsSection/WhyUsSection.js";

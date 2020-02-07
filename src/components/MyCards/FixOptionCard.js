@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -8,7 +8,9 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles({
+import TextField from '@material-ui/core/TextField';
+
+const useStyles = makeStyles(theme => ({
     card: {
         minWidth: 275,
         height: "100%"
@@ -44,15 +46,37 @@ const useStyles = makeStyles({
         color: "#1976d2",
         width: "100%"
     },
+    root: {
+        '& > *': {
+            margin: theme.spacing(1),
+            width: 200,
+        },
+    },
 
-});
+}));
+
+
+
+const Form = () => {
+    const classes = useStyles();
+
+    return (
+        <form className={classes.root} noValidate autoComplete="off">
+            <TextField id="standard-basic" label="Standard" />
+            <TextField id="filled-basic" label="Filled" variant="filled" />
+            <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+        </form>
+    )
+}
 
 export default function FixOptionCard(props) {
     const classes = useStyles();
     const { title, titlespan, titleSpanColor, desc, btnLable, img, left } = props
-    return (
+    const [showForm, setShowForm] = useState(false)
+    return (<div>
         <Card className={classes.card}>
             {!left ?
+
                 <Grid container spacing={0}>
                     <Grid item xs={12} md={6}>
                         <CardContent className={classes.cardContent}>
@@ -69,7 +93,11 @@ export default function FixOptionCard(props) {
                         </CardContent>
 
                         <CardActions>
-                            <Button size="small" className={classes.btn}>{btnLable}</Button>
+                            <Button
+                                size="small"
+                                className={classes.btn}
+                                onClick={() => { setShowForm(true) }}
+                            >{btnLable}</Button>
                         </CardActions>
                     </Grid>
                     <Grid item xs={12} md={6}>
@@ -77,6 +105,13 @@ export default function FixOptionCard(props) {
 
                     </Grid>
                 </Grid>
+
+
+
+
+
+
+
                 :
 
                 <Grid container spacing={0}>
@@ -99,7 +134,13 @@ export default function FixOptionCard(props) {
                         </CardContent>
 
                         <CardActions>
-                            <Button size="small" className={classes.btn}>{btnLable}</Button>
+                            <Button
+                                size="small"
+                                className={classes.btn}
+                                onClick={() => { console.log(title) }}
+                            >
+                                {btnLable}
+                            </Button>
                         </CardActions>
                     </Grid>
 
@@ -113,6 +154,11 @@ export default function FixOptionCard(props) {
 
 
         </Card>
+        {showForm && (<Form>
+
+        </Form>)}
+
+    </div>
     );
 }
 
