@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 import MainSection2 from "./views/pages/home/MainSection2/MainSection2.jsx";
+import TopHeader from "./views/pages/home/TopHeader/TopHeader.jsx";
+
 import WhyUsSection from "./views/pages/home/WhyUsSection/WhyUsSection.js";
 import FixSection from "./views/pages/home/FixSection/FixSection.js";
 import OurServicesSection from "./views/pages/home/OurServicesSection/OurServicesSection.js";
@@ -28,6 +30,7 @@ class App extends Component {
 
     return (
       <div className="App">
+      <TopHeader></TopHeader>
         <MainSection2>
         </MainSection2>
 

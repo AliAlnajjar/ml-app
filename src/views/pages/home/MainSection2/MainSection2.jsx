@@ -85,16 +85,16 @@ export default function MainSection2() {
                     <div className={classes.whyUs}>
                         <Grid container spacing={6}>
                             <Grid item xs={12} md={6}>
-                                Garanterer best pris i Bergen
+                                Best pris
                         </Grid>
                             <Grid item xs={12} md={6}>
-                                2års garanti på alle skjermer
+                                2års garanti 
                         </Grid>
                             <Grid item xs={12} md={6}>
-                                Veldig rask service (10-30 min)
+                                Rask service
                         </Grid>
                             <Grid item xs={12} md={6}>
-                                Feilsøke er helt gratis
+                                 Gratis feilsøke
                         </Grid>
                         </Grid>
                     </div>

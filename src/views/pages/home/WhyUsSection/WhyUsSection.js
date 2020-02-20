@@ -7,13 +7,13 @@ import WhyUsCard from "components/MyCards/WhyUsCard.js"
 
 // Assets
 // import FastRepairImage from 'assets/img/Fast-Repair-icon-Retina.png';
-import FastRepairImage from 'assets/img/icon/quick.svg';
+// import FastRepairImage from 'assets/img/icon/quick.svg';
 
 // import WarrantyImage from 'assets/img/Warranty-Icon-Retina.png';
-import WarrantyImage from 'assets/img/icon/warranty.svg';
+// import WarrantyImage from 'assets/img/icon/warranty.svg';
 
 // import CompetitivePricesImage from 'assets/img/Sale-Tag-icon.png';
-import CompetitivePricesImage from 'assets/img/icon/price.svg';
+// import CompetitivePricesImage from 'assets/img/icon/price.svg';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -48,14 +48,14 @@ export default function WhyUsSection() {
 
                     <GridItem xs={0} sm={0} md={2}>
                         <WhyUsCard title="Done Fast"
-                            img={FastRepairImage}
+                            // img={FastRepairImage}
                         />
 
                     </GridItem>
 
                     <GridItem xs={0} sm={0} md={2}>
                         <WhyUsCard title="Warranty"
-                            img={WarrantyImage}
+                            // img={WarrantyImage}
                         />
                     </GridItem>
 
@@ -67,7 +67,7 @@ export default function WhyUsSection() {
 
                     <GridItem xs={0} sm={0} md={2} >
                         <WhyUsCard title="Best Price"
-                            img={CompetitivePricesImage}
+                            // img={}
                         />
                     </GridItem>
 
