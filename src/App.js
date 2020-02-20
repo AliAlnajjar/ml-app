@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import MainSection from "./views/pages/home/MainSection/MainSection.js";
+import MainSection2 from "./views/pages/home/MainSection2/MainSection2.jsx";
 import WhyUsSection from "./views/pages/home/WhyUsSection/WhyUsSection.js";
 import FixSection from "./views/pages/home/FixSection/FixSection.js";
 import OurServicesSection from "./views/pages/home/OurServicesSection/OurServicesSection.js";
@@ -28,8 +28,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <MainSection>
-        </MainSection>
+        <MainSection2>
+        </MainSection2>
 
 
 
@@ -41,14 +41,14 @@ class App extends Component {
 
 
         {/* <WhyUsSection /> */}
-        <FixSection />
-        <OurServicesSection />
+        {/* <FixSection /> */}
+        {/* <OurServicesSection /> */}
         {/* <OffersSection /> */}
 
-        <FindUSSection />
+        {/* <FindUSSection /> */}
 
-        <Footer>
-        </Footer>
+        {/* <Footer>
+        </Footer> */}
       </div>
     );
   }
