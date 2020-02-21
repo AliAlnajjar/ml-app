@@ -7,7 +7,7 @@ import Header2 from "./views/sections/Header2/Header2.jsx";
 
 
 import WhyUsSection from "./views/pages/home/WhyUsSection/WhyUsSection.js";
-import FixSection from "./views/pages/home/FixSection/FixSection.js";
+import FixSection2 from "./views/pages/home/FixSection2/FixSection2.jsx";
 import OurServicesSection from "./views/pages/home/OurServicesSection/OurServicesSection.js";
 import FindUSSection from "./views/pages/home/FindUsSection/FindUsSection.js";
 import OffersSection from "./views/pages/home/OffersSection/OffersSection.js";
@@ -32,8 +32,8 @@ class App extends Component {
 
     return (
       <div className="App">
-      <TopHeader></TopHeader>
-      {/* <Header2></Header2> */}
+        <TopHeader></TopHeader>
+        {/* <Header2></Header2> */}
         <MainSection2>
         </MainSection2>
 
@@ -47,7 +47,7 @@ class App extends Component {
 
 
         {/* <WhyUsSection /> */}
-        <FixSection />
+        <FixSection2 />
         {/* <OurServicesSection /> */}
         {/* <OffersSection /> */}
 
