@@ -7,8 +7,15 @@ import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles(theme => ({
     root: {
         padding: "16px",
-        fontFamily: "Montserrat"
+        fontFamily: "Montserrat",
+        borderBottom: " 1px solid rgba(112, 112, 112, 0.12);",
+        marginBottom: "8px"
 
+    },
+    brand:{
+        fontSize:"2.5rem",
+        color: "#00A99D",
+        fontWeight:"900"
     },
     infoCell : {
         fontSize:"16px"
@@ -75,7 +82,10 @@ export default function TopHeader() {
         <div className={classes.root}>
             <Grid container spacing={2}>
             <Grid item  xs ={12}md={4} >
-                    Mobilland
+                <div className={classes.brand}>
+                Mobilland
+
+                </div>
                 </Grid>
                 <Grid item  xs ={12}md={2} >
                     <InfoCell

@@ -3,6 +3,8 @@ import './App.css';
 
 import MainSection2 from "./views/pages/home/MainSection2/MainSection2.jsx";
 import TopHeader from "./views/pages/home/TopHeader/TopHeader.jsx";
+import Header2 from "./views/sections/Header2/Header2.jsx";
+
 
 import WhyUsSection from "./views/pages/home/WhyUsSection/WhyUsSection.js";
 import FixSection from "./views/pages/home/FixSection/FixSection.js";
@@ -31,6 +33,7 @@ class App extends Component {
     return (
       <div className="App">
       <TopHeader></TopHeader>
+      {/* <Header2></Header2> */}
         <MainSection2>
         </MainSection2>
 
@@ -44,7 +47,7 @@ class App extends Component {
 
 
         {/* <WhyUsSection /> */}
-        {/* <FixSection /> */}
+        <FixSection />
         {/* <OurServicesSection /> */}
         {/* <OffersSection /> */}
 

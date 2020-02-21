@@ -54,7 +54,7 @@ export default class Tab extends Component {
         const { device, deviceList } = this.props;
         return (
             <div>
-                <Stepper device={device} activeStep={this.state.stepNumber} />
+                {/* <Stepper device={device} activeStep={this.state.stepNumber} /> */}
                 <GridContainer>
                     <GridItem xs={12} sm={12} md={4} lg={4} xl={4}>
                         <SelectDevice

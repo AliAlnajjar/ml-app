@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
         borderRadius: "20px",
         padding: "2rem",
         paddingBottom: "5rem",
-        marginBottom: "150px"
+        // marginBottom: "150px"
     },
     h1: {
         fontSize: "calc(2rem + (60 - 32) * ((100vw - 320px) / (1920 - 320)));",
@@ -80,7 +80,7 @@ export default function MainSection2() {
 
                 <Grid className={classes.gridItem1} item xs={12} md={7} lg={6}>
                     <h1 className={classes.h1}>
-                        Repair your phone in minutes
+                        Fiks Mobilen din på minutter
                     </h1>
                     <div className={classes.whyUs}>
                         <Grid container spacing={6}>
