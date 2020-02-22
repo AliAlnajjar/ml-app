@@ -84,16 +84,16 @@ export default function MainSection2() {
                     </h1>
                     <div className={classes.whyUs}>
                         <Grid container spacing={6}>
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={6} md={6}>
                                 Best pris
                         </Grid>
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={6} md={6}>
                                 2års garanti 
                         </Grid>
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={6} md={6}>
                                 Rask service
                         </Grid>
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={6} md={6}>
                                  Gratis feilsøke
                         </Grid>
                         </Grid>

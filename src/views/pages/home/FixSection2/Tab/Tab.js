@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import SelectDevice from "./SelectDevice.js"
+import SelectService from './SelectService.js';
+import ShowPrice from './ShowPrice.js'
 // Styles
 import { makeStyles } from '@material-ui/core/styles';
-import SelectService from './SelectService.js';
+
 import './Tab.css'
 
 
@@ -56,7 +58,7 @@ export default class Tab extends Component {
         return (
             <div className="root">
                 <Grid container spacing={0}>
-                    <Grid item md={12} lg={3} >
+                    <Grid item md={12} lg={4} >
                         <Step
                             stepNumber="1"
                             stepTitle="Velg mobilen din"
@@ -75,7 +77,7 @@ export default class Tab extends Component {
 
                         </div>
                     </Grid>
-                    <Grid item md={12} lg={6} >
+                    <Grid item md={12} lg={5} >
                         <Step
                             stepNumber="2"
                             stepTitle="Velg defekten"
@@ -96,6 +98,11 @@ export default class Tab extends Component {
                             stepTitle="Sjekk pris"
                             active={this.state.stepNumber >= 3}
                         ></Step>
+                        <div className="container">
+                            <ShowPrice
+                            priceList = {[{price:1000 , note:""} ]}
+                            ></ShowPrice>
+                        </div>
                     </Grid>
 
 

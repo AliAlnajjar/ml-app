@@ -5,7 +5,11 @@
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.green { color:#49aa9d  }
 
-
+.fab{
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+}
 /* #2c3f52 */
 /* #ed4e6e; */
 /* #49aa9d */

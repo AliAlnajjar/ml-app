@@ -1,9 +1,9 @@
 .root {
     margin: auto;
-    width: 90;
-    margin-top: 10rem;
+    width: 85%;
+    margin-top: 5rem;
 }
 
 .container {
-    padding: 48px;
+    padding: 24px;
 }

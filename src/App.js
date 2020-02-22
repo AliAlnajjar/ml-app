@@ -4,9 +4,12 @@ import './App.css';
 import MainSection2 from "./views/pages/home/MainSection2/MainSection2.jsx";
 import TopHeader from "./views/pages/home/TopHeader/TopHeader.jsx";
 import Header2 from "./views/sections/Header2/Header2.jsx";
+import Fab from '@material-ui/core/Fab';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import SvgIcon from '@material-ui/core/SvgIcon';
+import MessengerIcon from 'components/MessengerIcon/MessengerIcon.jsx'
 
-
-import WhyUsSection from "./views/pages/home/WhyUsSection/WhyUsSection.js";
 import FixSection2 from "./views/pages/home/FixSection2/FixSection2.jsx";
 import OurServicesSection from "./views/pages/home/OurServicesSection/OurServicesSection.js";
 import FindUSSection from "./views/pages/home/FindUsSection/FindUsSection.js";
@@ -55,6 +58,16 @@ class App extends Component {
 
         {/* <Footer>
         </Footer> */}
+        <div className="fab">
+{/* <Fab  color="primary" aria-label="messenger" >
+      </Fab> */}
+      <IconButton 
+      
+      >
+        <MessengerIcon></MessengerIcon>
+           </IconButton>
+        </div>
+      
       </div>
     );
   }

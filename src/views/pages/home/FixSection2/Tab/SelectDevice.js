@@ -4,11 +4,16 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
 import { makeStyles } from '@material-ui/core/styles';
+import MobileImage from 'assets/img/galaxys20-plus-gray1-produktside-720px.png'
 
 const useStyles = makeStyles(theme => ({
     Autocomplete: {
         marginTop: 0,
         width: "100%"
+    },
+    img:{
+        height: 200,
+        marginTop: "3rem"
     }
 }));
 
@@ -33,6 +38,8 @@ export default function SelectDevice(props) {
                     <TextField {...params} label={"Velg din " + props.device} variant="outlined" fullWidth />
                 )}
             />
+
+            <img src= {MobileImage} alt= ""  className={classes.img}></img>
         </div>
     );
 
