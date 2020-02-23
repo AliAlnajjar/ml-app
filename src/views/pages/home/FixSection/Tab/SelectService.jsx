@@ -30,12 +30,12 @@ const useStyles = makeStyles(theme => ({
 export default function SelectService(props) {
   const classes = useStyles();
   const defectList = [
-    { name: "Battery", image: `${DefectBatteryImage}`, active: true },
+    { name: "Battery", image: `${DefectBatteryImage}`, active: false },
     { name: "Charger", image: `${DefectChargerImage}`, active: false },
-    { name: "Screen", image: `${DefectScreenImage}`, active: true },
+    { name: "Screen", image: `${DefectScreenImage}`, active: false },
     { name: "Speaker", image: `${DefectSpeakerImage}`, active: false },
-    { name: "Mic", image: `${DefectMicImage}`, active: true },
-    { name: "Back panel", image: `${DefectBackPanelImage}`, active: true },
+    { name: "Mic", image: `${DefectMicImage}`, active: false },
+    { name: "Back panel", image: `${DefectBackPanelImage}`, active: false },
 
   ];
 
@@ -78,7 +78,8 @@ const useDefektCellStyles = makeStyles(theme => ({
     width:"70px"
   },
   img_grey: {
-    filter: " grayscale(100%)"
+    filter: " grayscale(100%)",
+    opacity: "0.4"
   }
 
 }));
@@ -93,7 +94,7 @@ const DefektCell = (props) => {
       >
 
         <Paper
-          className={classes.paper + ` ${props.active ? classes.paper_active : classes.paper_inactive}  `+classes.paper_choosen}
+          className={classes.paper + ` ${props.active ? classes.paper_active : classes.paper_inactive}  `}
           elevation={2}
         >
           <img src={props.image} alt=""

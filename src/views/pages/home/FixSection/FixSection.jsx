@@ -20,6 +20,7 @@ export default class FixSection extends Component {
 }
 const MobileList = [
     {
+        id:'iphone11',
         name: 'iPhone 11',
         services: [
             {
@@ -36,10 +37,12 @@ const MobileList = [
     },
 
     {
+        id:'iphoneXSMax',
+
         name: 'iPhone XS MAX',
         services: [
             {
-                name: "Bytte skjerm",
+                name: "Skjerm",
                 prices: [
                     {
                         price: 2599,
@@ -52,7 +55,7 @@ const MobileList = [
                 ]
             },
             {
-                name: "Bytte batteri",
+                name: "Batteri",
                 prices: [
                     {
                         price: 1099,
@@ -101,6 +104,7 @@ const MobileList = [
     },
 
     {
+        id:'iphoneXS',
         name: 'iPhone XS',
         services: [
             {
@@ -164,8 +168,8 @@ const MobileList = [
         ],
         notes: ""
     },
-
     {
+        id:'iphoneXR',
         name: 'iPhone XR',
         services: [
             {
@@ -231,6 +235,7 @@ const MobileList = [
     },
 
     {
+        id:'iphoneX',
         name: 'iPhone X',
         services: [
             {

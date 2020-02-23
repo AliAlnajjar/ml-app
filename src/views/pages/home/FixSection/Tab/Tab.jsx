@@ -69,6 +69,7 @@ export default class Tab extends Component {
                                 deviceList={this.props.deviceList.map((device) => {
                                     return {
                                         name: device.name,
+                                        id: device.id
                                     };
                                 })}
                                 onSelectDevice={this.handelSelectDevice.bind(this)}
@@ -101,6 +102,13 @@ export default class Tab extends Component {
                             <ShowPrice
                             priceList = {[{price:1000 , note:""} ]}
                             ></ShowPrice>
+                        </div>
+                    </Grid>
+
+                    <Grid item md={12} >
+                
+                        <div className="container">
+                        NB!!!! Om du ikke finner din mobil her eller pris for en del som må repareres, bare å ta kontakt. Vi kan bestille deler for alle modeller. 
                         </div>
                     </Grid>
 
