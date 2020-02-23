@@ -71,9 +71,8 @@ const useStyles = makeStyles(theme => ({
 
 
 }));
-export default function MainSection2() {
+export default function MainSection() {
     const classes = useStyles();
-
     return (
         <div className={classes.root}>
             <Grid container spacing={6}>

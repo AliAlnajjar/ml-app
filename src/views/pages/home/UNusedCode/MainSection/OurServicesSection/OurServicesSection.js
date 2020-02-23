@@ -4,11 +4,6 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import MediaCard from "components/MyCards/ServiceCard.js"
 
-// Assets
-import BuyPhoneImage from 'assets/img/Replacement-Phones-Icon-Retina.png';
-import SellPhoneImage from 'assets/img/Broken-Phones-Icon-Retina.png';
-import BuyAccessoriesImage from 'assets/img/Accessories-Icon-Retina.png';
-
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -33,7 +28,7 @@ const classes = useStyles();
                         title="Buy used phone"
                         desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since."
                         btn1Lable="check available phones"
-                        img={BuyPhoneImage}
+                        // img={BuyPhoneImage}
                     />
 
                 </GridItem>
@@ -42,7 +37,7 @@ const classes = useStyles();
                         title="Sell your broken phone"
                         desc="Har du Defekte eller knuste mobil elle pc? Ta de med til oss, så vil vi gi en verdivurdering. Vi kan gjøre en bra deal til deg. "
                         btn1Lable="Sell your phone here "
-                        img={SellPhoneImage}
+                        // img={SellPhoneImage}
                     />
 
                 </GridItem>
@@ -53,7 +48,7 @@ const classes = useStyles();
                         Vi kan bestille alt til deg. Vi lover beste priser i markedet.
                         "
                         btn1Lable="check accessories page"
-                        img={BuyAccessoriesImage}
+                        // img={BuyAccessoriesImage}
                     />
 
                 </GridItem>

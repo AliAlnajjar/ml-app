@@ -4,12 +4,14 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid';
 
+
 //Images 
 import DefectBatteryImage from 'assets/img/defect_battery.png'
 import DefectChargerImage from 'assets/img/defect_charger.png'
 import DefectScreenImage from 'assets/img/defect_screen.png'
 import DefectSpeakerImage from 'assets/img/defect_speaker.png'
 import DefectMicImage from 'assets/img/defect_mic.png'
+import DefectBackPanelImage from 'assets/img/defect_back_panel.png'
 
 
 
@@ -29,11 +31,11 @@ export default function SelectService(props) {
   const classes = useStyles();
   const defectList = [
     { name: "Battery", image: `${DefectBatteryImage}`, active: true },
-    { name: "Charger", image: `${DefectChargerImage}`, active: true },
+    { name: "Charger", image: `${DefectChargerImage}`, active: false },
     { name: "Screen", image: `${DefectScreenImage}`, active: true },
-    { name: "Speaker", image: `${DefectSpeakerImage}`, active: true },
+    { name: "Speaker", image: `${DefectSpeakerImage}`, active: false },
     { name: "Mic", image: `${DefectMicImage}`, active: true },
-    { name: "Screen", image: `${DefectScreenImage}`, active: true },
+    { name: "Back panel", image: `${DefectBackPanelImage}`, active: true },
 
   ];
 
@@ -46,7 +48,7 @@ export default function SelectService(props) {
   );
   return (
     <div className={classes.root}>
-      <Grid container spacing={1} justify="center">
+      <Grid container spacing={1} justify="left">
         {DefektsList}
       </Grid>
     </div>
@@ -59,8 +61,8 @@ const useDefektCellStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     display: "block",
     color: theme.palette.text.secondary,
-    height: "100px",
-    width: "100px"
+    height: "92px",
+    width: "92px",
   },
   paper_active: {
     opacity: "1"
@@ -68,9 +70,12 @@ const useDefektCellStyles = makeStyles(theme => ({
   paper_inactive: {
     opacity: "0.6"
   },
+  paper_choosen:{
+    border: "3px solid #7f5eff"
+  },
   img:{
-    height:"80px",
-    width:"80px"
+    height:"70px",
+    width:"70px"
   },
   img_grey: {
     filter: " grayscale(100%)"
@@ -82,18 +87,23 @@ const DefektCell = (props) => {
   const classes = useDefektCellStyles();
   return (
     <Grid item xs justify="center">
-      
-      <Paper
-        className={classes.paper + ` ${props.active ? classes.paper_active : classes.paper_inactive}`}
-        elevation={2}
-      // onclick={() => { console.log(props.text) }}
+      <Button 
+            onClick={() => { console.log("rr") }}
+            disabled= {!props.active}
       >
-        <img src={props.image} alt=""
-          className={classes.img+ ` ${props.active ? "" : classes.img_grey}`}
-        ></img>
-        {props.text}
-       
-      </Paper>
+
+        <Paper
+          className={classes.paper + ` ${props.active ? classes.paper_active : classes.paper_inactive}  `+classes.paper_choosen}
+          elevation={2}
+        >
+          <img src={props.image} alt=""
+            className={classes.img+ ` ${props.active ? "" : classes.img_grey}`}
+          ></img>
+          {props.text}
+        
+        </Paper>
+      </Button>
+
     </Grid>
   );
 }

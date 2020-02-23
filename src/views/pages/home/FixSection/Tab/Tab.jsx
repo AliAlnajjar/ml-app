@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
-import SelectDevice from "./SelectDevice.js"
-import SelectService from './SelectService.js';
-import ShowPrice from './ShowPrice.js'
+
+import SelectDevice from "./SelectDevice.jsx"
+import SelectService from './SelectService.jsx';
+import ShowPrice from './ShowPrice.jsx'
 // Styles
 import { makeStyles } from '@material-ui/core/styles';
-
 import './Tab.css'
-
 
 // const useStyles = makeStyles(styles);
 

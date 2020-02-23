@@ -5,11 +5,6 @@ import Tab from './Tab/Tab.js';
 import CustomTabs from "components/CustomTabs/CustomTabs.js";
 import FixOptionCard from "components/MyCards/FixOptionCard.js"
 import Grid from '@material-ui/core/Grid';
-//assets
-import Posten from 'assets/img/posten.jpg';
-import WeComeToYou from 'assets/img/we_come_to_you.jpg';
-import DropIn from 'assets/img/drop-in.jpg';
-
 
 
 
@@ -78,7 +73,7 @@ export default class FixSection extends Component {
                 titleSpanColor={"green"}
                 desc={" Det er opp til deg om du vil bestille time eller nei. Du trenger ikke vanligvis å bestille time! Men om du vil at vi beholder en tid for deg bare å bestille time. "}
                 btnLable={"Bestill time hos oss"}
-                img={DropIn}
+                // img={DropIn}
                 left={false}
 
               />
@@ -94,7 +89,7 @@ export default class FixSection extends Component {
                 titleSpanColor={"blue"}
                 desc={" Vi kan sende en tekniker til deg for skjermbytting av iPhone. Du slipper du å tenke på parkering rundt i byen, i tillegg til at du sparer tid for å gjøre andre ting mens teknikeren reparerer mobilen din. Vi operer foreløpig kun innenfor Bergen. Tjenesten gjelder kun for skjerm eller batteri på iphone når du forhåndsbestiller timen. Hvis du kansellerer senest kl. 12 dagen før avtaletidspunktet vil hele beløpet bli refundert."}
                 btnLable={"Bestill time"}
-                img={WeComeToYou}
+                // img={WeComeToYou}
                 left={true}
 
               />
@@ -106,7 +101,7 @@ export default class FixSection extends Component {
                 titleSpanColor={"red"}
                 desc={" Hvis du har problemer med din telefon/tablet eller pc  kan du sende den til oss for sjekk eller reparere, Når enheten skal returneres, bruker vi Bring til vanlig og det koster ca. 150 med sporing. Vi kan sende den med brevpakka men med kundens ansvar Du kan bare fylle ut vårt kontaktskjema."}
                 btnLable={"Fyll ut kontaktskjema"}
-                img={Posten}
+                // img={Posten}
                 left={false}
               />
 

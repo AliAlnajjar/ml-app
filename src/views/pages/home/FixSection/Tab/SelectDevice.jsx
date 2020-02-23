@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
 import { makeStyles } from '@material-ui/core/styles';
-import MobileImage from 'assets/img/galaxys20-plus-gray1-produktside-720px.png'
+import CardMedia from '@material-ui/core/CardMedia';
 
 const useStyles = makeStyles(theme => ({
     Autocomplete: {
@@ -39,7 +39,11 @@ export default function SelectDevice(props) {
                 )}
             />
 
-            <img src= {MobileImage} alt= ""  className={classes.img}></img>
+            {/* <img src= {MobileImage} alt= ""  className={classes.img}></img> */}
+            <CardMedia
+                className={classes.img}
+                image="/static/img/Phones/iPhone11.jpg"
+            />
         </div>
     );
 

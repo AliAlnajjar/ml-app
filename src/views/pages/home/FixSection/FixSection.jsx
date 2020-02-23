@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Tab from './Tab/Tab.js';
+import Tab from './Tab/Tab.jsx';
 
-export default class FixSection2 extends Component {
+export default class FixSection extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,7 +12,6 @@ export default class FixSection2 extends Component {
             // activeTab: "mobile"
         }
     }
-
     render() {
         return (
             <Tab device={"mobil"} deviceList={this.state.mobiles} />
