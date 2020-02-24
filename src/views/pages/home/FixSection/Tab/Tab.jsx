@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
-
+// My components
 import SelectDevice from "./SelectDevice.jsx"
 import SelectService from './SelectService.jsx';
 import ShowPrice from './ShowPrice.jsx'
@@ -8,12 +8,7 @@ import ShowPrice from './ShowPrice.jsx'
 import { makeStyles } from '@material-ui/core/styles';
 import './Tab.css'
 
-// const useStyles = makeStyles(styles);
-
-
 export default class Tab extends Component {
-    // const classes = useStyles()
-    // const [currentStepNumber, setCurrentStepNumber] = useState(4)
     constructor(props) {
         super(props);
         this.state = {
@@ -45,8 +40,13 @@ export default class Tab extends Component {
         })
     }
     handelSelectService(selectedService) {
+        console.log("Tab => selectedService", selectedService)
         const serviceList = (this.props.deviceList.filter((device) => device.name == this.state.selectedDevice))[0].services;
         const priceList = serviceList.filter(service => service.name == selectedService)[0].prices || []
+
+        console.log(" Tab => serviceList: ", serviceList)
+        console.log(" Tab => priceList: ", priceList)
+
         this.setState({
             selectedService: selectedService,
             priceList: priceList,
@@ -86,7 +86,7 @@ export default class Tab extends Component {
                         <div className="container">
                             <SelectService
                                 serviceList={this.state.serviceList}
-                                selectedService={this.state.selectedService}
+                                // selectedService={this.state.selectedService}
                                 onSelectService={this.handelSelectService.bind(this)}
                             />
                         </div>
@@ -100,31 +100,23 @@ export default class Tab extends Component {
                         ></Step>
                         <div className="container">
                             <ShowPrice
-                            priceList = {[{price:1000 , note:""} ]}
+                                selectedService={this.state.selectedService}
+                                priceList={this.state.priceList}
                             ></ShowPrice>
                         </div>
                     </Grid>
 
                     <Grid item md={12} >
-                
+
                         <div className="container">
-                        NB!!!! Om du ikke finner din mobil her eller pris for en del som må repareres, bare å ta kontakt. Vi kan bestille deler for alle modeller. 
+                            NB!!!! Om du ikke finner din mobil her eller pris for en del som må repareres, bare å ta kontakt. Vi kan bestille deler for alle modeller.
                         </div>
                     </Grid>
+                    <Grid item md={12} >
 
-
-                    {/* ///////////////////////////////////////////// */}
-                    {/* <Grid item md={3}>
-                        
+                        <div className="container">
+                            Backup / Oppgradering fra 199                </div>
                     </Grid>
-                    <Grid item md={6}>
-    
-                    </Grid>
-                    <Grid item md={3}>
-    
-                    </Grid> */}
-
-
                 </Grid>
             </div >
         );
