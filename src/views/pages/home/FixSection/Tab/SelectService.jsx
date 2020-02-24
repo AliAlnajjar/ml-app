@@ -6,12 +6,12 @@ import Grid from '@material-ui/core/Grid';
 
 
 //Images 
-import DefectBatteryImage from 'assets/img/defect_battery.png'
-import DefectChargerImage from 'assets/img/defect_charger.png'
-import DefectScreenImage from 'assets/img/defect_screen.png'
-import DefectSpeakerImage from 'assets/img/defect_speaker.png'
-import DefectMicImage from 'assets/img/defect_mic.png'
-import DefectBackPanelImage from 'assets/img/defect_back_panel.png'
+import DefectBatteryImage from 'assets/img/icon/defect_battery.svg'
+import DefectChargerImage from 'assets/img/icon/defect_charger.svg'
+import DefectScreenImage from 'assets/img/icon/defect_screen.svg'
+import DefectCameraImage from 'assets/img/icon/defect_camera.svg'
+import DefectRearCameraImage from 'assets/img/icon/defect_rearCamera.svg'
+import DefectBackPanelImage from 'assets/img/icon/defect_backPanel.svg'
 
 
 
@@ -30,12 +30,15 @@ const useStyles = makeStyles(theme => ({
 export default function SelectService(props) {
   const classes = useStyles();
   const defectList = [
-    { name: "Battery", image: `${DefectBatteryImage}`, active: false },
-    { name: "Charger", image: `${DefectChargerImage}`, active: false },
-    { name: "Screen", image: `${DefectScreenImage}`, active: false },
-    { name: "Speaker", image: `${DefectSpeakerImage}`, active: false },
-    { name: "Mic", image: `${DefectMicImage}`, active: false },
-    { name: "Back panel", image: `${DefectBackPanelImage}`, active: false },
+    { name: "Screen", image: `${DefectScreenImage}`, active: true },
+
+    { name: "Battery", image: `${DefectBatteryImage}`, active: true },
+    { name: "Rear Camera", image: `${DefectRearCameraImage}`, active: true },
+    { name: "Charger", image: `${DefectChargerImage}`, active: true },
+
+    { name: "Front Camera", image: `${DefectCameraImage}`, active: true },
+
+    { name: "Back panel", image: `${DefectBackPanelImage}`, active: true },
 
   ];
 
@@ -79,7 +82,7 @@ const useDefektCellStyles = makeStyles(theme => ({
   },
   img_grey: {
     filter: " grayscale(100%)",
-    opacity: "0.4"
+    opacity: "0.8"
   }
 
 }));
