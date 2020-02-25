@@ -87,13 +87,13 @@ export default function MainSection() {
                                 Best pris
                         </Grid>
                             <Grid item xs={6} md={6}>
-                                2års garanti 
+                                2års garanti
                         </Grid>
                             <Grid item xs={6} md={6}>
                                 Rask service
                         </Grid>
                             <Grid item xs={6} md={6}>
-                                 Gratis feilsøke
+                                Gratis diagnose
                         </Grid>
                         </Grid>
                     </div>

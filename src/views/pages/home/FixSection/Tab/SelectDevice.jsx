@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 // components
-import TextField from '@material-ui/core/TextField';
+import { CardMedia, Hidden, TextField } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-
+//Styles
 import { makeStyles } from '@material-ui/core/styles';
-import CardMedia from '@material-ui/core/CardMedia';
-
+//Images
 import images from './images.js'
 
 
@@ -47,10 +46,13 @@ export default function SelectDevice(props) {
                     <TextField {...params} label={"Velg " + props.device} variant="outlined" fullWidth />
                 )}
             />
-            <CardMedia
-                className={classes.img}
-                image={url}
-            />
+            <Hidden smDown >
+                <CardMedia
+                    className={classes.img}
+                    image={url}
+                />
+            </Hidden>
+
         </div>
     );
 

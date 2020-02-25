@@ -26,7 +26,7 @@ const serviceName_rearCamera = "Bak kamera"
 const serviceName_chargingPort = "Ladeport"
 const serviceName_backPanel = "Bak glass"
 
-const qualityName_TmQuality = "Tm kvalitet"
+const qualityName_TmQuality = "TM kvalitet"
 const qualityName_refurdbishedOriginal = "refurdbished original"
 const qualityName_oledSoft = "Oled soft"
 const qualityName_original = "Original"

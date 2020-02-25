@@ -4,6 +4,7 @@ import './App.css';
 import TopHeader from "./views/pages/home/TopHeader/TopHeader.jsx";
 import MainSection from "./views/pages/home/MainSection/MainSection.jsx";
 import FixSection from "./views/pages/home/FixSection/FixSection.jsx";
+import FixOptionsSection from './views/pages/home/FixOptionsSection/FixOptionsSection.jsx'
 import Footer from './views/sections/Footer/Footer'
 
 import IconButton from '@material-ui/core/IconButton';
@@ -17,9 +18,10 @@ class App extends Component {
     return (
       <div className="App">
 
-        <TopHeader/>
-        <MainSection/>
+        <TopHeader />
+        <MainSection />
         <FixSection />
+        <FixOptionsSection />
         <Footer />
         <div className="fab">
           <IconButton >
@@ -27,7 +29,7 @@ class App extends Component {
           </IconButton>
         </div>
 
-      
+
       </div>
     );
   }

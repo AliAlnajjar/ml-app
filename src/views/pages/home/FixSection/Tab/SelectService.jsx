@@ -37,9 +37,10 @@ export default function SelectService(props) {
   const defectList = [
     { name: "Skjerm", image: `${DefectScreenImage}`, active: props.serviceList.includes("Skjerm") },
     { name: "Batteri", image: `${DefectBatteryImage}`, active: props.serviceList.includes("Batteri") },
+    { name: "Bak kamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Bak kamera") },
+
     { name: "Ladeport", image: `${DefectChargerImage}`, active: props.serviceList.includes("Ladeport") },
     { name: "Front kamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Front kamera") },
-    { name: "Bak kamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Bak kamera") },
     { name: "Bak glass", image: `${DefectBackPanelImage}`, active: props.serviceList.includes("Bak glass") },
 
   ];

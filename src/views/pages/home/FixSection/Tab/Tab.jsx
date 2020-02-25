@@ -57,7 +57,7 @@ export default class Tab extends Component {
         return (
             <div className="root">
                 <Grid container spacing={0}>
-                    <Grid item md={12} lg={4} >
+                    <Grid item xs={12} md={4} >
                         <Step
                             stepNumber="1"
                             stepTitle="Velg mobilen din"
@@ -77,7 +77,7 @@ export default class Tab extends Component {
 
                         </div>
                     </Grid>
-                    <Grid item md={12} lg={5} >
+                    <Grid item xs={12} md={5} >
                         <Step
                             stepNumber="2"
                             stepTitle="Velg defekten"
@@ -92,7 +92,7 @@ export default class Tab extends Component {
                         </div>
 
                     </Grid>
-                    <Grid item md={12} lg={3} >
+                    <Grid item xs={12} md={3} >
                         <Step
                             stepNumber="3"
                             stepTitle="Sjekk pris"
@@ -106,17 +106,13 @@ export default class Tab extends Component {
                         </div>
                     </Grid>
 
-                    <Grid item md={12} >
+                    {/* <Grid item xs={12} >
 
-                        <div className="container">
+                        <div className="container NB">
                             NB!!!! Om du ikke finner din mobil her eller pris for en del som må repareres, bare å ta kontakt. Vi kan bestille deler for alle modeller.
                         </div>
-                    </Grid>
-                    <Grid item md={12} >
+                    </Grid> */}
 
-                        <div className="container">
-                            Backup / Oppgradering fra 199                </div>
-                    </Grid>
                 </Grid>
             </div >
         );
