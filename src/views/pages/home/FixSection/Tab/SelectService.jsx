@@ -6,12 +6,16 @@ import Grid from '@material-ui/core/Grid';
 
 
 //Images 
-import DefectBatteryImage from 'assets/img/defect_battery.png'
-import DefectChargerImage from 'assets/img/defect_charger.png'
-import DefectScreenImage from 'assets/img/defect_screen.png'
-import DefectRearCameraImage from 'assets/img/defect_rearCamera.png'
-import DefectCameraImage from 'assets/img/defect_camera.png'
-import DefectBackPanelImage from 'assets/img/defect_back_panel.png'
+
+import DefectBatteryImage from 'assets/img/icon/defect_battery.svg'
+import DefectChargerImage from 'assets/img/icon/defect_charger.svg'
+import DefectScreenImage from 'assets/img/icon/defect_screen.svg'
+import DefectCameraImage from 'assets/img/icon/defect_camera.svg'
+import DefectRearCameraImage from 'assets/img/icon/defect_rearCamera.svg'
+import DefectBackPanelImage from 'assets/img/icon/defect_backPanel.svg'
+
+
+
 
 
 
@@ -84,7 +88,7 @@ const useDefektCellStyles = makeStyles(theme => ({
   },
   img_grey: {
     filter: " grayscale(100%)",
-    opacity: "0.4"
+    opacity: "0.8"
   }
 
 }));

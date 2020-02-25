@@ -6,10 +6,13 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        padding: "16px",
+        padding: "48px",
+        marginTop:"36px",
         fontFamily: "Montserrat",
         borderBottom: " 1px solid rgba(112, 112, 112, 0.12);",
-        marginBottom: "8px"
+        backgroundColor:"#28384C",
+        color:"#FFFFFF",
+        height:"64px"
 
     },
     brand:{
@@ -75,18 +78,13 @@ const  InfoCell = (props)=> {
         
     )
 }
-export default function TopHeader() {
+export default function Footer() {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
             <Grid container spacing={2}>
-            <Grid item  xs ={12}md={4} >
-                <div className={classes.brand}>
-                Mobilland
-
-                </div>
-                </Grid>
+            
                 <Grid item  xs ={12}md={2} >
                     <InfoCell
                     text = "409 81 521"
@@ -99,7 +97,7 @@ export default function TopHeader() {
                 <Grid item  xs ={12}md={2} >
                     
                     <InfoCell
-                    text = "Solheimsgaten 33"
+                    text = ""
                     iconName ="location_on"
                     iconColor = "green"
                     ></InfoCell>
