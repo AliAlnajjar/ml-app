@@ -1,4 +1,4 @@
-import React, {useState}from 'react';
+import React, { useState } from 'react';
 // components
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
@@ -14,16 +14,16 @@ const useStyles = makeStyles(theme => ({
         marginTop: 0,
         width: "100%"
     },
-    img:{
+    img: {
         height: "200px",
         backgroundSize: "contain",
-        marginTop:"3rem"
-        
+        marginTop: "3rem"
+
     }
 }));
 
 export default function SelectDevice(props) {
-    const [url,setURL]= useState('')
+    const [url, setURL] = useState('')
     const classes = useStyles();
     const handelOnChange = (e, selectedDevice) => {
         if (!selectedDevice) {
@@ -31,8 +31,8 @@ export default function SelectDevice(props) {
             props.onSelectDevice("")
             return;
         }
-        const temp = images.filter((phone)=>phone.id ===selectedDevice.id)[0]
-        setURL((temp&&temp.url)?temp.url:'' )
+        const temp = images.filter((phone) => phone.id === selectedDevice.id)[0]
+        setURL((temp && temp.url) ? temp.url : '')
         props.onSelectDevice(selectedDevice.name)
     }
     return (
@@ -47,11 +47,9 @@ export default function SelectDevice(props) {
                     <TextField {...params} label={"Velg " + props.device} variant="outlined" fullWidth />
                 )}
             />
-
-            {/* <img src= {MobileImage} alt= ""  className={classes.img}></img> */}
             <CardMedia
                 className={classes.img}
-                image = {url}
+                image={url}
             />
         </div>
     );

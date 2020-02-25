@@ -6,12 +6,16 @@ import Grid from '@material-ui/core/Grid';
 
 
 //Images 
+
 import DefectBatteryImage from 'assets/img/icon/defect_battery.svg'
 import DefectChargerImage from 'assets/img/icon/defect_charger.svg'
 import DefectScreenImage from 'assets/img/icon/defect_screen.svg'
 import DefectCameraImage from 'assets/img/icon/defect_camera.svg'
 import DefectRearCameraImage from 'assets/img/icon/defect_rearCamera.svg'
 import DefectBackPanelImage from 'assets/img/icon/defect_backPanel.svg'
+
+
+
 
 
 
@@ -29,16 +33,14 @@ const useStyles = makeStyles(theme => ({
 
 export default function SelectService(props) {
   const classes = useStyles();
+
   const defectList = [
-    { name: "Screen", image: `${DefectScreenImage}`, active: true },
-
-    { name: "Battery", image: `${DefectBatteryImage}`, active: true },
-    { name: "Rear Camera", image: `${DefectRearCameraImage}`, active: true },
-    { name: "Charger", image: `${DefectChargerImage}`, active: true },
-
-    { name: "Front Camera", image: `${DefectCameraImage}`, active: true },
-
-    { name: "Back panel", image: `${DefectBackPanelImage}`, active: true },
+    { name: "Skjerm", image: `${DefectScreenImage}`, active: props.serviceList.includes("Skjerm") },
+    { name: "Batteri", image: `${DefectBatteryImage}`, active: props.serviceList.includes("Batteri") },
+    { name: "Ladeport", image: `${DefectChargerImage}`, active: props.serviceList.includes("Ladeport") },
+    { name: "Front kamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Front kamera") },
+    { name: "Bak kamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Bak kamera") },
+    { name: "Bak glass", image: `${DefectBackPanelImage}`, active: props.serviceList.includes("Bak glass") },
 
   ];
 
@@ -47,6 +49,7 @@ export default function SelectService(props) {
       text={item.name}
       image={item.image}
       active={item.active}
+      onSelectService={props.onSelectService}
     ></DefektCell>
   );
   return (
@@ -66,6 +69,9 @@ const useDefektCellStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary,
     height: "92px",
     width: "92px",
+    textTransform: "none",
+    fontSize: "0.9rem",
+    color: "#000000"
   },
   paper_active: {
     opacity: "1"
@@ -73,12 +79,12 @@ const useDefektCellStyles = makeStyles(theme => ({
   paper_inactive: {
     opacity: "0.6"
   },
-  paper_choosen:{
+  paper_choosen: {
     border: "3px solid #7f5eff"
   },
-  img:{
-    height:"70px",
-    width:"70px"
+  img: {
+    height: "70px",
+    width: "70px"
   },
   img_grey: {
     filter: " grayscale(100%)",
@@ -89,11 +95,15 @@ const useDefektCellStyles = makeStyles(theme => ({
 
 const DefektCell = (props) => {
   const classes = useDefektCellStyles();
+  const handelOnClick = (selectedService) => {
+    props.onSelectService(selectedService)
+  }
+
   return (
     <Grid item xs justify="center">
-      <Button 
-            onClick={() => { console.log("rr") }}
-            disabled= {!props.active}
+      <Button
+        onClick={() => { handelOnClick(props.text) }}
+        disabled={!props.active}
       >
 
         <Paper
@@ -101,10 +111,10 @@ const DefektCell = (props) => {
           elevation={2}
         >
           <img src={props.image} alt=""
-            className={classes.img+ ` ${props.active ? "" : classes.img_grey}`}
+            className={classes.img + ` ${props.active ? "" : classes.img_grey}`}
           ></img>
           {props.text}
-        
+
         </Paper>
       </Button>
 
