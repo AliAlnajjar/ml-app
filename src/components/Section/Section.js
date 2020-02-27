@@ -7,7 +7,7 @@ const sectionStyle = {
     section: {
         background: "#FFFFFF",
         padding: "40px 0px",
-        width: "90%",
+        width: "80%",
         maxWidth: "1620px",
         margin: "auto"
     },
@@ -17,7 +17,7 @@ const sectionStyle = {
         minHeight: "100px"
     },
     sectionTitle: {
-        fontSize: "2.5em",
+        fontSize: "2.3em",
         position: "relative",
         display: "inline-block",
         fontFamily: "Montserrat",

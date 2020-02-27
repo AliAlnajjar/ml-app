@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
         },
     },
     card: {
-        marginBottom: "8rem",
+        marginBottom: "5rem",
         backgroundColor: "none"
     },
     textPart: {
@@ -120,7 +120,7 @@ export default function FixOptionsSection(props) {
                         <Typography variant="body2" component="p" className={classes.desc}>
                             Hvis du har problemer med din telefon/tablet eller pc kan du sende den til oss for sjekk eller reparere, Når enheten skal returneres, bruker vi Bring til vanlig og det koster ca. 150 med sporing. Vi kan sende den med brevpakka men med kundens ansvar Du kan bare fylle ut vårt kontaktskjema.
                         </Typography>
-                        <MyButton text="Fyll ut kontakt skjema" />
+                        <MyButton text="Fyll ut kontaktskjema" />
                     </Grid>
                 </Grid>
 
