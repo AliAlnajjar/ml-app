@@ -40,13 +40,8 @@ export default class Tab extends Component {
         })
     }
     handelSelectService(selectedService) {
-        console.log("Tab => selectedService", selectedService)
         const serviceList = (this.props.deviceList.filter((device) => device.name == this.state.selectedDevice))[0].services;
         const priceList = serviceList.filter(service => service.name == selectedService)[0].prices || []
-
-        console.log(" Tab => serviceList: ", serviceList)
-        console.log(" Tab => priceList: ", priceList)
-
         this.setState({
             selectedService: selectedService,
             priceList: priceList,
@@ -57,7 +52,7 @@ export default class Tab extends Component {
         return (
             <div className="root">
                 <Grid container spacing={0}>
-                    <Grid item xs={12} md={4} >
+                    <Grid item xs={12} md={4} lg={4} >
                         <Step
                             stepNumber="1"
                             stepTitle="Velg mobilen din"
@@ -77,7 +72,7 @@ export default class Tab extends Component {
 
                         </div>
                     </Grid>
-                    <Grid item xs={12} md={5} >
+                    <Grid item xs={12} md={5} lg={4} >
                         <Step
                             stepNumber="2"
                             stepTitle="Velg defekten"
@@ -92,7 +87,7 @@ export default class Tab extends Component {
                         </div>
 
                     </Grid>
-                    <Grid item xs={12} md={3} >
+                    <Grid item xs={12} md={3} lg={4} >
                         <Step
                             stepNumber="3"
                             stepTitle="Sjekk pris"
@@ -126,7 +121,7 @@ const stepStyles = {
         margin: "8px",
         display: "flex",
         justifyContent: "center",
-        ['@media (max-width:1280px)']: { // eslint-disable-line no-useless-computed-key
+        ['@media (max-width:959px)']: { // eslint-disable-line no-useless-computed-key
             justifyContent: "flex-start",
 
         },
@@ -194,7 +189,7 @@ const stepNumberStyles = {
     //     color: "#FFFFFF",
     // },
     stepNumber_done: {
-        background: "#7f5eff",
+        background: "#00A99D",
         color: "#FFFFFF",
     },
     stepNumber_later: {

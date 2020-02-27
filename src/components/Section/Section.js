@@ -7,8 +7,8 @@ const sectionStyle = {
     section: {
         background: "#FFFFFF",
         padding: "40px 0px",
-        width: "80%",
-        maxWidth: "1220px",
+        width: "90%",
+        maxWidth: "1620px",
         margin: "auto"
     },
     container: {

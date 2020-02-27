@@ -14,8 +14,8 @@ const useStyles = makeStyles(theme => ({
         width: "80%",
         margin: "auto",
         borderRadius: "20px",
-        padding: "2rem",
-        paddingBottom: "5rem",
+        padding: "1rem",
+        paddingBottom: "3rem",
         // marginBottom: "150px"
     },
     h1: {

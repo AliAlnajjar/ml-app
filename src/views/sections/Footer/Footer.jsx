@@ -1,7 +1,11 @@
 import React from 'react';
+import { SvgIcon, IconButton } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+
+import FBIcon from 'assets/img/icon/FB.svg'
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -14,28 +18,8 @@ const useStyles = makeStyles(theme => ({
         // height: "64px"
 
     },
-    container: {
-        margin: "auto"
-    },
-    brand: {
-        fontSize: "2.5rem",
-        color: "#00A99D",
-        fontWeight: "900"
-    },
-    infoCell: {
-        fontSize: "16px"
-    },
-    infoCell_text: {
-        textAlign: "left",
-        paddingTop: "6px",
-        paddingLeft: "4px"
-    },
-    infoCell_text_location: {
-        textAlign: "left",
-        paddingLeft: "4px",
-    },
-    infoCell_icon: {
-        textAlign: "right",
+    img: {
+        width: "24px"
     }
 
 }));
@@ -82,21 +66,22 @@ const InfoCell = (props) => {
 }
 export default function Footer() {
     const classes = useStyles();
-    const iClass = `material-icons white`
     return (
         <div className={classes.root}>
-            <Grid container spacing={0} justify="center" alignContent="left">
+            <Grid container spacing={0} justify="center" alignItems="center">
 
                 <Grid item xs={12} md={4} >
                     &#x24B8; Mobil Fikser AS Org.nr.&nbsp;922&nbsp;739&nbsp;765
                 </Grid>
 
                 <Grid item xs={12} md={4} >
-                    <i class={iClass}>face</i>
+                    <IconButton >
+                        <img src={FBIcon} alt="facebook" className={classes.img} />
+                    </IconButton>
                 </Grid>
             </Grid>
 
-        </div>
+        </div >
     )
 
 }

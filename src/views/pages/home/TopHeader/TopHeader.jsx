@@ -55,17 +55,11 @@ const InfoCell = (props) => {
                                 <Grid item xs={12} >
                                     {props.text1_part1}
                                 </Grid>
-                                {/* <Grid item  xs={1} >
-                            {props.text1_part2}
-                        </Grid> */}
 
                                 <Grid item xs={12} >
                                     {props.text2_part1}
                                 </Grid>
-                                {/* <Grid item  xs={1} >
-                            {props.text2_part2}
-                            
-                            </Grid> */}
+
                             </Grid>
                         </Grid>
                     )}
@@ -80,7 +74,7 @@ export default function TopHeader() {
 
     return (
         <div className={classes.root}>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} justify="center">
                 <Grid item xs={12} md={4} >
                     <div className={classes.brand}>
                         Mobilland
@@ -98,7 +92,7 @@ export default function TopHeader() {
                     </Grid>
 
 
-                    <Grid item xs={12} md={2} >
+                    <Grid item xs={12} md={2}>
 
                         <InfoCell
                             text="Solheimsgaten 33"
@@ -106,7 +100,7 @@ export default function TopHeader() {
                             iconColor="green"
                         ></InfoCell>
                     </Grid>
-                    <Grid item xs={12} md={3} >
+                    <Grid item xs={12} md={3}>
                         <InfoCell
                             location={true}
                             text1_part1="man-fre&nbsp;&nbsp;11:00 - 18:00"

@@ -1,18 +1,24 @@
 .App {
   text-align: center;
-  margin:auto
+  margin:auto;
+}
+.AppContent{
+  max-width:1920px;
+  margin:auto;
+
 }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.green { color:#49aa9d  }
-
+.MuiButton-iconSizeLarge > *:firsh_child { font-size: 36px; }
 .fab{
   position: fixed;
   bottom: 10px;
   right: 10px;
 }
-/* #2c3f52 */
-/* #ed4e6e; */
+/*Primary color (green)*/
 /* #49aa9d */
+/*Secondary color*/
+/*#28384C*/
 
 
 

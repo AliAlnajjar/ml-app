@@ -55,7 +55,7 @@ export default function SelectService(props) {
   );
   return (
     <div className={classes.root}>
-      <Grid container spacing={1} justify="left">
+      <Grid container spacing={1}>
         {DefektsList}
       </Grid>
     </div>
@@ -64,6 +64,9 @@ export default function SelectService(props) {
 
 /////////////////////////////////////////
 const useDefektCellStyles = makeStyles(theme => ({
+  btn: {
+    padding: 0
+  },
   paper: {
     padding: theme.spacing(2),
     display: "block",
@@ -72,7 +75,11 @@ const useDefektCellStyles = makeStyles(theme => ({
     width: "92px",
     textTransform: "none",
     fontSize: "0.9rem",
-    color: "#000000"
+    color: "#000000",
+    // ['@media (max-width:780px)']: {
+    //   height: "82px",
+    //   width: "82px",
+    // }
   },
   paper_active: {
     opacity: "1"
@@ -85,7 +92,11 @@ const useDefektCellStyles = makeStyles(theme => ({
   },
   img: {
     height: "70px",
-    width: "70px"
+    width: "70px",
+    // ['@media (max-width:780px)']: {
+    //   height: "48px",
+    //   width: "48px",
+    // }
   },
   img_grey: {
     filter: " grayscale(100%)",
@@ -101,8 +112,8 @@ const DefektCell = (props) => {
   }
 
   return (
-    <Grid item xs justify="center">
-      <Button
+    <Grid item xs >
+      <Button className={classes.btn}
         onClick={() => { handelOnClick(props.text) }}
         disabled={!props.active}
       >
