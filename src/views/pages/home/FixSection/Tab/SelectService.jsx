@@ -1,23 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button'
-import Grid from '@material-ui/core/Grid';
-
+import { Grid, Paper, Button } from '@material-ui/core';
 
 //Images 
-
 import DefectBatteryImage from 'assets/img/icon/defect_battery.svg'
 import DefectChargerImage from 'assets/img/icon/defect_charger.svg'
 import DefectScreenImage from 'assets/img/icon/defect_screen.svg'
 import DefectCameraImage from 'assets/img/icon/defect_camera.svg'
 import DefectRearCameraImage from 'assets/img/icon/defect_rearCamera.svg'
 import DefectBackPanelImage from 'assets/img/icon/defect_backPanel.svg'
-
-
-
-
-
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,16 +24,13 @@ const useStyles = makeStyles(theme => ({
 
 export default function SelectService(props) {
   const classes = useStyles();
-
   const defectList = [
     { name: "Skjerm", image: `${DefectScreenImage}`, active: props.serviceList.includes("Skjerm") },
     { name: "Batteri", image: `${DefectBatteryImage}`, active: props.serviceList.includes("Batteri") },
     { name: "Bak kamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Bak kamera") },
-
     { name: "Ladeport", image: `${DefectChargerImage}`, active: props.serviceList.includes("Ladeport") },
     { name: "Front kamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Front kamera") },
     { name: "Bak glass", image: `${DefectBackPanelImage}`, active: props.serviceList.includes("Bak glass") },
-
   ];
 
   const DefektsList = defectList.map((item) =>
@@ -51,7 +39,7 @@ export default function SelectService(props) {
       image={item.image}
       active={item.active}
       onSelectService={props.onSelectService}
-    ></DefektCell>
+    />
   );
   return (
     <div className={classes.root}>
@@ -102,7 +90,6 @@ const useDefektCellStyles = makeStyles(theme => ({
     filter: " grayscale(100%)",
     opacity: "0.8"
   }
-
 }));
 
 const DefektCell = (props) => {
@@ -115,9 +102,7 @@ const DefektCell = (props) => {
     <Grid item xs >
       <Button className={classes.btn}
         onClick={() => { handelOnClick(props.text) }}
-        disabled={!props.active}
-      >
-
+        disabled={!props.active}>
         <Paper
           className={classes.paper + ` ${props.active ? classes.paper_active : classes.paper_inactive}  `}
           elevation={2}
@@ -126,10 +111,8 @@ const DefektCell = (props) => {
             className={classes.img + ` ${props.active ? "" : classes.img_grey}`}
           ></img>
           {props.text}
-
         </Paper>
       </Button>
-
     </Grid>
   );
 }

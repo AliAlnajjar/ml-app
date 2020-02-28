@@ -24,7 +24,8 @@ const sectionStyle = {
         textAlign: "center",
         "@media (max-width: 576px)": {
             textAlign: "Center",
-            padding: "30px 0"
+            padding: "30px 0",
+            fontSize: "1.7rem"
         },
         padding: "30px 0px",
         "&:before": {
@@ -45,14 +46,14 @@ export default function Section(props) {
     const classes = useStyles();
     const { title, children } = props;
     return (
-        <div className={classes.section}>
+        <section className={classes.section}>
 
             <div className={classes.sectionTitle}> {title} </div>
             <div className={classes.container}>
                 {children}
             </div>
 
-        </div>
+        </section>
     );
 }
 

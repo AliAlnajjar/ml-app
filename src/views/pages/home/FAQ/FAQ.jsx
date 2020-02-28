@@ -93,7 +93,7 @@ export default function FAQ(props) {
         ></MyExpansionPanel>
     );
     return (
-        <Section title="Ofte stilte spørsmål">
+        <Section title="Spørsmål og svar ">
             <div className={classes.root}>
                 {FaqsList}
             </div>
