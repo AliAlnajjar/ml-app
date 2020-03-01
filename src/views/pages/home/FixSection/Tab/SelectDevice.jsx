@@ -11,12 +11,12 @@ import images from './images.js'
 const useStyles = makeStyles(theme => ({
     Autocomplete: {
         marginTop: 0,
-        width: "100%"
+        // width: "100%"
     },
     img: {
         height: "200px",
         backgroundSize: "contain",
-        marginTop: "3rem"
+        marginTop: "1rem"
 
     }
 }));

@@ -72,10 +72,10 @@ export default class Tab extends Component {
 
                         </div>
                     </Grid>
-                    <Grid item xs={12} md={5} lg={4} >
+                    <Grid item xs={12} md={5} lg={5} >
                         <Step
                             stepNumber="2"
-                            stepTitle="Velg defekten"
+                            stepTitle="Velg feil på mobil"
                             active={this.state.stepNumber >= 2}
                         ></Step>
                         <div className="container">
@@ -87,7 +87,7 @@ export default class Tab extends Component {
                         </div>
 
                     </Grid>
-                    <Grid item xs={12} md={3} lg={4} >
+                    <Grid item xs={12} md={3} lg={3} >
                         <Step
                             stepNumber="3"
                             stepTitle="Sjekk pris"
@@ -101,12 +101,12 @@ export default class Tab extends Component {
                         </div>
                     </Grid>
 
-                    {/* <Grid item xs={12} >
+                    <Grid item xs={12} >
 
                         <div className="container NB">
-                            NB!!!! Om du ikke finner din mobil her eller pris for en del som må repareres, bare å ta kontakt. Vi kan bestille deler for alle modeller.
+                            NB!! Om du ikke finner din mobil her eller pris for en del som må repareres, bare å ta kontakt. Vi kan bestille deler for alle modeller.
                         </div>
-                    </Grid> */}
+                    </Grid>
 
                 </Grid>
             </div >

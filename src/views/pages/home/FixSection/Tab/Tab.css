@@ -5,14 +5,17 @@
 }
 
 .container {
-    padding: 24px;
+    padding: 16px;
 }
 .NB{
-    background-color:#E7F7F6;
-    border: 1px solid #28384C;
+    background-color:#FFC;
+    border: 1px solid #FFCC00;
+    border-left: 10px solid rgb(255, 208, 0);
+
     font-family: Montserrat, sans-serif;
     font-size: 1.1rem;
-    margin-top: 80px;
-    border-radius: 10px;
+    margin-top: 2em;
+    /* margin-bottom: 100px; */
+    border-radius: 2px;
 
 }

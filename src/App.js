@@ -27,11 +27,11 @@ class App extends Component {
           <FAQ />
         </div>
         <Footer />
-        <div className="fab">
-          <IconButton >
+        {/* <div className="fab">
+          <IconButton className="messenger-btn">
             <MessengerIcon></MessengerIcon>
           </IconButton>
-        </div>
+        </div> */}
 
 
       </div>

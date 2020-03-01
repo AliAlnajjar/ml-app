@@ -18,12 +18,14 @@ const useStyles = makeStyles(theme => ({
     },
     heading: {
         textAlign: "left",
-        fontSize: "1.2rem",
+        fontSize: "1.4rem",
         fontFamily: "'Work Sans', sans-serif",
-
+    },
+    color_green:{
+        color : "#00A99D"
     },
     answer: {
-        fontSize: theme.typography.pxToRem(15),
+        fontSize: theme.typography.pxToRem(18),
         textAlign: "left",
         fontFamily: "'Work Sans', sans-serif",
     },
@@ -93,7 +95,7 @@ export default function FAQ(props) {
         ></MyExpansionPanel>
     );
     return (
-        <Section title="Spørsmål og svar ">
+        <Section title="Dette lurer folk vanligvis på ">
             <div className={classes.root}>
                 {FaqsList}
             </div>

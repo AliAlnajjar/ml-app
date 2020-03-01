@@ -75,9 +75,12 @@ export default function Footer() {
                 </Grid>
 
                 <Grid item xs={12} md={4} >
-                    <IconButton >
+                  <a href = "https://www.facebook.com/mobillandNorge/" target = "_blank">
+                  <IconButton >
                         <img src={FBIcon} alt="facebook" className={classes.img} />
                     </IconButton>
+                  </a>
+                    
                 </Grid>
             </Grid>
 

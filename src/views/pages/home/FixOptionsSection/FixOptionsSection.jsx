@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState ,useRef,useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-
+import {CardMedia,Button,Typography,Grid} from '@material-ui/core';
+// my components
 import Section from 'components/Section/Section.js'
-
+import MakeAppointmentForm from './MakeAppointmentForm.jsx'
+import SendDeviceForm from './SendDeviceForm.jsx'
 //Images
 import WeComeToYouImage from 'assets/img/we_come_to_you.jpg'
 import PostenImage from 'assets/img/posten.jpg'
@@ -40,7 +38,7 @@ const useStyles = makeStyles(theme => ({
         lineHeight: "1.6",
         textAlign: "left",
         lineHeight: "1.8",
-        textAlign: "justify",
+        // textAlign: "justify",
         fontFamily: "'Work Sans', sans-serif"
 
     },
@@ -57,19 +55,19 @@ const useStyles = makeStyles(theme => ({
         height: "100%",
         minHeight: "50%",
         backgroundSize: "cover",
-    }
-
-
+    },
 }));
 
 
 const MyButton = (props) => {
-    const classes = useStyles();
+    
+    const classes = useStyles();    
     return (
         <Button disableElevation
             size="large"
             className={classes.btn}
             endIcon={<i className="material-icons md-36">keyboard_arrow_right</i>}
+            onClick = {props.onClick}
         >
             {props.text}
         </Button>
@@ -78,22 +76,21 @@ const MyButton = (props) => {
 
 export default function FixOptionsSection(props) {
     const classes = useStyles();
-    // const { title, titlespan, titleSpanColor, desc, btnLable, img, left } = props
-    // const [showForm, setShowForm] = useState(false)
-    return (
-        <div>
-            <Section title="Har du ikke mulighet til å komme til oss? ">
+    // const formRef = useRef(null);
+    // const handelClick = (formRef)=>{window.scrollTo(0,formRef.current.offsetTop)}
 
+    return (
+            <Section title="Har du ikke mulighet til å komme til oss? ">
+                {/* ///////////////////////We come to you ///////////////////////////// */}
                 <Grid container spacing={0} className={classes.card}>
                     <Grid item xs={12} lg={7} xl={6} className={classes.textPart}>
                         <Typography variant="h5" component="h2" className={classes.title}>
                             Vi kommer til deg
                         </Typography>
-
                         <Typography variant="body2" component="p" className={classes.desc}>
                             Vi kan sende en tekniker til deg for skjermbytting av iPhone. Du slipper du å tenke på parkering rundt i byen, i tillegg til at du sparer tid for å gjøre andre ting mens teknikeren reparerer mobilen din. Vi operer foreløpig kun innenfor Bergen. Tjenesten gjelder kun for skjerm eller batteri på iphone når du forhåndsbestiller timen. Hvis du kansellerer senest kl. 12 dagen før avtaletidspunktet vil hele beløpet bli refundert.
                         </Typography>
-                        <MyButton text="Bestill time" />
+                        <MyButton text="Bestill time" onClick={null} />
                     </Grid>
                     <Grid item xs={12} lg={5} xl={6}>
                         <CardMedia
@@ -101,8 +98,10 @@ export default function FixOptionsSection(props) {
                             image={WeComeToYouImage}
                         />
                     </Grid>
+
+                    <MakeAppointmentForm />
                 </Grid>
-                {/* //////////////////////////////////////////////////// */}
+                {/* ////////////////////////send your device via post//////////////////////////// */}
                 <Grid container spacing={0} className={classes.card}>
 
                     <Grid item xs={12} md={6}>
@@ -122,14 +121,9 @@ export default function FixOptionsSection(props) {
                         </Typography>
                         <MyButton text="Fyll ut kontaktskjema" />
                     </Grid>
+                    <SendDeviceForm />
                 </Grid>
-
-
-
-
-
             </Section>
-        </div>
     );
 }
 

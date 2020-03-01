@@ -43,7 +43,7 @@ export default function SelectService(props) {
   );
   return (
     <div className={classes.root}>
-      <Grid container spacing={1}>
+      <Grid container spacing={3}>
         {DefektsList}
       </Grid>
     </div>
