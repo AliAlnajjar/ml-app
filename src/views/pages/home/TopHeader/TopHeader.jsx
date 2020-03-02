@@ -100,7 +100,7 @@ export default function TopHeader() {
                         <InfoCell
                             location={true}
                             text1_part1="man-fre&nbsp;&nbsp;11:00 - 18:00"
-                            text2_part1="lørdag&nbsp;&nbsp;&nbsp;&nbsp; 12:00 - 18:00"
+                            text2_part1="lørdag&nbsp;&nbsp;&nbsp;&nbsp; 11:00 - 18:00"
                             iconName="access_time"
                             iconColor="green"
                         ></InfoCell>

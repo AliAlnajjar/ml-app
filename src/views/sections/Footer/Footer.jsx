@@ -71,7 +71,7 @@ export default function Footer() {
             <Grid container spacing={0} justify="center" alignItems="center">
 
                 <Grid item xs={12} md={4} >
-                    &#x24B8; Mobil Fikser AS Org.nr.&nbsp;922&nbsp;739&nbsp;765
+                   Copyright &#x24B8; Mobil Fikser AS Org.nr.&nbsp;922&nbsp;739&nbsp;765
                 </Grid>
 
                 <Grid item xs={12} md={4} >

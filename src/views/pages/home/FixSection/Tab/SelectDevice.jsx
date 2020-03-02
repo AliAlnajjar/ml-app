@@ -9,6 +9,10 @@ import images from './images.js'
 
 
 const useStyles = makeStyles(theme => ({
+    root:{
+        width:"90%",
+        margin:"auto"
+    },
     Autocomplete: {
         marginTop: 0,
         // width: "100%"

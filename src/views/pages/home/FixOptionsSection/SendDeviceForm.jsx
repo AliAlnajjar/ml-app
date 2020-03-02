@@ -109,13 +109,13 @@ export default function SendDeviceForm(props) {
     return (
         <form className={classes.form} noValidate autoComplete="off">
             <Grid container spacing={_spacing}>
-                {/* konatktinformasjon */}
+                {/* Kontaktinformasjon */}
                 <Grid container spacing={3}>
                     <Grid container item xs={12} spacing={1}>
-                        {/* konatktinformasjon */}
+                        {/* Kontaktinformasjon */}
                         <Grid item xs={12} md={6} >
                             <Typography variant="h5" component="h2" className={classes.title}>
-                                Konatktinformasjon
+                                Kontaktinformasjon
                                     </Typography>
                         </Grid>
                     </Grid>

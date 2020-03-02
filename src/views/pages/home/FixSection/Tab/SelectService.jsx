@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState}from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Paper, Button } from '@material-ui/core';
 
@@ -29,6 +29,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function SelectService(props) {
   const classes = useStyles();
+
   const defectList = [
     { name: "Skjerm", image: `${DefectScreenImage}`, active: props.serviceList.includes("Skjerm") },
     { name: "Batteri", image: `${DefectBatteryImage}`, active: props.serviceList.includes("Batteri") },
@@ -81,15 +82,11 @@ const useDefektCellStyles = makeStyles(theme => ({
     opacity: "0.6"
   },
   paper_choosen: {
-    border: "3px solid #7f5eff"
+    border: "3px solid #4a4983"
   },
   img: {
     height: "70px",
     width: "70px",
-    // ['@media (max-width:780px)']: {
-    //   height: "48px",
-    //   width: "48px",
-    // }
   },
   img_grey: {
     filter: " grayscale(100%)",
@@ -100,6 +97,8 @@ const useDefektCellStyles = makeStyles(theme => ({
 const DefektCell = (props) => {
   const classes = useDefektCellStyles();
   const handelOnClick = (selectedService) => {
+    //change borders
+
     props.onSelectService(selectedService)
   }
 
@@ -109,7 +108,7 @@ const DefektCell = (props) => {
         onClick={() => { handelOnClick(props.text) }}
         disabled={!props.active}>
         <Paper
-          className={classes.paper + ` ${props.active ? classes.paper_active : classes.paper_inactive}  `}
+          className={classes.paper + ` ${props.active ? classes.paper_active : classes.paper_inactive }  `}
           elevation={2}
         >
           <img src={props.image} alt=""

@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
-
-import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
+
+import InfoCell from 'components/InfoCell/InfoCell.jsx'
+import { makeStyles } from '@material-ui/core/styles';
+
+
 
 //images 
 import Main from 'assets/img/repair.png';
@@ -71,11 +74,16 @@ const useStyles = makeStyles(theme => ({
             fontSize: "1rem",
         }
     },
+    icon:{
+
+    },
 
 
 }));
 export default function MainSection() {
     const classes = useStyles();
+    const iClass = `material-icons md-36`
+
     return (
         <div className={classes.root}>
             <Grid container spacing={2}>
@@ -85,25 +93,46 @@ export default function MainSection() {
                         Fiks Mobilen din på minutter
                     </h1>
                     <div className={classes.whyUs}>
-                        <Grid container spacing={6}>
+                        <Grid container spacing={0}>
                             <Grid item xs={6} md={6}>
-                                Best pris
-                        </Grid>
+                            
+                            <InfoCell
+                                text="Best pris"
+                                iconName="arrow_forward"
+                                iconColor="purple"
+                                iconFontSize="md-36"
+                            ></InfoCell>
+                            </Grid>
                             <Grid item xs={6} md={6}>
-                                2års garanti
-                        </Grid>
+                            <InfoCell
+                                text="2års garanti"
+                                iconName="arrow_forward"
+                                iconColor="purple"
+                                iconFontSize="md-36"
+                            ></InfoCell>
+                                
+                            </Grid>
                             <Grid item xs={6} md={6}>
-                                Rask service
-                        </Grid>
+                            <InfoCell
+                                text="Rask service"
+                                iconName="arrow_forward"
+                                iconColor="purple"
+                                iconFontSize="md-36"
+                            ></InfoCell>
+                            </Grid>
                             <Grid item xs={6} md={6}>
-                                Gratis diagnose
-                        </Grid>
+                            <InfoCell
+                                text="Gratis diagnose"
+                                iconName="arrow_forward"
+                                iconColor="purple"
+                                iconFontSize="md-36"
+                            ></InfoCell>
+                            </Grid>
                         </Grid>
                     </div>
 
                 </Grid>
                 <Grid item xs={12} md={5} lg={6}>
-
                     <div className={classes.phoneImage}>  <img src={Main} alt="Main" className={classes.img} ></img></div>
                 </Grid>
 
