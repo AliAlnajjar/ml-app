@@ -7,9 +7,13 @@ const sectionStyle = {
     section: {
         background: "#FFFFFF",
         padding: "40px 0px",
-        width: "80%",
+        width: "90%",
         maxWidth: "1620px",
-        margin: "auto"
+        margin: "auto",
+        "@media (max-width: 576px)": {
+            padding: "20px 0",
+
+        },
     },
     container: {
         boxSizing: "border-box",

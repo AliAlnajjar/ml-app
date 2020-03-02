@@ -76,9 +76,19 @@ const MyButton = (props) => {
 
 export default function FixOptionsSection(props) {
     const classes = useStyles();
-    // const formRef = useRef(null);
-    // const handelClick = (formRef)=>{window.scrollTo(0,formRef.current.offsetTop)}
+    const [showAppointmentForm, setShowAppointmentForm]  = useState(false)
+    const [showSendDeviceForm, setShowSendDeviceForm]  = useState(false)
+    const appointmentFormRef = useRef();
+    const sendDeviceFormRef = useRef();
+    useEffect(() => {
+        if (appointmentFormRef.current)
+            appointmentFormRef.current.scrollIntoView()
+      }, [showAppointmentForm])
 
+      useEffect(() => {
+        if (sendDeviceFormRef.current)
+            sendDeviceFormRef.current.scrollIntoView()
+      }, [showSendDeviceForm])
     return (
             <Section title="Har du ikke mulighet til å komme til oss? ">
                 {/* ///////////////////////We come to you ///////////////////////////// */}
@@ -90,7 +100,9 @@ export default function FixOptionsSection(props) {
                         <Typography variant="body2" component="p" className={classes.desc}>
                             Vi kan sende en tekniker til deg for skjermbytting av iPhone. Du slipper du å tenke på parkering rundt i byen, i tillegg til at du sparer tid for å gjøre andre ting mens teknikeren reparerer mobilen din. Vi operer foreløpig kun innenfor Bergen. Tjenesten gjelder kun for skjerm eller batteri på iphone når du forhåndsbestiller timen. Hvis du kansellerer senest kl. 12 dagen før avtaletidspunktet vil hele beløpet bli refundert.
                         </Typography>
-                        <MyButton text="Bestill time" onClick={null} />
+                        <MyButton text="Bestill time" 
+                        onClick={()=>{setShowAppointmentForm(true)}
+                            } />
                     </Grid>
                     <Grid item xs={12} lg={5} xl={6}>
                         <CardMedia
@@ -98,8 +110,14 @@ export default function FixOptionsSection(props) {
                             image={WeComeToYouImage}
                         />
                     </Grid>
-
-                    <MakeAppointmentForm />
+                    {showAppointmentForm ? (
+                        <div ref = {appointmentFormRef}>
+                            <MakeAppointmentForm />
+                        </div>
+                    ) : (
+                        <div></div>
+                    )}
+                    
                 </Grid>
                 {/* ////////////////////////send your device via post//////////////////////////// */}
                 <Grid container spacing={0} className={classes.card}>
@@ -119,9 +137,15 @@ export default function FixOptionsSection(props) {
                         <Typography variant="body2" component="p" className={classes.desc}>
                             Hvis du har problemer med din telefon/tablet eller pc kan du sende den til oss for sjekk eller reparere, Når enheten skal returneres, bruker vi Bring til vanlig og det koster ca. 150 med sporing. Vi kan sende den med brevpakka men med kundens ansvar Du kan bare fylle ut vårt kontaktskjema.
                         </Typography>
-                        <MyButton text="Fyll ut kontaktskjema" />
+                        <MyButton text="Fyll ut kontaktskjema" onClick = {()=>{setShowSendDeviceForm(true)}}/>
                     </Grid>
-                    <SendDeviceForm />
+                    {showSendDeviceForm ? (
+                        <div ref = {sendDeviceFormRef}>
+                            <SendDeviceForm/>
+                        </div>
+                    ) : (
+                        <div></div>
+                    )}
                 </Grid>
             </Section>
     );
