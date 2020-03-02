@@ -19,48 +19,69 @@ const useStyles = makeStyles(theme => ({
     },
     card: {
         marginBottom: "5rem",
-        backgroundColor: "none"
+        backgroundColor: "none",
+        ['@media (max-width:599px)']: {
+            marginBottom: "2rem",
+        }
     },
     textPart: {
         backgroundColor: "#E7F7F6",
         padding: "54px",
+        ['@media (max-width:599px)']: {
+            padding: "16px",
+            order: 2
 
+        }
     },
     title: {
         fontSize: "1.7rem",
         textAlign: "center",
         paddingBottom: "1em",
-        fontFamily: "'Work Sans', sans-serif"
-
+        fontFamily: "'Work Sans', sans-serif",
+        ['@media (max-width:599px)']: {
+            fontSize: "1.3rem",
+            textAlign: "center",
+            paddingBottom: ".5em",
+        }
     },
     desc: {
         fontSize: "1.1rem",
         lineHeight: "1.6",
         textAlign: "left",
         lineHeight: "1.8",
-        // textAlign: "justify",
-        fontFamily: "'Work Sans', sans-serif"
-
+        fontFamily: "'Work Sans', sans-serif",
+        ['@media (max-width:599px)']: {
+            fontSize: ".9rem",
+            textAlign: "left",
+        }
     },
     btn: {
         marginTop: "2em",
-        // color: "#28384C",
         color: "#00a99d",
         fontSize: "1.4rem",
-        // backgroundColor: "#28384C",
         padding: "0.3em 1em",
-        textTransform: "none"
+        textTransform: "none",
+        ['@media (max-width:599px)']: {
+            marginTop: ".5em",
+
+        }
     },
     mediaCard: {
         height: "100%",
         minHeight: "50%",
         backgroundSize: "cover",
+        ['@media (max-width:599px)']: {
+            height: "50vw",
+        }
+    },
+
+    form: {
+        order: 3
     },
 }));
 
 
 const MyButton = (props) => {
-
     const classes = useStyles();
     return (
         <Button disableElevation
@@ -110,13 +131,17 @@ export default function FixOptionsSection(props) {
                         image={WeComeToYouImage}
                     />
                 </Grid>
+
                 {showAppointmentForm ? (
-                    <div ref={appointmentFormRef}>
-                        <MakeAppointmentForm />
-                    </div>
+                    <Grid item xs={12} className={classes.form}>
+                        <div ref={appointmentFormRef}>
+                            <MakeAppointmentForm />
+                        </div>
+                    </Grid>
                 ) : (
                         <div></div>
                     )}
+
 
             </Grid>
             {/* ////////////////////////send your device via post//////////////////////////// */}
@@ -140,9 +165,11 @@ export default function FixOptionsSection(props) {
                     <MyButton text="Fyll ut kontaktskjema" onClick={() => { setShowSendDeviceForm(true) }} />
                 </Grid>
                 {showSendDeviceForm ? (
-                    <div ref={sendDeviceFormRef}>
-                        <SendDeviceForm />
-                    </div>
+                    <Grid item xs={12} className={classes.form}>
+                        <div ref={sendDeviceFormRef}>
+                            <SendDeviceForm />
+                        </div>
+                    </Grid>
                 ) : (
                         <div></div>
                     )}

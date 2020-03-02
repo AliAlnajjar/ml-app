@@ -14,15 +14,27 @@ const useStyles = makeStyles({
     },
     media: {
         height: 210,
-
         backgroundSize: "200px", /* Resize the background image to cover the entire container */
     },
-    BtnRoot : {
-        color :"#00A99D"
+    BtnRoot: {
+        color: "#00A99D"
     },
-    CardActionsRoot :{
+    CardActionsRoot: {
         justifyContent: "center"
-    }
+    },
+    title: {
+        ['@media (max-width:599px)']: {
+
+
+        }
+    },
+    body: {
+        ['@media (max-width:599px)']: {
+
+
+        }
+
+    },
 });
 
 export default function MediaCard(props) {
@@ -38,16 +50,18 @@ export default function MediaCard(props) {
                     title=" "
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom variant="h5" component="h2"
+                        className={classes.title}>
                         {title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography variant="body2" color="textSecondary" component="p"
+                        className={classes.body}>
                         {desc}
                     </Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions classes= {{root: classes.CardActionsRoot}}>
-                <Button size="small" classes= {{root: classes.BtnRoot}}>
+            <CardActions classes={{ root: classes.CardActionsRoot }}>
+                <Button size="small" classes={{ root: classes.BtnRoot }}>
                     {btn1Lable}
                 </Button>
             </CardActions>

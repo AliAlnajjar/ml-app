@@ -9,12 +9,19 @@ const useStyles = makeStyles(theme => ({
         padding: "16px",
         fontFamily: "Montserrat",
         borderBottom: " 1px solid rgba(112, 112, 112, 0.12);",
-        marginBottom: "8px"
+        marginBottom: "8px",
+        ['@media (max-width:599px)']: {
+            marginBottom: 0,
+        },
     },
     brand: {
         fontSize: "2.5rem",
         color: "#00A99D",
-        fontWeight: "900"
+        fontWeight: "900",
+        ['@media (max-width:599px)']: {
+            fontSize: "1.5rem",
+
+        },
     },
     infoCell: {
         fontSize: "16px"

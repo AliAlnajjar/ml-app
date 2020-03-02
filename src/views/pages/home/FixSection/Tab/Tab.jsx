@@ -81,7 +81,6 @@ export default class Tab extends Component {
                         <div className="container">
                             <SelectService
                                 serviceList={this.state.serviceList}
-                                // selectedService={this.state.selectedService}
                                 onSelectService={this.handelSelectService.bind(this)}
                             />
                         </div>
@@ -172,22 +171,22 @@ const StepHeader = (props) => {
 /////////////////////Step Number/////////////////////
 const stepNumberStyles = {
     stepNumber: {
-        // background: "#7f5eff",
         height: "30px",
         width: "30px",
         borderRadius: "50% 10% 50% 50%",
         display: "flex",
         fontSize: "1.5rem",
-        // color: "#FFFFFF",
         marginRight: "30px",
         fontWeight: 700,
         fontFamily: "Montserrat, sans-serif",
         justifyContent: "center",
+        ['@media (max-width:599px)']: {
+            height: "27px",
+            width: "27px",
+            fontSize: "1.2rem",
+
+        },
     },
-    // stepNumber_now: {
-    //     background: "#7f5eff",
-    //     color: "#FFFFFF",
-    // },
     stepNumber_done: {
         background: "#00A99D",
         color: "#FFFFFF",
@@ -213,6 +212,10 @@ const stepTitleStyles = {
         fontSize: "1.5rem",
         fontFamily: "Montserrat, sans-serif",
         color: "#000000",
+        ['@media (max-width:599px)']: {
+            fontSize: "1.35rem",
+
+        },
     },
     stepTitle_done: {
         fontWeight: 700,

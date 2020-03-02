@@ -11,8 +11,13 @@ const useStyles = makeStyles(theme => ({
         marginBottom: "5em",
         width: "80%",
         margin: "auto",
-        ['@media (max-width:1000px)']: { // eslint-disable-line no-useless-computed-key
+        ['@media (max-width:1000px)']: {
             width: "100%",
+        },
+        ['@media (max-width:599px)']: {
+            width: "90%",
+            marginTop: "2em",
+            marginBottom: "1em",
         }
     },
     textFeild: {
@@ -81,14 +86,15 @@ const defects = [
 ]
 export default function MakeAppointmentForm(props) {
     const classes = useStyles();
+    const _spacing = (window.innerWidth < 600) ? 0 : 6
     return (
         <form className={classes.form} noValidate autoComplete="off">
 
-            <Grid container spacing={6}>
+            <Grid container spacing={_spacing}>
 
                 {/* Feil på mobil */}
                 <Grid container spacing={3}>
-                    <Grid container item xs={6} spacing={1}>
+                    <Grid container item xs={12} spacing={1}>
                         {/* Om Mobil og feil */}
                         <Grid item xs={12} >
                             <Typography variant="h5" component="h2" className={classes.title}>
@@ -168,11 +174,9 @@ export default function MakeAppointmentForm(props) {
                 <Grid container spacing={3}>
                     <Divider className={classes.divider} />
                 </Grid>
-
-
                 {/* Dato*/}
                 <Grid container spacing={3}>
-                    <Grid container item xs={6} spacing={1}>
+                    <Grid container item xs={12} spacing={1}>
                         {/* Om Mobil og feil */}
                         <Grid item xs={12} md={6} >
                             <Typography variant="h5" component="h2" className={classes.title}>
@@ -197,9 +201,6 @@ export default function MakeAppointmentForm(props) {
                         </Grid>
                     </Grid>
                 </Grid>
-
-
-
                 {/* Bestill */}
                 <Grid container spacing={3} justify="center">
                     <Button className={classes.submittBtn} variant="contained" disableElevation>

@@ -20,6 +20,11 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  container: {
+    ['@media (max-width:599px)']: {
+      padding: "2px"
+    }
+  }
 }));
 
 export default function SelectService(props) {
@@ -27,10 +32,10 @@ export default function SelectService(props) {
   const defectList = [
     { name: "Skjerm", image: `${DefectScreenImage}`, active: props.serviceList.includes("Skjerm") },
     { name: "Batteri", image: `${DefectBatteryImage}`, active: props.serviceList.includes("Batteri") },
-    { name: "Bak kamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Bak kamera") },
+    { name: "Hovedkamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Hovedkamera") },
     { name: "Ladeport", image: `${DefectChargerImage}`, active: props.serviceList.includes("Ladeport") },
-    { name: "Front kamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Front kamera") },
-    { name: "Bak glass", image: `${DefectBackPanelImage}`, active: props.serviceList.includes("Bak glass") },
+    { name: "Frontkamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Frontkamera") },
+    { name: "Bakglass", image: `${DefectBackPanelImage}`, active: props.serviceList.includes("Bakglass") },
   ];
 
   const DefektsList = defectList.map((item) =>
@@ -41,12 +46,11 @@ export default function SelectService(props) {
       onSelectService={props.onSelectService}
     />
   );
+  const _spacing = (window.innerWidth < 600) ? 1 : 3
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
-        {DefektsList}
-      </Grid>
-    </div>
+    <Grid container className={classes.container} spacing={_spacing}>
+      {DefektsList}
+    </Grid>
   );
 }
 
@@ -64,10 +68,11 @@ const useDefektCellStyles = makeStyles(theme => ({
     textTransform: "none",
     fontSize: "0.9rem",
     color: "#000000",
-    // ['@media (max-width:780px)']: {
-    //   height: "82px",
-    //   width: "82px",
-    // }
+    ['@media (max-width:599px)']: {
+      height: "92px",
+      width: "82px",
+      padding: theme.spacing(2),
+    }
   },
   paper_active: {
     opacity: "1"

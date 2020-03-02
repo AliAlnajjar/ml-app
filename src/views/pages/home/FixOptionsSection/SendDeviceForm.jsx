@@ -33,7 +33,7 @@ const defects = [
     { id: 3, text: "Ladeportbytte" },
     { id: 4, text: "Hovedkamerabytte" },
     { id: 5, text: "Bakglassbytte" },
-    { id: 6, text: "Bakkamerabytte" },
+    { id: 6, text: "Frontkamerabytte" },
 ]
 const useStyles = makeStyles(theme => ({
     form: {
@@ -42,6 +42,11 @@ const useStyles = makeStyles(theme => ({
         margin: "auto",
         ['@media (max-width:1000px)']: { // eslint-disable-line no-useless-computed-key
             width: "100%",
+        },
+        ['@media (max-width:1000px)']: { // eslint-disable-line no-useless-computed-key
+            width: "90%",
+            marginTop: "2em",
+            marginbottom: "1em",
         }
     },
     textFeild: {
@@ -100,10 +105,10 @@ export default function SendDeviceForm(props) {
             'user_vnnhMCDrj0x5gHEurLkQ6'
         )
     }
-
+    const _spacing = (window.innerWidth < 600) ? 0 : 6
     return (
         <form className={classes.form} noValidate autoComplete="off">
-            <Grid container spacing={6}>
+            <Grid container spacing={_spacing}>
                 {/* konatktinformasjon */}
                 <Grid container spacing={3}>
                     <Grid container item xs={12} spacing={1}>

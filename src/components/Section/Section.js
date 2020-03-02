@@ -10,9 +10,9 @@ const sectionStyle = {
         width: "90%",
         maxWidth: "1620px",
         margin: "auto",
-        "@media (max-width: 576px)": {
+        "@media (max-width: 599px)": {
             padding: "20px 0",
-
+            width: "100%",
         },
     },
     container: {

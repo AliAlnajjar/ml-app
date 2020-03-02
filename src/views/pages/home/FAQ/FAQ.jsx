@@ -20,14 +20,23 @@ const useStyles = makeStyles(theme => ({
         textAlign: "left",
         fontSize: "1.4rem",
         fontFamily: "'Work Sans', sans-serif",
+
+        ['@media (max-width:599px)']: {
+            fontSize: "1.1rem",
+
+        }
     },
-    color_green:{
-        color : "#00A99D"
+    color_green: {
+        color: "#00A99D"
     },
     answer: {
         fontSize: theme.typography.pxToRem(18),
         textAlign: "left",
         fontFamily: "'Work Sans', sans-serif",
+        ['@media (max-width:599px)']: {
+            fontSize: ".9rem",
+
+        }
     },
 }));
 

@@ -6,18 +6,30 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
     root: {
         justifyContent: "left",
+        // ['@media (max-width:599px)']: {
+        //     display: "flex",
+        //     justifyContent: "space-around",
+
+        // }
     },
 
     header: {
         color: "black",
         fontSize: "1.5rem",
         paddingTop: 0,
-        marginTop: 0
+        marginTop: 0,
+        ['@media (max-width:599px)']: {
+            fontSize: "1.2rem",
+
+        }
     },
     price: {
         fontSize: "2.6rem",
-        color: "#00A99D"
+        color: "#00A99D",
+        ['@media (max-width:599px)']: {
+            fontSize: "2.3rem",
 
+        }
     },
     note: {
         color: "black",

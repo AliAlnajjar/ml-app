@@ -21,10 +21,10 @@ export default class FixSection extends Component {
 
 const serviceName_screen = "Skjerm"
 const serviceName_battery = "Batteri"
-const serviceName_frontCamera = "Front kamera"
-const serviceName_rearCamera = "Bak kamera"
+const serviceName_frontCamera = "Frontkamera"
+const serviceName_rearCamera = "Hovedkamera"
 const serviceName_chargingPort = "Ladeport"
-const serviceName_backPanel = "Bak glass"
+const serviceName_backPanel = "Bakglass"
 
 const qualityName_TmQuality = "TM kvalitet"
 const qualityName_refurdbishedOriginal = "refurdbished original"
