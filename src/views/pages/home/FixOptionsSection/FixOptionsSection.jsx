@@ -1,6 +1,6 @@
-import React, { useState ,useRef,useEffect} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {CardMedia,Button,Typography,Grid} from '@material-ui/core';
+import { CardMedia, Button, Typography, Grid } from '@material-ui/core';
 // my components
 import Section from 'components/Section/Section.js'
 import MakeAppointmentForm from './MakeAppointmentForm.jsx'
@@ -60,14 +60,14 @@ const useStyles = makeStyles(theme => ({
 
 
 const MyButton = (props) => {
-    
-    const classes = useStyles();    
+
+    const classes = useStyles();
     return (
         <Button disableElevation
             size="large"
             className={classes.btn}
             endIcon={<i className="material-icons md-36">keyboard_arrow_right</i>}
-            onClick = {props.onClick}
+            onClick={props.onClick}
         >
             {props.text}
         </Button>
@@ -76,78 +76,78 @@ const MyButton = (props) => {
 
 export default function FixOptionsSection(props) {
     const classes = useStyles();
-    const [showAppointmentForm, setShowAppointmentForm]  = useState(false)
-    const [showSendDeviceForm, setShowSendDeviceForm]  = useState(false)
+    const [showAppointmentForm, setShowAppointmentForm] = useState(false)
+    const [showSendDeviceForm, setShowSendDeviceForm] = useState(false)
     const appointmentFormRef = useRef();
     const sendDeviceFormRef = useRef();
     useEffect(() => {
         if (appointmentFormRef.current)
             appointmentFormRef.current.scrollIntoView()
-      }, [showAppointmentForm])
+    }, [showAppointmentForm])
 
-      useEffect(() => {
+    useEffect(() => {
         if (sendDeviceFormRef.current)
             sendDeviceFormRef.current.scrollIntoView()
-      }, [showSendDeviceForm])
+    }, [showSendDeviceForm])
     return (
-            <Section title="Har du ikke mulighet til å komme til oss? ">
-                {/* ///////////////////////We come to you ///////////////////////////// */}
-                <Grid container spacing={0} className={classes.card}>
-                    <Grid item xs={12} lg={7} xl={6} className={classes.textPart}>
-                        <Typography variant="h5" component="h2" className={classes.title}>
-                            Vi kommer til deg
+        <Section title="Har du ikke mulighet til å komme til oss? ">
+            {/* ///////////////////////We come to you ///////////////////////////// */}
+            <Grid container spacing={0} className={classes.card}>
+                <Grid item xs={12} lg={7} xl={6} className={classes.textPart}>
+                    <Typography variant="h5" component="h2" className={classes.title}>
+                        Vi kommer til deg
                         </Typography>
-                        <Typography variant="body2" component="p" className={classes.desc}>
-                            Vi kan sende en tekniker til deg for skjermbytting av iPhone. Du slipper du å tenke på parkering rundt i byen, i tillegg til at du sparer tid for å gjøre andre ting mens teknikeren reparerer mobilen din. Vi operer foreløpig kun innenfor Bergen. Tjenesten gjelder kun for skjerm eller batteri på iphone når du forhåndsbestiller timen. Hvis du kansellerer senest kl. 12 dagen før avtaletidspunktet vil hele beløpet bli refundert.
+                    <Typography variant="body2" component="p" className={classes.desc}>
+                        Vi kan sende en tekniker til deg for skjermbytting av iPhone. Du slipper du å tenke på parkering rundt i byen, i tillegg til at du sparer tid for å gjøre andre ting mens teknikeren reparerer mobilen din. Vi operer foreløpig kun innenfor Bergen. Tjenesten gjelder kun for skjerm eller batteri på iphone når du forhåndsbestiller timen. Hvis du kansellerer senest kl. 12 dagen før avtaletidspunktet vil hele beløpet bli refundert.
                         </Typography>
-                        <MyButton text="Bestill time" 
-                        onClick={()=>{setShowAppointmentForm(true)}
-                            } />
-                    </Grid>
-                    <Grid item xs={12} lg={5} xl={6}>
-                        <CardMedia
-                            className={classes.mediaCard}
-                            image={WeComeToYouImage}
-                        />
-                    </Grid>
-                    {showAppointmentForm ? (
-                        <div ref = {appointmentFormRef}>
-                            <MakeAppointmentForm />
-                        </div>
-                    ) : (
+                    <MyButton text="Bestill time"
+                        onClick={() => { setShowAppointmentForm(true) }
+                        } />
+                </Grid>
+                <Grid item xs={12} lg={5} xl={6}>
+                    <CardMedia
+                        className={classes.mediaCard}
+                        image={WeComeToYouImage}
+                    />
+                </Grid>
+                {showAppointmentForm ? (
+                    <div ref={appointmentFormRef}>
+                        <MakeAppointmentForm />
+                    </div>
+                ) : (
                         <div></div>
                     )}
-                    
+
+            </Grid>
+            {/* ////////////////////////send your device via post//////////////////////////// */}
+            <Grid container spacing={0} className={classes.card}>
+
+                <Grid item xs={12} md={6}>
+                    <CardMedia
+                        className={classes.mediaCard}
+                        image={PostenImage}
+                    />
                 </Grid>
-                {/* ////////////////////////send your device via post//////////////////////////// */}
-                <Grid container spacing={0} className={classes.card}>
 
-                    <Grid item xs={12} md={6}>
-                        <CardMedia
-                            className={classes.mediaCard}
-                            image={PostenImage}
-                        />
-                    </Grid>
-
-                    <Grid item xs={12} md={6} className={classes.textPart}>
-                        <Typography variant="h5" component="h2" className={classes.title}>
-                            Send din enhet på Posten
+                <Grid item xs={12} md={6} className={classes.textPart}>
+                    <Typography variant="h5" component="h2" className={classes.title}>
+                        Send din enhet på Posten
                         </Typography>
 
-                        <Typography variant="body2" component="p" className={classes.desc}>
-                            Hvis du har problemer med din telefon/tablet eller pc kan du sende den til oss for sjekk eller reparere, Når enheten skal returneres, bruker vi Bring til vanlig og det koster ca. 150 med sporing. Vi kan sende den med brevpakka men med kundens ansvar Du kan bare fylle ut vårt kontaktskjema.
+                    <Typography variant="body2" component="p" className={classes.desc}>
+                        Hvis du har problemer med din telefon/tablet eller pc kan du sende den til oss for sjekk eller reparere, Når enheten skal returneres, bruker vi Bring til vanlig og det koster ca. 150 med sporing. Vi kan sende den med brevpakka men med kundens ansvar Du kan bare fylle ut vårt kontaktskjema.
                         </Typography>
-                        <MyButton text="Fyll ut kontaktskjema" onClick = {()=>{setShowSendDeviceForm(true)}}/>
-                    </Grid>
-                    {showSendDeviceForm ? (
-                        <div ref = {sendDeviceFormRef}>
-                            <SendDeviceForm/>
-                        </div>
-                    ) : (
+                    <MyButton text="Fyll ut kontaktskjema" onClick={() => { setShowSendDeviceForm(true) }} />
+                </Grid>
+                {showSendDeviceForm ? (
+                    <div ref={sendDeviceFormRef}>
+                        <SendDeviceForm />
+                    </div>
+                ) : (
                         <div></div>
                     )}
-                </Grid>
-            </Section>
+            </Grid>
+        </Section>
     );
 }
 

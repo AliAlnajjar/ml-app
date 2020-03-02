@@ -10,7 +10,6 @@ const useStyles = makeStyles(theme => ({
         fontFamily: "Montserrat",
         borderBottom: " 1px solid rgba(112, 112, 112, 0.12);",
         marginBottom: "8px"
-
     },
     brand: {
         fontSize: "2.5rem",
@@ -32,7 +31,6 @@ const useStyles = makeStyles(theme => ({
     infoCell_icon: {
         textAlign: "right",
     }
-
 }));
 
 const InfoCell = (props) => {
@@ -51,22 +49,17 @@ const InfoCell = (props) => {
                 ) : (
                         <Grid item md={10} className={classes.infoCell_text_location}>
                             <Grid container spacing={1}>
-
                                 <Grid item xs={12} >
                                     {props.text1_part1}
                                 </Grid>
-
                                 <Grid item xs={12} >
                                     {props.text2_part1}
                                 </Grid>
-
                             </Grid>
                         </Grid>
                     )}
-
             </Grid>
         </div>
-
     )
 }
 export default function TopHeader() {
@@ -78,8 +71,7 @@ export default function TopHeader() {
                 <Grid item xs={12} md={4} >
                     <div className={classes.brand}>
                         Mobilland
-
-                </div>
+                    </div>
                 </Grid>
 
                 <Hidden smDown >
@@ -90,10 +82,7 @@ export default function TopHeader() {
                             iconColor="green"
                         ></InfoCell>
                     </Grid>
-
-
                     <Grid item xs={12} md={2}>
-
                         <InfoCell
                             text="Solheimsgaten 33"
                             iconName="location_on"
@@ -108,11 +97,9 @@ export default function TopHeader() {
                             iconName="access_time"
                             iconColor="green"
                         ></InfoCell>
-
                     </Grid>
                 </Hidden>
             </Grid>
-
         </div>
     )
 
