@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Grid, TextField, Typography, Divider } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import axios from 'axios';
 
-import emailjs from 'emailjs-com'
 const iPhones = [
     { id: 1, text: "iPhone 11 Pro Max" },
     { id: 2, text: "iPhone 11 Pro" },
@@ -75,8 +75,6 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-
-
 export default function SendDeviceForm(props) {
     const classes = useStyles();
     // const handelClick = (formRef)=>{window.scrollTo(0,formRef.current.offsetTop)}
@@ -89,21 +87,24 @@ export default function SendDeviceForm(props) {
     const [desc, setDesc] = useState();
     const [passCode, setPassCode] = useState();
 
-
-
     const sendEmail = () => {
-        let templateParams = {
-            from_name: email,
-            to_name: 'ali_alnajjar@live.com',
-            subject: "send device via posten",
-            message_html: desc,
-        }
-        emailjs.send(
-            'outlook',
-            'template_Vg0MIkae',
-            templateParams,
-            'user_vnnhMCDrj0x5gHEurLkQ6'
-        )
+        const API_PATH = 'https://mobilland.no/api/sendMail.php';
+        let mailDetails = {
+            fname: name,
+            lname: '',
+            email: email,
+            message: desc,
+          }
+        axios({
+            method: 'post',
+            url: `${API_PATH}`,
+            headers: { 'content-type': 'application/json' },
+            data: mailDetails
+          })
+            .then(result => {
+              console.log(result)
+            })
+            .catch(error => console.log(error))
     }
     const _spacing = (window.innerWidth < 600) ? 0 : 6
     return (
@@ -166,8 +167,6 @@ export default function SendDeviceForm(props) {
                 <Grid container spacing={3}>
                     <Divider className={classes.divider} />
                 </Grid>
-
-
                 {/* Om mobil */}
                 <Grid container spacing={3}>
                     <Grid container item xs={12} spacing={1}>
@@ -217,7 +216,6 @@ export default function SendDeviceForm(props) {
                         </Grid>
                     </Grid>
                 </Grid>
-
                 {/* Send skjema */}
                 <Grid container spacing={3} justify="center">
                     <Button className={classes.submittBtn} variant="contained" disableElevation

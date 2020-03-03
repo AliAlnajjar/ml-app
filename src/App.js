@@ -8,10 +8,7 @@ import FixOptionsSection from './views/pages/home/FixOptionsSection/FixOptionsSe
 import FAQ from './views/pages/home/FAQ/FAQ.jsx'
 
 import Footer from './views/sections/Footer/Footer'
-
-import IconButton from '@material-ui/core/IconButton';
-import MessengerIcon from 'components/MessengerIcon/MessengerIcon.jsx'
-
+import FliperText from 'components/FliperText/FliperText.jsx'
 
 class App extends Component {
 
@@ -19,6 +16,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        {/* <FliperText /> */}
         <TopHeader />
         <div className="AppContent">
           <MainSection />
