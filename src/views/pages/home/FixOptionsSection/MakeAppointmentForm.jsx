@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Grid, TextField, Typography, Divider, makeStyles } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-
+import sendEmail from './sendEmail.js'
 // my components
 import DatePicker from './DatePicker.jsx'
 
@@ -84,18 +84,51 @@ const defects = [
     { id: 1, text: "Skjermbytte" },
     { id: 2, text: "Batteribytte" },
 ]
+
+
 export default function MakeAppointmentForm(props) {
     const classes = useStyles();
+
+    const [name, setName] = useState();
+    const [address, setAddress] = useState({ streetNo: "", Zip: "", city: "" });
+    const [email, setEmail] = useState();
+    const [mobileNo, setMobileNo] = useState();
+    const [phoneModel, setPhoneModel] = useState();
+    const [service, setService] = useState();
+    const todayDate = new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear()
+    const [date, setDate] = useState(todayDate);
+    const [time, setTime] = useState();
+
+    const [validation, setvalidation] = useState({ name: null, streetNo: null, Zip: null, city: null, mobileNo: null, phoneModel: null, service: null, date: null, time: null, });
+    const validationErrorMSG = "Vennligst fyll ut dette feltet"
+
+    const sendMail = () => {
+        if (!invalidForm())
+            sendEmail(name, address, email, mobileNo, phoneModel, service, null, null, date, time, 'appointment')
+    }
+    const invalidForm = () => {
+        //initial state 
+        if (validation.name === null && validation.streetNo === null && validation.Zip === null && validation.city === null && validation.mobileNo === null && validation.phoneModel === null && validation.service === null && validation.date === null && validation.time === null) {
+            setvalidation({ name: true, streetNo: true, Zip: true, city: true, mobileNo: true, phoneModel: true, service: true, date: false, time: true });
+            return true
+        }
+        setvalidation({ name: !name, streetNo: !address.streetNo, Zip: !address.Zip, city: !address.city, mobileNo: !mobileNo, phoneModel: !phoneModel, service: !service, date: !date, time: !time });
+        // return validation result 
+        console.log(validation.name, validation.streetNo, validation.Zip, validation.city, validation.mobileNo, validation.phoneModel, validation.service, validation.date, validation.time)
+
+        return (validation.name || validation.streetNo || validation.Zip || validation.city || validation.mobileNo || validation.phoneModel || validation.service || validation.date || validation.time)
+    }
+    const handelDateChange = (date) => {
+        date ? setDate(date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear()) : setDate(null)
+    }
     const _spacing = (window.innerWidth < 600) ? 0 : 6
     return (
         <form className={classes.form} noValidate autoComplete="off">
 
             <Grid container spacing={_spacing}>
-
-                {/* Feil på mobil */}
+                {/* Om Mobil og feil */}
                 <Grid container spacing={3}>
                     <Grid container item xs={12} spacing={1}>
-                        {/* Om Mobil og feil */}
                         <Grid item xs={12} >
                             <Typography variant="h5" component="h2" className={classes.title}>
                                 Ønsket service og mobilmodell <span className={classes.noteSpan}>(kun iPhone)</span>
@@ -103,23 +136,30 @@ export default function MakeAppointmentForm(props) {
                         </Grid>
                     </Grid>
                     <Grid container item xs={12} spacing={1}>
+                        {/*  Mobil Model */}
                         <Grid item xs={12} md={6} >
-                            {/* <FormControl  component="fieldset" margin="none"  fullWidth={true}> */}
                             <Autocomplete
-                                id="timePicker"
+                                id="Model"
                                 options={iPhones}
                                 getOptionLabel={option => option.text}
-                                renderInput={params => <TextField {...params} label="Modell" variant="outlined" fullWidth />}
+                                renderInput={params => <TextField {...params} label="Modell" variant="outlined" fullWidth
+                                    helperText={validation.phoneModel && validationErrorMSG}
+                                    error={validation.phoneModel}
+                                />}
+
+                                onChange={(e, selectedDevice) => { setPhoneModel(selectedDevice ? selectedDevice.text : null); setvalidation({ ...validation, phoneModel: selectedDevice ? false : true }) }}
                             />
-                            {/* </FormControl> */}
                         </Grid>
-                        {/* modell */}
+                        {/* Service */}
                         <Grid item xs={12} md={6} >
                             <Autocomplete
-                                id="timePicker"
                                 options={defects}
                                 getOptionLabel={option => option.text}
-                                renderInput={params => <TextField {...params} label="Service" variant="outlined" fullWidth />}
+                                renderInput={params => <TextField {...params} label="Service" variant="outlined" fullWidth
+                                    helperText={validation.service && validationErrorMSG}
+                                    error={validation.service}
+                                />}
+                                onChange={(e, selectedService) => { setService(selectedService ? selectedService.text : null); setvalidation({ ...validation, service: selectedService ? false : true }) }}
                             />
                         </Grid>
 
@@ -142,31 +182,55 @@ export default function MakeAppointmentForm(props) {
                     <Grid container item xs={12} spacing={1}>
                         {/* Fullnavn */}
                         <Grid item xs={12} md={6} >
-                            <TextField className={classes.textFeild} id="name" label="Fullnavn" variant="outlined" />
+                            <TextField className={classes.textFeild} id="name" label="Fullnavn" variant="outlined"
+                                helperText={validation.name && validationErrorMSG}
+                                error={validation.name}
+                                autoComplete="off"
+                                onChange={(e) => { setName(e.target.value); setvalidation({ ...validation, name: e.target.value ? false : true }) }}
+                            />
                         </Grid>
                     </Grid>
                     <Grid container item xs={12} spacing={1}>
                         {/* Gate og husnummer */}
                         <Grid item xs={12} md={6} >
-                            <TextField className={classes.textFeild} id="address" label="Gate og husnummer" variant="outlined" />
+                            <TextField className={classes.textFeild} id="address" label="Gate og husnummer" variant="outlined"
+                                helperText={validation.streetNo && validationErrorMSG}
+                                error={validation.streetNo}
+                                onChange={(e) => { setAddress({ ...address, streetNo: e.target.value }); setvalidation({ ...validation, streetNo: e.target.value ? false : true }) }}
+
+                            />
                         </Grid>
                         {/* Postnummer */}
                         <Grid item xs={12} md={6} >
-                            <TextField className={classes.textFeild} id="Postnummer" label="Postnummer" variant="outlined" />
+                            <TextField className={classes.textFeild} id="Postnummer" label="Postnummer" variant="outlined"
+                                helperText={validation.Zip && validationErrorMSG}
+                                error={validation.Zip}
+                                onChange={(e) => { console.log(e.target.value); setAddress({ ...address, Zip: e.target.value }); setvalidation({ ...validation, Zip: (e.target.value ? false : true) }) }}
+                            />
                         </Grid>
                         {/* Sted */}
                         <Grid item xs={12} md={6} >
-                            <TextField className={classes.textFeild} id="Sted" label="Sted" variant="outlined" />
+                            <TextField className={classes.textFeild} id="Sted" label="Sted" variant="outlined"
+                                helperText={validation.city && validationErrorMSG}
+                                error={validation.city}
+                                onChange={(e) => { setAddress({ ...address, city: e.target.value }); setvalidation({ ...validation, city: (e.target.value ? false : true) }) }}
+                            />
                         </Grid>
                     </Grid>
                     <Grid container item xs={12} spacing={1}>
                         {/* E-post */}
                         <Grid item xs={12} md={6}  >
-                            <TextField className={classes.textFeild} id="email" label="E-post" variant="outlined" />
+                            <TextField className={classes.textFeild} id="email" label="E-post" variant="outlined"
+                                onChange={(e) => { setEmail(e.target.value) }}
+                            />
                         </Grid>
                         { /* Mobilnummer */}
                         <Grid item xs={12} md={6}  >
-                            <TextField className={classes.textFeild} id="mobil" label="Mobilnummer" variant="outlined" />
+                            <TextField className={classes.textFeild} id="mobil" label="Mobilnummer" variant="outlined"
+                                helperText={validation.mobileNo && validationErrorMSG}
+                                error={validation.mobileNo}
+                                onChange={(e) => { setMobileNo(e.target.value); setvalidation({ ...validation, mobileNo: e.target.value ? false : true }) }}
+                            />
                         </Grid>
                     </Grid>
                 </Grid>
@@ -174,10 +238,9 @@ export default function MakeAppointmentForm(props) {
                 <Grid container spacing={3}>
                     <Divider className={classes.divider} />
                 </Grid>
-                {/* Dato*/}
+                {/* Date and Time*/}
                 <Grid container spacing={3}>
                     <Grid container item xs={12} spacing={1}>
-                        {/* Om Mobil og feil */}
                         <Grid item xs={12} md={6} >
                             <Typography variant="h5" component="h2" className={classes.title}>
                                 Dato og tidspunkt
@@ -185,25 +248,31 @@ export default function MakeAppointmentForm(props) {
                         </Grid>
                     </Grid>
                     <Grid container item xs={12} spacing={1}>
-                        {/* modell */}
+                        {/* Date */}
                         <Grid item xs={12} md={6} >
-                            <DatePicker />
+                            <DatePicker change={handelDateChange} />
                         </Grid>
+                        {/* Time */}
                         <Grid item xs={12} md={6} >
-                            {/* <FormControl  component="fieldset" margin="none"  fullWidth={true}> */}
                             <Autocomplete
                                 id="timePicker"
                                 options={Times}
                                 getOptionLabel={option => option.text}
-                                renderInput={params => <TextField {...params} label="Tidspunkt" variant="outlined" fullWidth />}
+                                renderInput={params => <TextField {...params} label="Tidspunkt" variant="outlined" fullWidth
+                                    helperText={validation.time && validationErrorMSG}
+                                    error={validation.time}
+                                />}
+                                onChange={(e, time) => { setTime(time ? time.text : ''); setvalidation({ ...validation, time: time ? false : true }) }}
+
                             />
-                            {/* </FormControl> */}
                         </Grid>
                     </Grid>
                 </Grid>
                 {/* Bestill */}
                 <Grid container spacing={3} justify="center">
-                    <Button className={classes.submittBtn} variant="contained" disableElevation>
+                    <Button className={classes.submittBtn} variant="contained" disableElevation
+                        onClick={sendMail}
+                    >
                         Bestill
                         </Button>
                 </Grid>

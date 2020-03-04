@@ -1,11 +1,15 @@
 import React from 'react';
-import { Grid} from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
     infoCell: {
-        fontSize: "18px"
+        fontSize: "18px",
+        ['@media (min-width:600px)']: {
+            fontSize: "22px",
+
+        },
     },
     infoCell_text: {
         textAlign: "left",
@@ -21,9 +25,9 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default function InfoCell  (props) {
+export default function InfoCell(props) {
     const classes = useStyles();
-    const iClass = `material-icons ${props.iconFontSize+" "+ props.iconColor}`
+    const iClass = `material-icons ${props.iconFontSize + " " + props.iconColor}`
     return (
         <div className={classes.infoCell}>
             <Grid container spacing={0}>

@@ -103,12 +103,12 @@ export default function FixOptionsSection(props) {
     const sendDeviceFormRef = useRef();
     useEffect(() => {
         if (appointmentFormRef.current)
-            appointmentFormRef.current.scrollIntoView()
+            appointmentFormRef.current.scrollIntoView(false)
     }, [showAppointmentForm])
 
     useEffect(() => {
         if (sendDeviceFormRef.current)
-            sendDeviceFormRef.current.scrollIntoView()
+            sendDeviceFormRef.current.scrollIntoView(false)
     }, [showSendDeviceForm])
     return (
         <Section title="Har du ikke mulighet til å komme til oss? ">

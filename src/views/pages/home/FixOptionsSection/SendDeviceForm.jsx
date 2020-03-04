@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Grid, TextField, Typography, Divider } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import axios from 'axios';
+import sendEmail from './sendEmail.js'
 
 const iPhones = [
     { id: 1, text: "iPhone 11 Pro Max" },
@@ -77,7 +77,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function SendDeviceForm(props) {
     const classes = useStyles();
-    // const handelClick = (formRef)=>{window.scrollTo(0,formRef.current.offsetTop)}
+
     const [name, setName] = useState();
     const [address, setAddress] = useState({ streetNo: "", Zip: "", city: "" });
     const [email, setEmail] = useState();
@@ -87,24 +87,25 @@ export default function SendDeviceForm(props) {
     const [desc, setDesc] = useState();
     const [passCode, setPassCode] = useState();
 
-    const sendEmail = () => {
-        const API_PATH = 'https://mobilland.no/api/sendMail.php';
-        let mailDetails = {
-            fname: name,
-            lname: '',
-            email: email,
-            message: desc,
-          }
-        axios({
-            method: 'post',
-            url: `${API_PATH}`,
-            headers: { 'content-type': 'application/json' },
-            data: mailDetails
-          })
-            .then(result => {
-              console.log(result)
-            })
-            .catch(error => console.log(error))
+    const [validation, setValidation] = useState({ name: null, streetNo: null, Zip: null, city: null, mobileNo: null, phoneModel: null, service: null, desc: null });
+    const validationErrorMSG = "Vennligst fyll ut dette feltet"
+    const sendMail = () => {
+        if (!invalidForm())
+            sendEmail(name, address, email, mobileNo, phoneModel, service, desc, passCode, 'sendDevice')
+        else
+            console.log('notValid')
+    }
+    const invalidForm = () => {
+        // initial state 
+        if (validation.name === null || validation.streetNo === null || validation.Zip === null || validation.city === null || validation.mobileNo === null || validation.phoneModel === null || validation.service === null || validation.desc === null) {
+            setValidation({ name: true, streetNo: true, Zip: true, city: true, mobileNo: true, phoneModel: true, service: true, desc: true });
+            return true;
+        }
+        // validate 
+        setValidation({ name: !name, streetNo: !address.streetNo, Zip: !address.Zip, city: !address.city, mobileNo: !mobileNo, phoneModel: !phoneModel, service: !service, desc: !desc });
+        // return validation result 
+        return (validation.name || validation.streetNo || validation.Zip || validation.city || validation.mobileNo || validation.phoneModel || validation.service || validation.desc)
+
     }
     const _spacing = (window.innerWidth < 600) ? 0 : 6
     return (
@@ -113,18 +114,20 @@ export default function SendDeviceForm(props) {
                 {/* Kontaktinformasjon */}
                 <Grid container spacing={3}>
                     <Grid container item xs={12} spacing={1}>
-                        {/* Kontaktinformasjon */}
                         <Grid item xs={12} md={6} >
                             <Typography variant="h5" component="h2" className={classes.title}>
                                 Kontaktinformasjon
-                                    </Typography>
+                            </Typography>
                         </Grid>
                     </Grid>
                     <Grid container item xs={12} spacing={1}>
                         {/* Fullnavn */}
                         <Grid item xs={12} md={6} >
                             <TextField className={classes.textFeild} id="name" label="Fullnavn" variant="outlined"
-                                onChange={(e) => { setName(e.target.value) }}
+                                required={true}
+                                helperText={validation.name && validationErrorMSG}
+                                error={validation.name}
+                                onChange={(e) => { setName(e.target.value); setValidation({ ...validation, name: (e.target.value ? false : true) }) }}
                             />
                         </Grid>
                     </Grid>
@@ -132,19 +135,28 @@ export default function SendDeviceForm(props) {
                         {/* Gate og husnummer */}
                         <Grid item xs={12} md={6} >
                             <TextField className={classes.textFeild} id="address" label="Gate og husnummer" variant="outlined"
-                                onChange={(e) => { setAddress({ ...address, streetNo: e.target.value }) }}
+                                required={true}
+                                helperText={validation.streetNo && validationErrorMSG}
+                                error={validation.streetNo}
+                                onChange={(e) => { setAddress({ ...address, streetNo: e.target.value }); setValidation({ ...validation, streetNo: (e.target.value ? false : true) }) }}
                             />
                         </Grid>
                         {/* Postnummer */}
                         <Grid item xs={12} md={6} >
                             <TextField className={classes.textFeild} id="Postnummer" label="Postnummer" variant="outlined"
-                                onChange={(e) => { setAddress({ ...address, Zip: e.target.value }) }}
+                                required={true}
+                                helperText={validation.Zip && validationErrorMSG}
+                                error={validation.Zip}
+                                onChange={(e) => { setAddress({ ...address, Zip: e.target.value }); setValidation({ ...validation, Zip: (e.target.value ? false : true) }) }}
                             />
                         </Grid>
                         {/* Sted */}
                         <Grid item xs={12} md={6} >
                             <TextField className={classes.textFeild} id="Sted" label="Sted" variant="outlined"
-                                onChange={(e) => { setAddress({ ...address, city: e.target.value }) }}
+                                required={true}
+                                helperText={validation.city && validationErrorMSG}
+                                error={validation.city}
+                                onChange={(e) => { setAddress({ ...address, city: e.target.value }); setValidation({ ...validation, city: (e.target.value ? false : true) }) }}
                             />
                         </Grid>
                     </Grid>
@@ -158,7 +170,10 @@ export default function SendDeviceForm(props) {
                         { /* Mobilnummer */}
                         <Grid item xs={12} md={6}  >
                             <TextField className={classes.textFeild} id="mobil" label="Mobilnummer" variant="outlined"
-                                onChange={(e) => { setMobileNo(e.target.value) }}
+                                required={true}
+                                helperText={validation.mobileNo && validationErrorMSG}
+                                error={validation.mobileNo}
+                                onChange={(e) => { setMobileNo(e.target.value); setValidation({ ...validation, mobileNo: (e.target.value ? false : true) }) }}
                             />
                         </Grid>
                     </Grid>
@@ -167,14 +182,13 @@ export default function SendDeviceForm(props) {
                 <Grid container spacing={3}>
                     <Divider className={classes.divider} />
                 </Grid>
-                {/* Om mobil */}
+                {/* Om Mobil og feil */}
                 <Grid container spacing={3}>
                     <Grid container item xs={12} spacing={1}>
-                        {/* Om Mobil og feil */}
                         <Grid item xs={12} md={6} >
                             <Typography variant="h5" component="h2" className={classes.title}>
                                 Om mobilen
-                                    </Typography>
+                            </Typography>
                         </Grid>
                     </Grid>
                     <Grid container item xs={12} spacing={1}>
@@ -183,18 +197,25 @@ export default function SendDeviceForm(props) {
                             <Autocomplete
                                 options={iPhones}
                                 getOptionLabel={option => option.text}
-                                renderInput={params => <TextField {...params} label="Modell" variant="outlined" fullWidth />}
-                                onChange={(e, selectedDevice) => { setPhoneModel(selectedDevice.text) }}
-
+                                renderInput={params => <TextField {...params} label="Modell" variant="outlined" fullWidth
+                                    // required={true}
+                                    helperText={validation.phoneModel && validationErrorMSG}
+                                    error={validation.phoneModel}
+                                />}
+                                onChange={(e, selectedDevice) => { setPhoneModel(selectedDevice ? selectedDevice.text : null); setValidation({ ...validation, phoneModel: (selectedDevice ? false : true) }) }}
                             />
                         </Grid>
-                        {/* modell */}
+                        {/* service */}
                         <Grid item xs={12} md={6} >
                             <Autocomplete
                                 options={defects}
                                 getOptionLabel={option => option.text}
-                                renderInput={params => <TextField {...params} label="Service" variant="outlined" fullWidth />}
-                                onChange={(e, selectedService) => { setService(selectedService.text) }}
+                                renderInput={params => <TextField {...params} label="Service" variant="outlined" fullWidth
+                                    // required={true}
+                                    helperText={validation.service && validationErrorMSG}
+                                    error={validation.service}
+                                />}
+                                onChange={(e, selectedService) => { setService(selectedService ? selectedService.text : null); setValidation({ ...validation, service: (selectedService ? false : true) }) }}
                             />
                         </Grid>
 
@@ -203,7 +224,10 @@ export default function SendDeviceForm(props) {
                         {/* feil beskrivelse */}
                         <Grid item xs={12} >
                             <TextField className={classes.textFeild} id="feil_beskrivelse" label="Feil beskrivelse" variant="outlined" multiline rows="6"
-                                onChange={(e) => { setDesc(e.target.value) }}
+                                required={true}
+                                helperText={validation.desc && validationErrorMSG}
+                                error={validation.desc}
+                                onChange={(e) => { setDesc(e.target.value); setValidation({ ...validation, desc: (e.target.value ? false : true) }) }}
                             />
                         </Grid>
                     </Grid>
@@ -218,11 +242,9 @@ export default function SendDeviceForm(props) {
                 </Grid>
                 {/* Send skjema */}
                 <Grid container spacing={3} justify="center">
-                    <Button className={classes.submittBtn} variant="contained" disableElevation
-                        onClick={sendEmail}
-                    >
+                    <Button className={classes.submittBtn} variant="contained" disableElevation onClick={sendMail}>
                         Send skjema
-                        </Button>
+                    </Button>
                 </Grid>
             </Grid>
         </form>

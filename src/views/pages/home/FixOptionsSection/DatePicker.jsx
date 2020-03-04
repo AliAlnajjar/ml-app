@@ -5,10 +5,11 @@ import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider, KeyboardDatePicker, } from '@material-ui/pickers';
 
-export default function DatePicker() {
+export default function DatePicker(props) {
   const [selectedDate, setSelectedDate] = React.useState();
   const handleDateChange = date => {
     setSelectedDate(date);
+    props.change(date)
   };
   return (
     <FormControl component="fieldset" margin="none" fullWidth={true}>
