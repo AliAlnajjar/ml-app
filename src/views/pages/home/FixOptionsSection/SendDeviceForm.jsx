@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Grid, TextField, Typography, Divider } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import sendEmail from './sendEmail.js'
+import composeEmail from './composeEmail.js';
+import axios from 'axios'
 
 const iPhones = [
     { id: 1, text: "iPhone 11 Pro Max" },
@@ -90,10 +91,20 @@ export default function SendDeviceForm(props) {
     const [validation, setValidation] = useState({ name: null, streetNo: null, Zip: null, city: null, mobileNo: null, phoneModel: null, service: null, desc: null });
     const validationErrorMSG = "Vennligst fyll ut dette feltet"
     const sendMail = () => {
-        if (!invalidForm())
-            sendEmail(name, address, email, mobileNo, phoneModel, service, desc, passCode, 'sendDevice')
-        else
-            console.log('notValid')
+        if (!invalidForm()){
+            const mailDetails =  composeEmail(name, address, email, mobileNo, phoneModel, service, desc, passCode, 'sendDevice')
+            const API_PATH = 'https://mobilland.no/api/send_mail.php';
+            axios({
+                method: 'post',
+                url: `${API_PATH}`,
+                headers: { 'content-type': 'application/json' },
+                data: mailDetails
+            })
+                .then(result => { props.onDone (true) })
+                .catch(error => { return (error) })
+
+        }
+        
     }
     const invalidForm = () => {
         // initial state 

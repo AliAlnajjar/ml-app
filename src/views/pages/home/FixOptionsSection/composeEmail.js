@@ -1,34 +1,33 @@
 
-import axios from 'axios';
 
-const sendEmail = (name = '', address = {}, email = '', mobileNo = '', phoneModel = '', service = '', desc = '', passCode = '', date = '', time = '', msgType) => {
+const composeEmail = (name = '', address = {}, email = '', mobileNo = '', phoneModel = '', service = '', desc = '', passCode = '', date = '', time = '', msgType) => {
     const composeMessage = () => {
         if (msgType && msgType == 'appointment') {
             return (
                 `<div>
                     <p>
-                    name: ${name}
+                    Full Name: ${name}
                     </p>
                     <p>
-                    address: ${address['streetNo']}  <br/> ${address['Zip'] + ' ' + address['city']}
+                    Address: ${address['streetNo']}  <br/> ${address['Zip'] + ' ' + address['city']}
                     </p>
                     <p>
-                    email: ${email}
+                    Email: ${email}
                     </p>
                     <p>
-                    mobile: ${mobileNo}
+                    Mobile: ${mobileNo}
                     </p>
                     <p>
-                    phoneModel: ${phoneModel}
+                    Phone Model: ${phoneModel}
                     </p>
                     <p>
-                    service: ${service}
+                    Service: ${service}
                     </p>
                     <p>
-                    date: ${date}
+                    Date: ${date}
                     </p>
                     <p>
-                    time: ${time}
+                    Time: ${time}
                     </p>
                 </div>`
             )
@@ -37,25 +36,25 @@ const sendEmail = (name = '', address = {}, email = '', mobileNo = '', phoneMode
             return (
                 `<div>
                     <p>
-                    name: ${name}
+                    Full Name: ${name}
                     </p>
                     <p>
-                    address: ${address['streetNo']}  <br/> ${address['Zip'] + ' ' + address['city']}
+                    Address: ${address['streetNo']}  <br/> ${address['Zip'] + ' ' + address['city']}
                     </p>
                     <p>
-                    email: ${email}
+                    Email: ${email}
                     </p>
                     <p>
-                    mobile: ${mobileNo}
+                    Mobile number: ${mobileNo}
                     </p>
                     <p>
-                    phoneModel: ${phoneModel}
+                    Phone Model: ${phoneModel}
                     </p>
                     <p>
-                    service: ${service}
+                    Service: ${service}
                     </p>
                     <p>
-                    description: ${desc}
+                    Description: ${desc}
                     </p>
                     <p>
                     passCode: ${passCode}
@@ -63,21 +62,12 @@ const sendEmail = (name = '', address = {}, email = '', mobileNo = '', phoneMode
                 </div>`
             )
         }
-
     }
-    const API_PATH = 'https://mobilland.no/api/send_mail.php';
-
     let mailDetails = {
         subject: (msgType && msgType == 'appointment') ? 'Bestille time' : 'Posten..' + name || '' + '..' + email || '',
         message: composeMessage(),
     }
-    axios({
-        method: 'post',
-        url: `${API_PATH}`,
-        headers: { 'content-type': 'application/json' },
-        data: mailDetails
-    })
-        .then(result => { return (result) })
-        .catch(error => { return (error) })
+    return mailDetails
+    
 }
-export default sendEmail;
+export default composeEmail;

@@ -30,21 +30,30 @@ const useStyles = makeStyles(theme => ({
 export default function SelectService(props) {
   const classes = useStyles();
 
+  const [chosen, setChosen] = useState ([{"Skjerm":true},{"Batteri":true},{"Hovedkamera":false},{"Ladeport":false},{"Frontkamera":false},{"Bakglass":false}])
+
   const defectList = [
     { name: "Skjerm", image: `${DefectScreenImage}`, active: props.serviceList.includes("Skjerm") },
     { name: "Batteri", image: `${DefectBatteryImage}`, active: props.serviceList.includes("Batteri") },
     { name: "Hovedkamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Hovedkamera") },
     { name: "Ladeport", image: `${DefectChargerImage}`, active: props.serviceList.includes("Ladeport") },
-    { name: "Frontkamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Frontkamera") },
+    {  name: "Frontkamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Frontkamera") },
     { name: "Bakglass", image: `${DefectBackPanelImage}`, active: props.serviceList.includes("Bakglass") },
   ];
 
+  const handelChoose = (c)=>{
+    setChosen([{"Skjerm":true},{"Batteri":true},{"Hovedkamera":true},{"Ladeport":true},{"Frontkamera":false},{"Bakglass":false}])
+    setChosen([...chosen, c])
+  }
+
   const DefektsList = defectList.map((item) =>
     <DefektCell
+      chosen={chosen[`"${item.name}"`  ]}
       text={item.name}
       image={item.image}
       active={item.active}
       onSelectService={props.onSelectService}
+      onChoose = {handelChoose}
     />
   );
   const _spacing = (window.innerWidth < 600) ? 1 : 3
@@ -84,6 +93,9 @@ const useDefektCellStyles = makeStyles(theme => ({
   paper_choosen: {
     border: "3px solid #4a4983"
   },
+  paper_unChoosen: {
+    border: "none"
+  },
   img: {
     height: "70px",
     width: "70px",
@@ -98,7 +110,9 @@ const DefektCell = (props) => {
   const classes = useDefektCellStyles();
   const handelOnClick = (selectedService) => {
     //change borders
-
+    const temp = `{"${props.text}":true}`;
+    console.log(temp)
+    props.onChoose(temp)
     props.onSelectService(selectedService)
   }
 
@@ -108,7 +122,7 @@ const DefektCell = (props) => {
         onClick={() => { handelOnClick(props.text) }}
         disabled={!props.active}>
         <Paper
-          className={classes.paper + ` ${props.active ? classes.paper_active : classes.paper_inactive }  `}
+          className={classes.paper + ` ${props.active ? classes.paper_active : classes.paper_inactive }    ${props.chosen ? classes.paper_choosen : classes.paper_unChoosen }` }
           elevation={2}
         >
           <img src={props.image} alt=""

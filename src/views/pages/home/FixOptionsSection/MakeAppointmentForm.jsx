@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Grid, TextField, Typography, Divider, makeStyles } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import sendEmail from './sendEmail.js'
+import composeEmail from './composeEmail.js'
 // my components
 import DatePicker from './DatePicker.jsx'
+import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
     form: {
@@ -104,7 +105,20 @@ export default function MakeAppointmentForm(props) {
 
     const sendMail = () => {
         if (!invalidForm())
-            sendEmail(name, address, email, mobileNo, phoneModel, service, null, null, date, time, 'appointment')
+        {
+            const mailDetails = composeEmail(name, address, email, mobileNo, phoneModel, service, null, null, date, time, 'appointment')
+            const API_PATH = 'https://mobilland.no/api/send_mail.php';
+
+            axios({
+                method: 'post',
+                url: `${API_PATH}`,
+                headers: { 'content-type': 'application/json' },
+                data: mailDetails
+            })
+                .then(result => { props.onDone (true) })
+                .catch(error => { return (error) })
+        }
+        //TODO reset the form
     }
     const invalidForm = () => {
         //initial state 
@@ -114,8 +128,6 @@ export default function MakeAppointmentForm(props) {
         }
         setvalidation({ name: !name, streetNo: !address.streetNo, Zip: !address.Zip, city: !address.city, mobileNo: !mobileNo, phoneModel: !phoneModel, service: !service, date: !date, time: !time });
         // return validation result 
-        console.log(validation.name, validation.streetNo, validation.Zip, validation.city, validation.mobileNo, validation.phoneModel, validation.service, validation.date, validation.time)
-
         return (validation.name || validation.streetNo || validation.Zip || validation.city || validation.mobileNo || validation.phoneModel || validation.service || validation.date || validation.time)
     }
     const handelDateChange = (date) => {

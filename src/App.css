@@ -11,6 +11,7 @@ html {
 
 }
 .material-icons.md-36 { font-size: 36px; }
+.material-icons.md-200 { font-size: 200px; }
 .material-icons.green { color:#49aa9d  }
 .material-icons.purple { color:#4a4983}
 .MuiButton-iconSizeLarge > *:firsh_child { font-size: 36px; }
