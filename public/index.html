@@ -2,65 +2,96 @@
 <html lang="no">
 
 <head>
+  <!--charset and language-->
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--The document is intended for Norwegian language speakers -->
+  <meta http-equiv="content-language" content="no">
 
+  <title>Mobilland | mobil reperasjon senter i Bergen</title>
+
+  <!--Appearance and layout-->
+  <link rel="icon" href="%PUBLIC_URL%/static/favicon/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <!--See https://developers.google.com/web/fundamentals/web-app-manifest/-->
+  <!--TODO-->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <!--TODO-->
+  <!-- <link rel="apple-touch-icon" href="logo192.png" /> -->
+
+  <!-- Referrer Policy TODO-->
+  <meta name="referrer" content="origin">
+
+  <!--Author and technology ;)-->
+  <meta name="author" content="Ali Alnajjar, 004791280406, Ali_Alnajjar@live.com">
+  <meta name="generator" content="react">
+
+  <!--Keywords and description-->
+  <!--TODO-->
+  <meta name="keywords" content="">
+  <meta name="description" content="
+    Mobilland Bergen. Mobilreparasjon senter. Vi reparerer Mobiler, IPad, nettbrett og PCer både programvern og maskinvaren. vi bytter knust skjerm, batteri, bakdeksel, kamera, laderport og høyttaler på minutter
+     Vi har prisgaranti mot andre verksteder i Bergen.
+     Vi tilbyr gratis diagnose, 1-2 års garanti på reparasjoner, Drop-in og timebestilling.
+     Du kan send din enhet til oss eller vi kan komme til deg i Bergens området. Vi har også overvåkningssystem.">
+
+  <!--Disable chache-->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <!--refreshment rate-->
+  <!--<meta http-equiv="refresh" content="30">-->
+
+  <!--Facebook and twitter meta tags. Read more here: https://css-tricks.com/essential-meta-tags-social-media/-->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mobilland.no">
+  <meta property="og:title" content="Mobilland AS ">
+  <meta property="og:description" content="Mobil reparasjon og mobiltilbehør">
+  <meta property="og:image" content="%PUBLIC_URL%/SocialMediaPost.png">
+  <meta property="og:url" content="https://mobilland.no/index.html">
+  <meta property="og:locale" content="nb_NO">
+
+  <!--google-site-verification-->
+  <meta name="google-site-verification" content="ghfRkUTkNSg95Vx2n7ZMgzzb3rrDva_jXaHb_8CaVTs" />
   <!--Google Fonts-->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-  <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One|Lekton|Montserrat:400,700|Exo+2|Work+Sans&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Saira+Stencil+One|Montserrat:400,700|Exo+2|Work+Sans&display=swap"
     rel="stylesheet">
   <!--Google Icons (web Fonts)-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <link rel="apple-touch-icon" href="logo192.png" />
 
-  <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-  <title>Mobilland</title>
 </head>
 
 <body>
 
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      xfbml            : true,
-      version          : 'v6.0'
-    });
-  };
+  <!-- Load Facebook SDK for JavaScript -->
+  <!-- Your customer chat code -->
+  <div class="fb-customerchat" attribution=install_email page_id="112889193434748"
+    logged_in_greeting="Hei! hva kan vi hjelpe deg med ? " logged_out_greeting="Hei! hva kan vi hjelpe deg med ? ">
+  </div>
 
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/nb_NO/sdk/xfbml.customerchat.js';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v6.0'
+      });
+    };
 
-<!-- Your customer chat code -->
-<div class="fb-customerchat"
-  attribution=install_email
-  page_id="112889193434748"
-logged_in_greeting="Hei! hva kan vi hjelpe deg med ? "
-logged_out_greeting="Hei! hva kan vi hjelpe deg med ? ">
-</div>
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/nb_NO/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+  <div id="fb-root"></div>
+
 
   <noscript>Du trenger å aktivere JavaScript for å kunne kjøre denne siden.</noscript>
   <div id="root"></div>

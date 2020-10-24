@@ -1,4 +1,4 @@
-import React ,{useState}from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Paper, Button } from '@material-ui/core';
 
@@ -12,12 +12,13 @@ import DefectBackPanelImage from 'assets/img/icon/defect_backPanel.svg'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
-    padding: "0px"
+    // flexGrow: 1,
+    padding: "0px",
+    textAlign: "left"
   },
   paper: {
     padding: theme.spacing(0),
-    textAlign: 'center',
+    // textAlign: 'center',
     color: theme.palette.text.secondary,
   },
   container: {
@@ -30,30 +31,39 @@ const useStyles = makeStyles(theme => ({
 export default function SelectService(props) {
   const classes = useStyles();
 
-  const [chosen, setChosen] = useState ([{"Skjerm":true},{"Batteri":true},{"Hovedkamera":false},{"Ladeport":false},{"Frontkamera":false},{"Bakglass":false}])
+  const [chosen, setChosen] = useState([{ "Skjerm": true }, { "Batteri": true }, { "Hovedkamera": false }, { "Ladeport": false }, { "Frontkamera": false }, { "Bakglass": false }])
 
   const defectList = [
+<<<<<<< HEAD
     { name: "Skjerm", image: `${DefectScreenImage}`, active: props.serviceList.includes("Skjerm"), alt:"Skjermbytte" },
     { name: "Batteri", image: `${DefectBatteryImage}`, active: props.serviceList.includes("Batteri"), alt:"Batteribytte"  },
     { name: "Hovedkamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Hovedkamera"),alt:"Hovedkamerabytte" },
     { name: "Ladeport", image: `${DefectChargerImage}`, active: props.serviceList.includes("Ladeport") ,alt:"Ladeportbytte"},
     {  name: "Frontkamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Frontkamera") ,alt:"Frontkamerabytte"},
     { name: "Bakglass", image: `${DefectBackPanelImage}`, active: props.serviceList.includes("Bakglass"),alt:"Bakglassbytte" },
+=======
+    { name: "Skjerm", image: `${DefectScreenImage}`, active: props.serviceList.includes("Skjerm") },
+    { name: "Batteri", image: `${DefectBatteryImage}`, active: props.serviceList.includes("Batteri") },
+    { name: "Hovedkamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Hovedkamera") },
+    { name: "Ladeport", image: `${DefectChargerImage}`, active: props.serviceList.includes("Ladeport") },
+    { name: "Frontkamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Frontkamera") },
+    { name: "Bakglass", image: `${DefectBackPanelImage}`, active: props.serviceList.includes("Bakglass") },
+>>>>>>> 93d99529515e7eaea9079d337a3deecfaaafb179
   ];
 
-  const handelChoose = (c)=>{
-    setChosen([{"Skjerm":true},{"Batteri":true},{"Hovedkamera":true},{"Ladeport":true},{"Frontkamera":false},{"Bakglass":false}])
+  const handelChoose = (c) => {
+    setChosen([{ "Skjerm": true }, { "Batteri": true }, { "Hovedkamera": true }, { "Ladeport": true }, { "Frontkamera": false }, { "Bakglass": false }])
     setChosen([...chosen, c])
   }
 
   const DefektsList = defectList.map((item) =>
     <DefektCell
-      chosen={chosen[`"${item.name}"`  ]}
+      chosen={chosen[`"${item.name}"`]}
       text={item.name}
       image={item.image}
       active={item.active}
       onSelectService={props.onSelectService}
-      onChoose = {handelChoose}
+      onChoose={handelChoose}
     />
   );
   const _spacing = (window.innerWidth < 600) ? 1 : 3
@@ -122,7 +132,7 @@ const DefektCell = (props) => {
         onClick={() => { handelOnClick(props.text) }}
         disabled={!props.active}>
         <Paper
-          className={classes.paper + ` ${props.active ? classes.paper_active : classes.paper_inactive }    ${props.chosen ? classes.paper_choosen : classes.paper_unChoosen }` }
+          className={classes.paper + ` ${props.active ? classes.paper_active : classes.paper_inactive}    ${props.chosen ? classes.paper_choosen : classes.paper_unChoosen}`}
           elevation={2}
         >
           <img src={props.image} alt={props.alt}

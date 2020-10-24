@@ -91,8 +91,8 @@ export default function SendDeviceForm(props) {
     const [validation, setValidation] = useState({ name: null, streetNo: null, Zip: null, city: null, mobileNo: null, phoneModel: null, service: null, desc: null });
     const validationErrorMSG = "Vennligst fyll ut dette feltet"
     const sendMail = () => {
-        if (!invalidForm()){
-            const mailDetails =  composeEmail(name, address, email, mobileNo, phoneModel, service, desc, passCode, 'sendDevice')
+        if (!invalidForm()) {
+            const mailDetails = composeEmail(name, address, email, mobileNo, phoneModel, service, desc, passCode, 'sendDevice')
             const API_PATH = 'https://mobilland.no/api/send_mail.php';
             axios({
                 method: 'post',
@@ -100,11 +100,11 @@ export default function SendDeviceForm(props) {
                 headers: { 'content-type': 'application/json' },
                 data: mailDetails
             })
-                .then(result => { props.onDone (true) })
+                .then(result => { props.onDone(true) })
                 .catch(error => { return (error) })
 
         }
-        
+
     }
     const invalidForm = () => {
         // initial state 
@@ -134,7 +134,7 @@ export default function SendDeviceForm(props) {
                     <Grid container item xs={12} spacing={1}>
                         {/* Fullnavn */}
                         <Grid item xs={12} md={6} >
-                            <TextField className={classes.textFeild} id="name" label="Fullnavn" variant="outlined"
+                            <TextField className={classes.textFeild} id="name" label="Fullt navn" variant="outlined"
                                 required={true}
                                 helperText={validation.name && validationErrorMSG}
                                 error={validation.name}
