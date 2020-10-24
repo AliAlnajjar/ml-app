@@ -104,8 +104,7 @@ export default function MakeAppointmentForm(props) {
     const validationErrorMSG = "Vennligst fyll ut dette feltet"
 
     const sendMail = () => {
-        if (!invalidForm())
-        {
+        if (!invalidForm()) {
             const mailDetails = composeEmail(name, address, email, mobileNo, phoneModel, service, null, null, date, time, 'appointment')
             const API_PATH = 'https://mobilland.no/api/send_mail.php';
 
@@ -115,7 +114,7 @@ export default function MakeAppointmentForm(props) {
                 headers: { 'content-type': 'application/json' },
                 data: mailDetails
             })
-                .then(result => { props.onDone (true) })
+                .then(result => { props.onDone(true) })
                 .catch(error => { return (error) })
         }
         //TODO reset the form
@@ -194,7 +193,7 @@ export default function MakeAppointmentForm(props) {
                     <Grid container item xs={12} spacing={1}>
                         {/* Fullnavn */}
                         <Grid item xs={12} md={6} >
-                            <TextField className={classes.textFeild} id="name" label="Fullnavn" variant="outlined"
+                            <TextField className={classes.textFeild} id="name" label="Fullt navn" variant="outlined"
                                 helperText={validation.name && validationErrorMSG}
                                 error={validation.name}
                                 autoComplete="off"

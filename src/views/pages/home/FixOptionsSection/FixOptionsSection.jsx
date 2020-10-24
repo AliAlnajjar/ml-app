@@ -68,6 +68,9 @@ const useStyles = makeStyles(theme => ({
 
         }
     },
+    iconSizeLarge: {
+        fontSize: '5rem',
+    },
     mediaCard: {
         height: "100%",
         minHeight: "50%",
@@ -80,14 +83,14 @@ const useStyles = makeStyles(theme => ({
     form: {
         order: 3
     },
-    doneCard : {
-        width :"100%",
-        margin:" 5rem auto",
+    doneCard: {
+        width: "100%",
+        margin: " 5rem auto",
         order: 3
 
     },
-    doneMsg:{
-        fontFamily :"'Exo 2', sans-serif"
+    doneMsg: {
+        fontFamily: "'Exo 2', sans-serif"
 
     }
 }));
@@ -97,7 +100,11 @@ const MyButton = (props) => {
     return (
         <Button disableElevation
             size="large"
-            className={classes.btn}
+            classes={{
+                root: classes.btn,
+                endIcon: classes.iconSizeLarge,
+
+            }}
             endIcon={<i className="material-icons md-36">keyboard_arrow_right</i>}
             onClick={props.onClick}
         >
@@ -106,7 +113,7 @@ const MyButton = (props) => {
     )
 }
 
-const DoneCard = (props)=>{
+const DoneCard = (props) => {
     const classes = useStyles();
     const iClass = `material-icons md-200 green`
 
@@ -114,8 +121,8 @@ const DoneCard = (props)=>{
     return (
         <div>
             <i class={iClass}>check_circle_outline</i>
-             <Typography variant="h5" component="h5" className ={classes.doneMsg}>
-                 {props.message}
+            <Typography variant="h5" component="h5" className={classes.doneMsg}>
+                {props.message}
             </Typography>
         </div>
     )
@@ -133,10 +140,10 @@ export default function FixOptionsSection(props) {
 
     const sendDeviceFormRef = useRef();
     const sendDeviceCardRef = useRef();
-    const handelAppointmentFormDone = (result)=>{
+    const handelAppointmentFormDone = (result) => {
         setAppointmentFormDone(true)
     }
-    const handelSendDeviceFormDone = ()=>{
+    const handelSendDeviceFormDone = () => {
         setSendDeviceFormDone(true)
     }
     useEffect(() => {
@@ -157,7 +164,7 @@ export default function FixOptionsSection(props) {
         if (sendDeviceCardRef.current)
             sendDeviceCardRef.current.scrollIntoView()
     }, [sendDeviceFormDone])
-   
+
     return (
         <Section title="Har du ikke mulighet til å komme til oss? ">
             {/* ///////////////////////We come to you ///////////////////////////// */}
@@ -167,7 +174,7 @@ export default function FixOptionsSection(props) {
                         Vi kommer til deg
                         </Typography>
                     <Typography variant="body2" component="p" className={classes.desc}>
-                        Vi kan sende en tekniker til deg for skjermbytting av iPhone. Du slipper du å tenke på parkering rundt i byen, i tillegg til at du sparer tid for å gjøre andre ting mens teknikeren reparerer mobilen din. Vi operer foreløpig kun innenfor Bergen. Tjenesten gjelder kun for skjerm eller batteri på iphone når du forhåndsbestiller timen. Hvis du kansellerer senest kl. 12 dagen før avtaletidspunktet vil hele beløpet bli refundert.
+                        Vi kan sende en tekniker til deg for skjermbytting av iPhone. Da slipper du å tenke på parkering rundt i byen, i tillegg til at du sparer tid for å gjøre andre ting mens teknikeren reparerer mobilen din. Vi operere foreløpig kun innenfor Bergen. Tjenesten gjelder kun for skjerm eller batteri på iphone når du forhåndsbestiller timen. Hvis du kansellerer senest kl. 12 dagen før avtaletidspunktet vil hele beløpet bli refundert.
                         </Typography>
                     <MyButton text="Bestill time"
                         onClick={() => { setShowAppointmentForm(true); setAppointmentFormDone(false) }
@@ -183,19 +190,19 @@ export default function FixOptionsSection(props) {
                 {(showAppointmentForm && !appointmentFormDone) ? (
                     <Grid item xs={12} className={classes.form}>
                         <div ref={appointmentFormRef}>
-                            <MakeAppointmentForm 
-                            onDone = {handelAppointmentFormDone}
+                            <MakeAppointmentForm
+                                onDone={handelAppointmentFormDone}
                             />
                         </div>
                     </Grid>
-                ) : appointmentFormDone? (
-                    <div className = {classes.doneCard} ref={appointmentCardRef}> 
-                    <DoneCard message =  "time er bestilt! vi tar kontakt med deg snart"/>
+                ) : appointmentFormDone ? (
+                    <div className={classes.doneCard} ref={appointmentCardRef}>
+                        <DoneCard message="time er bestilt! vi tar kontakt med deg snart" />
                     </div>
-                    ):(
-                        <div></div>
-                    )
-                
+                ) : (
+                            <div></div>
+                        )
+
                 }
 
 
@@ -212,30 +219,30 @@ export default function FixOptionsSection(props) {
 
                 <Grid item xs={12} md={6} className={classes.textPart}>
                     <Typography variant="h5" component="h2" className={classes.title}>
-                        Send din enhet på Posten
+                        Send din enhet med Posten
                         </Typography>
 
                     <Typography variant="body2" component="p" className={classes.desc}>
-                        Hvis du har problemer med din telefon/tablet eller pc kan du sende den til oss for sjekk eller reparere, Når enheten skal returneres, bruker vi Bring til vanlig og det koster ca. 150 med sporing. Vi kan sende den med brevpakka men med kundens ansvar Du kan bare fylle ut vårt kontaktskjema.
+                        Hvis du har problemer med din telefon/tablet eller pc kan du sende den til oss for sjekk eller reparasjon, Når enheten skal returneres, pleier vi å bruke Bring. Det koster ca. 150 med sporing. Vi kan også sende den med brevpakka, men på kundens ansvar. Fyll ut vårt kontaktskjema.
                         </Typography>
-                    <MyButton text="Fyll ut kontaktskjema" onClick={() => { setShowSendDeviceForm(true);        setSendDeviceFormDone(false) }} />
+                    <MyButton text="Fyll ut kontaktskjema" onClick={() => { setShowSendDeviceForm(true); setSendDeviceFormDone(false) }} />
                 </Grid>
-                {showSendDeviceForm && !sendDeviceFormDone?  (
+                {showSendDeviceForm && !sendDeviceFormDone ? (
                     <Grid item xs={12} className={classes.form}>
                         <div ref={sendDeviceFormRef} >
-                            <SendDeviceForm                             
-                            onDone = {handelSendDeviceFormDone}
-                        />
+                            <SendDeviceForm
+                                onDone={handelSendDeviceFormDone}
+                            />
                         </div>
                     </Grid>
-                ) :  sendDeviceFormDone? (
-                    <div className = {classes.doneCard} ref={sendDeviceCardRef}> 
-                    <DoneCard message =  "Takk!! vi mottatt din e-post"/>
+                ) : sendDeviceFormDone ? (
+                    <div className={classes.doneCard} ref={sendDeviceCardRef}>
+                        <DoneCard message="Takk!! vi mottatt din e-post" />
                     </div>
-                    ):(
-                        <div></div>
-                    )
-                    }
+                ) : (
+                            <div></div>
+                        )
+                }
             </Grid>
         </Section>
     );

@@ -87,7 +87,7 @@ export default function FAQ(props) {
         },
         {
             q: "Hvor ligger butikken?",
-            a: "Vi holder til i Fjøsangerveien 39, 5054 Bergen. Når man bruker GBS, Skriver du Solheimgaten 33."
+            a: "Vi holder til i Fjøsangerveien 39, 5054 Bergen. Hvis du bruker GPS, skriver du Solheimgaten 33."
         }, {
             q: "Hvilken kvalitet på skjermer har dere?",
             a: "Vi har originale, TS8, TM, alle skjermer er garantert 2 års. du kan ta en titt på skjermkvalitets beskrivelse."
