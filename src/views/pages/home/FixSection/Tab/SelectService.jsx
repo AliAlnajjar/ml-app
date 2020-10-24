@@ -33,12 +33,12 @@ export default function SelectService(props) {
   const [chosen, setChosen] = useState ([{"Skjerm":true},{"Batteri":true},{"Hovedkamera":false},{"Ladeport":false},{"Frontkamera":false},{"Bakglass":false}])
 
   const defectList = [
-    { name: "Skjerm", image: `${DefectScreenImage}`, active: props.serviceList.includes("Skjerm") },
-    { name: "Batteri", image: `${DefectBatteryImage}`, active: props.serviceList.includes("Batteri") },
-    { name: "Hovedkamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Hovedkamera") },
-    { name: "Ladeport", image: `${DefectChargerImage}`, active: props.serviceList.includes("Ladeport") },
-    {  name: "Frontkamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Frontkamera") },
-    { name: "Bakglass", image: `${DefectBackPanelImage}`, active: props.serviceList.includes("Bakglass") },
+    { name: "Skjerm", image: `${DefectScreenImage}`, active: props.serviceList.includes("Skjerm"), alt:"Skjermbytte" },
+    { name: "Batteri", image: `${DefectBatteryImage}`, active: props.serviceList.includes("Batteri"), alt:"Batteribytte"  },
+    { name: "Hovedkamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Hovedkamera"),alt:"Hovedkamerabytte" },
+    { name: "Ladeport", image: `${DefectChargerImage}`, active: props.serviceList.includes("Ladeport") ,alt:"Ladeportbytte"},
+    {  name: "Frontkamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Frontkamera") ,alt:"Frontkamerabytte"},
+    { name: "Bakglass", image: `${DefectBackPanelImage}`, active: props.serviceList.includes("Bakglass"),alt:"Bakglassbytte" },
   ];
 
   const handelChoose = (c)=>{
@@ -125,7 +125,7 @@ const DefektCell = (props) => {
           className={classes.paper + ` ${props.active ? classes.paper_active : classes.paper_inactive }    ${props.chosen ? classes.paper_choosen : classes.paper_unChoosen }` }
           elevation={2}
         >
-          <img src={props.image} alt=""
+          <img src={props.image} alt={props.alt}
             className={classes.img + ` ${props.active ? "" : classes.img_grey}`}
           ></img>
           {props.text}

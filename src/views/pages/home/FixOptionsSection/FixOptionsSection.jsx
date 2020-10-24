@@ -8,8 +8,8 @@ import SendDeviceForm from './SendDeviceForm.jsx';
 //motion
 import Slide from '@material-ui/core/Slide';
 //Images
-import WeComeToYouImage from 'assets/img/we_come_to_you.jpg'
-import PostenImage from 'assets/img/posten.jpg'
+import WeComeToYouImage from 'assets/img/fiks_Mobilen_din_hjemme.jpg'
+import PostenImage from 'assets/img/Send_mobilen_din_med_posten.jpg'
 
 
 const useStyles = makeStyles(theme => ({
