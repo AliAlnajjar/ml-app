@@ -77,7 +77,7 @@ export default function SelectService(props) {
       active: props.serviceList.includes("Bakglass"),
       alt: "Bakglassbytte",
     },
-  ];
+
 
   const handelChoose = (c) => {
     setChosen([
