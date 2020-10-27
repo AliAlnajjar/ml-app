@@ -34,21 +34,12 @@ export default function SelectService(props) {
   const [chosen, setChosen] = useState([{ "Skjerm": true }, { "Batteri": true }, { "Hovedkamera": false }, { "Ladeport": false }, { "Frontkamera": false }, { "Bakglass": false }])
 
   const defectList = [
-<<<<<<< HEAD
-    { name: "Skjerm", image: `${DefectScreenImage}`, active: props.serviceList.includes("Skjerm"), alt:"Skjermbytte" },
-    { name: "Batteri", image: `${DefectBatteryImage}`, active: props.serviceList.includes("Batteri"), alt:"Batteribytte"  },
-    { name: "Hovedkamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Hovedkamera"),alt:"Hovedkamerabytte" },
-    { name: "Ladeport", image: `${DefectChargerImage}`, active: props.serviceList.includes("Ladeport") ,alt:"Ladeportbytte"},
-    {  name: "Frontkamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Frontkamera") ,alt:"Frontkamerabytte"},
-    { name: "Bakglass", image: `${DefectBackPanelImage}`, active: props.serviceList.includes("Bakglass"),alt:"Bakglassbytte" },
-=======
-    { name: "Skjerm", image: `${DefectScreenImage}`, active: props.serviceList.includes("Skjerm") },
-    { name: "Batteri", image: `${DefectBatteryImage}`, active: props.serviceList.includes("Batteri") },
-    { name: "Hovedkamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Hovedkamera") },
-    { name: "Ladeport", image: `${DefectChargerImage}`, active: props.serviceList.includes("Ladeport") },
-    { name: "Frontkamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Frontkamera") },
-    { name: "Bakglass", image: `${DefectBackPanelImage}`, active: props.serviceList.includes("Bakglass") },
->>>>>>> 93d99529515e7eaea9079d337a3deecfaaafb179
+    { name: "Skjerm", image: `${DefectScreenImage}`, active: props.serviceList.includes("Skjerm"), alt: "Skjermbytte" },
+    { name: "Batteri", image: `${DefectBatteryImage}`, active: props.serviceList.includes("Batteri"), alt: "Batteribytte" },
+    { name: "Hovedkamera", image: `${DefectRearCameraImage}`, active: props.serviceList.includes("Hovedkamera"), alt: "Hovedkamerabytte" },
+    { name: "Ladeport", image: `${DefectChargerImage}`, active: props.serviceList.includes("Ladeport"), alt: "Ladeportbytte" },
+    { name: "Frontkamera", image: `${DefectCameraImage}`, active: props.serviceList.includes("Frontkamera"), alt: "Frontkamerabytte" },
+    { name: "Bakglass", image: `${DefectBackPanelImage}`, active: props.serviceList.includes("Bakglass"), alt: "Bakglassbytte" },
   ];
 
   const handelChoose = (c) => {
