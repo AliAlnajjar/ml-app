@@ -77,7 +77,7 @@ export default function SelectService(props) {
       active: props.serviceList.includes("Bakglass"),
       alt: "Bakglassbytte",
     },
-
+  ]
 
   const handelChoose = (c) => {
     setChosen([
@@ -174,9 +174,9 @@ const DefektCell = (props) => {
           className={
             classes.paper +
             ` ${
-              props.active ? classes.paper_active : classes.paper_inactive
+            props.active ? classes.paper_active : classes.paper_inactive
             }   + ${
-              props.chosen ? classes.paper_choosen : classes.paper_unChoosen
+            props.chosen ? classes.paper_choosen : classes.paper_unChoosen
             }`
           }
           elevation={2}
