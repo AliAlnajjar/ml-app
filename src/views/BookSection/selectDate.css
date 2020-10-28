@@ -1,0 +1,15 @@
+/*Calender */
+
+.rdrCalendarWrapper {
+  font-size: 18px;
+}
+.rdrSelected {
+  background-color: #00a99d;
+  font-weight: 600;
+}
+.rdrDayNumber {
+  font-weight: 600;
+}
+.rdrSelected .rdrDayNumber span {
+  color: rgba(255, 255, 255, 1);
+}
