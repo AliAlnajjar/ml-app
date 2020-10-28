@@ -6,7 +6,7 @@ import MainSection from "./views/pages/home/MainSection/MainSection.jsx";
 import FixSection from "./views/pages/home/FixSection/FixSection.jsx";
 import FixOptionsSection from "./views/pages/home/FixOptionsSection/FixOptionsSection.jsx";
 import FAQ from "./views/pages/home/FAQ/FAQ.jsx";
-import SelectTimeSlot from "./views/BookSection/SelectTimeSlot";
+import SelectDate from "./views/BookSection/SelectDate";
 import Footer from "./views/sections/Footer/Footer";
 import FliperText from "components/FliperText/FliperText.jsx";
 class App extends Component {
@@ -17,6 +17,7 @@ class App extends Component {
         <TopHeader />
         <div className="AppContent">
           <MainSection />
+          <SelectDate />
           <FixSection />
           <FixOptionsSection />
           <FAQ />
