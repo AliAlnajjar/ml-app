@@ -101,7 +101,7 @@ export default function SendDeviceForm(props) {
                 data: mailDetails
             })
                 .then(result => { props.onDone(true) })
-                .catch(error => { return (error) })
+                .catch(error => { props.onDone(true) })
 
         }
 

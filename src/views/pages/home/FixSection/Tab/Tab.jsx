@@ -175,7 +175,7 @@ const stepNumberStyles = {
         width: "30px",
         borderRadius: "50% 10% 50% 50%",
         display: "flex",
-        fontSize: "1.5rem",
+        fontSize: "1.2rem",
         marginRight: "30px",
         fontWeight: 700,
         fontFamily: "Montserrat, sans-serif",
@@ -209,7 +209,7 @@ const StepNumber = (props) => {
 /////////////////////Step Title//////////////////////
 const stepTitleStyles = {
     stepTitle: {
-        fontSize: "1.5rem",
+        fontSize: "1.3rem",
         fontFamily: "Montserrat, sans-serif",
         color: "#000000",
         ['@media (max-width:599px)']: {

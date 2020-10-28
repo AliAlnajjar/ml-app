@@ -64,10 +64,10 @@ const composeEmail = (name = '', address = {}, email = '', mobileNo = '', phoneM
         }
     }
     let mailDetails = {
-        subject: (msgType && msgType == 'appointment') ? 'Bestille time' : 'Posten..' + name || '' + '..' + email || '',
+        subject: (msgType && msgType === 'appointment') ? 'Bestille time' : 'Posten..' + name || '' + '..' + email || '',
         message: composeMessage(),
     }
     return mailDetails
-    
+
 }
 export default composeEmail;

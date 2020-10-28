@@ -3,8 +3,6 @@ header("Access-Control-Allow-Origin: *");
 
 $_POST = json_decode($file_get_contents("php://input"), true);
 
-if (empty($_POST['fname']) && empty($_POST['email'])) die();
-
 if ($_POST)
 	{
 	// set response code - 200 OK
