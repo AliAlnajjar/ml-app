@@ -44,11 +44,15 @@ const InfoCell = (props) => {
   return (
     <div className={classes.infoCell}>
       <Grid container spacing={0}>
-        <Grid item md={2} className={classes.infoCell_icon}>
+        <Grid item md={3} className={classes.infoCell_icon}>
           <i class={iClass}>{props.iconName}</i>
         </Grid>
-        <Grid item md={10} className={classes.infoCell_text}>
+        <Grid item md={9} className={classes.infoCell_text}>
           {props.text}
+        </Grid>
+        <Grid item md={3} className={classes.infoCell_text}></Grid>
+        <Grid item md={9} className={classes.infoCell_text}>
+          {props.text2}
         </Grid>
       </Grid>
     </div>
@@ -59,35 +63,39 @@ export default function TopHeader() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={2} justify="center">
-        <Grid item xs={12} md={4}>
+      <Grid container spacing={1} justify="center">
+        <Grid item md={4}>
           <div className={classes.brand}>Mobilland</div>
         </Grid>
-
-        <Hidden smDown>
-          <Grid item xs={12} md={2}>
-            <InfoCell
-              text="409 81 521"
-              iconName="phone"
-              iconColor="green"
-            ></InfoCell>
+        <Grid item md={8}>
+          <Grid container spacing={1} justify="left">
+            <Hidden smDown>
+              <Grid item md={2}>
+                <InfoCell
+                  text="409 81 521"
+                  iconName="phone"
+                  iconColor="green"
+                ></InfoCell>
+              </Grid>
+              <Grid item md={5}>
+                <InfoCell
+                  text="Bergen: Fantoftvegen 14L"
+                  text2='Oslo: Valkyriegata 7 "Tobakkland"'
+                  iconName="location_on"
+                  iconColor="green"
+                ></InfoCell>
+              </Grid>
+              <Grid item md={4}>
+                <InfoCell
+                  location={true}
+                  text="man-lør&nbsp;&nbsp;12:00 - 20:00"
+                  iconName="access_time"
+                  iconColor="green"
+                ></InfoCell>
+              </Grid>
+            </Hidden>
           </Grid>
-          <Grid item xs={12} md={2}>
-            <InfoCell
-              text="Fantoftvegen 14L"
-              iconName="location_on"
-              iconColor="green"
-            ></InfoCell>
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <InfoCell
-              location={true}
-              text="man-lør&nbsp;&nbsp;12:00 - 20:00"
-              iconName="access_time"
-              iconColor="green"
-            ></InfoCell>
-          </Grid>
-        </Hidden>
+        </Grid>
       </Grid>
     </div>
   );
