@@ -74,7 +74,7 @@ export default function TopHeader() {
           </Grid>
           <Grid item xs={12} md={2}>
             <InfoCell
-              text="Fantoftvegen 14L"
+              text="Fjøsangerveien 32A"
               iconName="location_on"
               iconColor="green"
             ></InfoCell>
